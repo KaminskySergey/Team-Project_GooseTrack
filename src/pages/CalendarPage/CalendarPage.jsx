@@ -1,6 +1,6 @@
 import {} from './CalendarPage.styled';
 
-export default function RegisterPage() {
+export default function CalendarPage() {
   return (
     <div>
       <h1>

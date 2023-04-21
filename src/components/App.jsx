@@ -6,7 +6,7 @@ import { PrivateRoute } from 'components/PrivateRoute';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
-const CalendarPage = lazy(() => import('pages/CalendarPage/CalendarPage'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 
 export const App = () => {
   return (
@@ -17,10 +17,7 @@ export const App = () => {
         <Route
           path="/login"
           element={
-            <RestrictedRoute
-              redirectTo="/calendar"
-              component={<CalendarPage />}
-            />
+            <RestrictedRoute redirectTo="/calendar" component={<LoginPage />} />
           }
         />
       </Route>

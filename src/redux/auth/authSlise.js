@@ -5,7 +5,7 @@ import { persistReducer } from 'redux-persist';
 const initialState = {
     user: { name: null, email: null },
     token: null,
-    isLoggedIn: false,
+    isLoggedIn: true,
     isRefreshing: false,
     error: false,
 };

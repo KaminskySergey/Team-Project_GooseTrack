@@ -1,7 +1,6 @@
-import { RedirectLink } from './AuthNavigate.styled';
 import {} from './AccountPage.styled';
 
-export default function RegisterPage() {
+export default function AccountPage() {
   return (
     <div>
       <h1>
