@@ -1,15 +1,75 @@
 /* @import-normalize; bring in normalize.css styles */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); */
 
+@font-face {
+	font-family: "InterNormal"; 
+	font-style: normal; 
+	font-weight: 500;
+	src: url("./fonts/Inter-Regular.ttf") format("truetype");
+  }
+  @font-face {
+	font-family: "InterBolt"; 
+	font-style: normal; 
+	font-weight: 700;
+	src: url("./fonts/Inter-Bold.ttf") format("truetype");
+  }
+  @font-face {
+	font-family: "InterSemiBolt"; 
+	font-style: normal; 
+	font-weight: 600;
+	font-size: 16px;
+	src: url("./fonts/Inter-Bold.ttf") format("truetype");
+  }@font-face {
+	font-family: "InterSemiBoltMinSize"; 
+	font-style: normal; 
+	font-weight: 600;
+	font-size: 14px;
+	src: url("./fonts/Inter-Bold.ttf") format("truetype");
+  }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: InterSemiBolt;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:  'Inter', sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+/* Стили для обнуления верхних отступов у элементов */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+/* Класс для обнуления базовых свойств у списков (ul) */
+ul,li {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+/* Класс для обнуления базовых свойств у ссылок */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+/* Свойства для корректного отображения картинок */
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
