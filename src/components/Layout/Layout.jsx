@@ -1,17 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
-// import { MainLayout } from 'components/AppBarHeader';
+import { MainLayout } from 'components/MainLayout';
 
 import { CardWrapper } from './Layout.styled';
-// import { useAuth } from 'hooks/useAuth';
+import { useAuth } from 'hooks/useAuth';
 
 export const Layout = () => {
-  // const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
 
   return (
     <CardWrapper>
-      {/* {isLoggedIn && <MainLayout />} */}
+      {isLoggedIn && <MainLayout />}
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>

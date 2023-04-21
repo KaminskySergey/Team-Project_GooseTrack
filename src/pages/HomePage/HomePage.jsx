@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import {} from 'react-router-dom';
 
 import {} from './HomePage.styled';
 import { AuthNavigate } from 'components/AuthNavigate';
