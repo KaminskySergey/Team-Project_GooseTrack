@@ -1,8 +1,12 @@
 import { NavLink } from 'react-router-dom';
 
 import {} from './HomePage.styled';
+import { AuthNavigate } from 'components/AuthNavigate';
 
 export default function HomePage() {
+  const redirectLogin = '/login';
+  const redirectRegister = '/register';
+
   return (
     <div>
       <h1>
@@ -12,8 +16,8 @@ export default function HomePage() {
         </span>
       </h1>
       <nav>
-        <NavLink to="/login">Log in</NavLink>
-        <NavLink to="/register">Sing up</NavLink>
+        <AuthNavigate redirect={redirectLogin} nameLink="Log in" />
+        <AuthNavigate redirect={redirectRegister} nameLink="Sing up" />
       </nav>
     </div>
   );
