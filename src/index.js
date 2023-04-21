@@ -1,25 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import  App  from 'components/App';
+import { App } from 'components/App';
 import './index.css';
-
-// import { store } from 'Redux/store';
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
+import { HelmetProvider } from 'react-helmet-async';
+import { PersistGate } from 'redux-persist/integration/react'
 import { ThemeProvider } from 'styled-components';
-import { persistor, store } from 'Redux/store';
-import { theme } from 'components/Theme/theme';
-import { PersistGate } from 'redux-persist/integration/react';
+// import { theme } from 'components/Theme/theme';
+
+import { store, persistor } from 'redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    {/* <ThemeProvider theme={theme}> */}
     <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-
-<App />
-
-</PersistGate>
-    </Provider>,
-    </ThemeProvider>
-  </React.StrictMode>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter basename="/Team-Project_GooseTrack" >
+          <HelmetProvider>
+            <App />
+          </HelmetProvider>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+    {/* </ThemeProvider> */}
+  </React.StrictMode >
 );
+
+
+{/* <ThemeProvider theme={theme}> */ }
