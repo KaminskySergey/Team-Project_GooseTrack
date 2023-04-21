@@ -1,19 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+import { initAuth } from 'redux/auth/init-state'
 
-const initialState = {
-    user: { name: null, email: null },
-    token: null,
-    isLoggedIn: false,
-    isRefreshing: false,
-    error: false,
-};
+// import { register, logIn, logOut, fetchCurrentUser } from './operations';
 
 
 const authSlice = createSlice({
     name: 'auth',
-    initialState,
+    initialState: initAuth,
     extraReducers: builder =>
         builder
     // .addCase(register.fulfilled, (state, action) => {
