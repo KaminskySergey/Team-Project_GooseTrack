@@ -1,6 +1,11 @@
 import {} from './LoginPage.styled';
 
+import { LoginForm } from 'components/LoginForm';
+import { AuthNavigate } from 'components/AuthNavigate';
+
 export default function LoginPage() {
+  const redirectRegister = '/register';
+
   return (
     <div>
       <h1>
@@ -9,6 +14,9 @@ export default function LoginPage() {
           💁‍♀️
         </span>
       </h1>
+
+      <LoginForm />
+      <AuthNavigate redirect={redirectRegister} nameLink="Log in" />
     </div>
   );
 }
