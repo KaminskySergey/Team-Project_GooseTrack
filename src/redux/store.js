@@ -9,8 +9,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-import { persistAuthReducer } from 'redux/auth/authSlise';
-import { initAuth } from 'redux/auth/init-state'
+import { persistAuthReducer } from 'Redux/auth/authSlise';
+import { initAuth } from 'Redux/auth/initAuth';
 
 const initState = {
   auth: initAuth,
