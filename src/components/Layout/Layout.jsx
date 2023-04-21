@@ -1,20 +1,46 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
-import { MainLayout } from 'components/MainLayout';
+// import { MainLayout } from 'components/MainLayout';
 
-import { CardWrapper } from './Layout.styled';
-import { useAuth } from 'hooks/useAuth';
+import {  Go, Main, Item } from './Layout.styled';
+// import { useAuth } from 'hooks/useAuth';
+import { Aside, Container, List } from './Layout.styled';
+import Box from 'components/Box/Box';
 
 export const Layout = () => {
-  const { isLoggedIn } = useAuth();
+  // const { isLoggedIn } = useAuth();
 
   return (
-    <CardWrapper>
-      {isLoggedIn && <MainLayout />}
-      <Suspense fallback={null}>
+    <>
+    <Go>
+    <Main>
+    <Container style={{display: 'flex'}}>
+      <Aside>
+        {/* <nav > */}
+        <p>User Panel</p>
+          <List >
+            <Item>
+        <Link to="">My account</Link>
+
+            </Item>
+            <Item>
+
+        <Link to="">Calendar</Link>
+            </Item>
+          </List>
+          {/* <Link to="/products">Products</Link> */}
+        {/* </nav> */}
+      </Aside>
+      <Box style={{backgroundColor: '#EAEAEA', width: '100%', height: '100%'}}>
+      <Suspense>
         <Outlet />
       </Suspense>
-    </CardWrapper>
+      </Box>
+    </Container>
+    </Main>
+
+    </Go>
+    </>
   );
 };

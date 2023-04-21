@@ -10,6 +10,8 @@ const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const AccountPage = lazy(() => import('pages/AccountPage/AccountPage'));
 const CalendarPage = lazy(() => import('pages/CalendarPage/CalendarPage'));
 
+
+
 export const App = () => {
   return (
     <Routes>
