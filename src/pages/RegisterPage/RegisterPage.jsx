@@ -1,4 +1,3 @@
-import { RedirectLink } from './AuthNavigate.styled';
 import {} from './RegisterPage.styled';
 
 export default function RegisterPage() {
