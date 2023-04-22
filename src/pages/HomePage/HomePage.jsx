@@ -15,7 +15,6 @@ export default function HomePage() {
           💁‍♀️
         </span>
       </h1>
-
       <nav>
         <AuthNavigate redirect={redirectLogin} nameLink="Log in" />
         <AuthNavigate redirect={redirectRegister} nameLink="Sing up" />
