@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Icon from './Icon/Icon';
+
 import styled from 'styled-components';
 
 
@@ -95,8 +95,3 @@ transition: 250ms all;
 `
 
 
-export const UserSvg = styled.img`
-width: 24px;
-height: 24px;
-stroke: black;
-`

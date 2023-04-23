@@ -1,3 +1,4 @@
+
 const Icon = ({id}) => {
     switch (id) {
         case 'user':
@@ -17,10 +18,8 @@ const Icon = ({id}) => {
             </svg>
         default:
             return <svg></svg>
-            break;
+            // break;
     }
 }
 
-export default Icon
-
-
+export default Icon;

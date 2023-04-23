@@ -2,9 +2,9 @@
 
 
 import Box from 'components/Box/Box';
-import {logo, user, calendarCheck} from '../../images/svg/index'
-import { Aside, Item, Link, Button, UserSvg } from "./AsideBar.styled";
-import Icon from './Icon/Icon';
+
+import { Aside, Item, Link, Button } from "./AsideBar.styled";
+import Icon from '../Icon/Icon';
 
 
 
@@ -17,7 +17,7 @@ const AsideBar = () => {
         
         <div>
           <Box mb={32}>
-          <Icon id='logo'/>
+          
           </Box>
           
           <p>User Panel</p>
