@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import Icon from './Icon/Icon';
 import styled from 'styled-components';
 
 
@@ -21,6 +22,7 @@ export const Aside = styled.aside`
     font-size: 14px;
 line-height: 17px;
 margin-bottom: 32px;
+color: #7E7D82;
   }
 `
 
@@ -48,6 +50,9 @@ display: block;
 padding: 16px 20px;
 border-radius: 8px;
 transition: all 250ms;
+display: flex;
+align-items: center;
+color: #84828A;
 &:hover, &:focus {
   background-color: rgba(120, 165, 191, 0.1);
   
@@ -56,10 +61,21 @@ transition: all 250ms;
     background: #E3F3FF;
     color: #3E85F3;
   }
+  svg {
+    stroke: #84828A;
+  }
+  &.active svg{
+    stroke: #3E85F3;
+  }
+  
+  
 `;
 
 
 export const Button = styled.button`
+display: flex;
+    align-items: center;
+    justify-content: center;
 width: 141px;
 height: 56px;
 background: #3E85F3;
@@ -76,4 +92,11 @@ transition: 250ms all;
   transform: scale(1.1);
   box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.70);
 }
+`
+
+
+export const UserSvg = styled.img`
+width: 24px;
+height: 24px;
+stroke: black;
 `
