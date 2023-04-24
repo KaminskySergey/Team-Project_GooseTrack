@@ -1,6 +1,7 @@
 import {} from 'react-router-dom';
 
 import {} from './HomePage.styled';
+import { ChoosedDay } from '../../components/ChoosedDay/ChoosedDay';
 import { AuthNavigate } from 'components/AuthNavigate';
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
           💁‍♀️
         </span>
       </h1>
+      <ChoosedDay />
       <nav>
         <AuthNavigate redirect={redirectLogin} nameLink="Log in" />
         <AuthNavigate redirect={redirectRegister} nameLink="Sing up" />
