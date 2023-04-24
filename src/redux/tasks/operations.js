@@ -37,14 +37,14 @@ export const deleteTasks = createAsyncThunk(
   }
 );
 
-// export const editTasks = createAsyncThunk(
-//   'tasks/editTasks',
-//   async (tasksID, thunkAPI) => {
-//     try {
-//       const { data } = await axios.patch(`/tasks/${tasksID}`);
-//       return data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const editTasks = createAsyncThunk(
+  'tasks/editTasks',
+  async (tasksID, thunkAPI) => {
+    try {
+      const { data } = await axios.patch(`/tasks/${tasksID}`);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
