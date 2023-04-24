@@ -1,11 +1,8 @@
-
 import { configureStore } from '@reduxjs/toolkit';
 import persistStore from "redux-persist/es/persistStore";
 import { authReducer } from 'redux/auth/authSlise';
 import { initAuth } from 'redux/auth/initAuth';
-import { persistAuthReducer } from 'redux/auth/authSlise';
 import { tasksSlise } from './tasks/tasksSlise';
-import { initAuth } from 'redux/auth/initAuth';
 import { initTasks } from './tasks/initTasks';
 import { 
     FLUSH,
