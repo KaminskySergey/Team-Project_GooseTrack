@@ -1,8 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Layout } from './Layout';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
+import { useDispatch } from 'react-redux';
+import {useAuth} from '../hooks/useAuth'
+import { refresh } from 'redux/auth/authOperations';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
@@ -10,9 +13,18 @@ const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const AccountPage = lazy(() => import('pages/AccountPage/AccountPage'));
 const CalendarPage = lazy(() => import('pages/CalendarPage/CalendarPage'));
 
+
 export const App = () => {
+  const {isRefreshing} = useAuth()
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+dispatch(refresh())
+  }, [dispatch])
   return (
-    <Routes>
+    
+    !isRefreshing && (<Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -36,6 +48,7 @@ export const App = () => {
           }
         />
       </Route>
-    </Routes>
+    </Routes>)
+    
   );
 };
