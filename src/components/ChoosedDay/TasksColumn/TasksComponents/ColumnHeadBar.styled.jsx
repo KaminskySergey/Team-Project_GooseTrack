@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { AiOutlinePlusCircle } from 'react-icons/ai';
+
 export const Box = styled.div`
   display: flex;
   justify-content: space-between;
@@ -19,7 +21,14 @@ export const ColumnTitle = styled.h3`
     line-height: 1.2;
   }
 `;
+
 export const BtnAdd = styled.button`
   border: none;
   background-color: transparent;
+`;
+
+export const BtnIcon = styled(AiOutlinePlusCircle)`
+  width: 24px;
+  height: 24px;
+  fill: ${p => p.theme.colors.text};
 `;
