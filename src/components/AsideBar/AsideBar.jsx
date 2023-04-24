@@ -5,11 +5,17 @@ import Box from 'components/Box/Box';
 
 import { Aside, Item, Link, Button } from "./AsideBar.styled";
 import Icon from '../Icon/Icon';
+import { useDispatch } from 'react-redux';
+import { logout } from 'redux/auth/authOperations';
+
 
 
 
 
 const AsideBar = () => {
+  const dispatch = useDispatch()
+  
+  const handleLogout = () => dispatch(logout())
   
   return (
     <>
@@ -41,7 +47,7 @@ const AsideBar = () => {
         </div>
           
           <div>
-            <Button type="button">
+            <Button type="button" onClick={handleLogout}>
             <span style={{marginRight: 11}}>Log out</span>
             <Icon id='logout'/>
             </Button>

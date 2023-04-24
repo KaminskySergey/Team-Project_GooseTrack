@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 import { initAuth } from './initAuth'
+import { login, register, logout, refresh } from './authOperations';
 
 // import { register, logIn, logOut, fetchCurrentUser } from './operations';
 
@@ -9,55 +10,49 @@ import { initAuth } from './initAuth'
 const authSlice = createSlice({
     name: 'auth',
     initialState: initAuth,
-    extraReducers: builder =>
-        builder
-    // .addCase(register.fulfilled, (state, action) => {
-    //     state.user = action.payload.user;
-    //     state.token = action.payload.token;
-    //     state.isLoggedIn = true;
-    //     state.error = false;
-    // })
-    // .addCase(register.pending, (state) => {
-    //     state.error = false;
-    // })
-    // .addCase(register.rejected, (state) => {
-    //     state.error = true;
-    // })
-    // .addCase(logIn.fulfilled, (state, action) => {
-    //     state.user = action.payload.user;
-    //     state.token = action.payload.token;
-    //     state.isLoggedIn = true;
-    //     state.error = false;
-    // })
-    // .addCase(logIn.pending, (state) => {
-    //     state.error = false;
-    // })
-    // .addCase(logIn.rejected, (state) => {
-    //     state.error = true;
-    // })
-    // .addCase(logOut.fulfilled, (state) => {
-    //     state.user = { name: null, email: null };
-    //     state.token = null;
-    //     state.isLoggedIn = false;
-    //     state.error = false;
-    // })
-    // .addCase(fetchCurrentUser.pending, (state) => {
-    //     state.isRefreshing = true;
-    // })
-    // .addCase(fetchCurrentUser.fulfilled, (state, action) => {
-    //     state.user = action.payload;
-    //     state.isLoggedIn = true;
-    //     state.isRefreshing = false;
-    // })
-    // .addCase(fetchCurrentUser.rejected, (state) => {
-    //     state.isRefreshing = false;
-    // })
-});
+    extraReducers: builder => builder
+    .addCase(register.pending, state => state )
+    .addCase(register.fulfilled, (state, {payload}) => {
+        
+        // state.user = payload.user;
+        // state.token = payload.token;
+        state.isLoggedIn = true;
+        state.error = false
+    })
+    .addCase(register.rejected, state => state.error = true)
+    
+    .addCase(login.pending, state => state)
+    .addCase(login.fulfilled, (state, {payload}) => {
+        state.user = payload.result.user;
+        state.token = payload.result.token;
+        state.isLoggedIn = true;
+        state.error = false;
+    })
+    .addCase(login.rejected, state => state.error = true)
 
-const authPersistConfig = {
+    .addCase(logout.fulfilled, state => {
+        state.user = { email: null, name: null };
+        state.token = null;
+        state.isLoggedIn = false
+    })
+    .addCase(refresh.pending, (state, action) => {
+        state.isRefreshing = true;
+    })
+    .addCase(refresh.fulfilled, (state, action) => {
+        state.user = action.payload.result;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+    })
+    .addCase(refresh.rejected, state => {
+        state.isRefreshing = false;
+    })
+    
+})
+
+const persistConfig = {
     key: 'auth',
     storage,
     whitelist: ['token'],
 };
 
-export const persistAuthReducer = persistReducer(authPersistConfig, authSlice.reducer)
+export const authReducer = persistReducer(persistConfig, authSlice.reducer)
