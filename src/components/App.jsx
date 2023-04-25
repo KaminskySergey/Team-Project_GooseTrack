@@ -18,6 +18,8 @@ export const App = () => {
 
   const dispatch = useDispatch();
 
+  const x = 15;
+
   useEffect(() => {
     dispatch(refresh());
   }, [dispatch]);
