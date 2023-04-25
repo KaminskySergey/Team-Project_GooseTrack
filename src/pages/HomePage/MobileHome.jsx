@@ -9,6 +9,11 @@ import {
   RedirectLinkLogin,
   RedirectLinkRegister,
   ImageContainer,
+  AdvantageNumber,
+  Advantage,
+  AdvantageColor,
+  AdvantageItem,
+  AboutText,
 } from './MobileHome.styled';
 
 import { ReactComponent as Logo } from '../../images/svg/logo.svg';
@@ -45,13 +50,14 @@ export const MobileHome = () => {
 
       <MainContainer>
         <AboutContainer>
-          <p>1.</p>
-          <h2>Callendar view</h2>
-          <p>
+          <AdvantageNumber>1.</AdvantageNumber>
+          <AdvantageColor>Calendar</AdvantageColor>
+          <AdvantageItem>view</AdvantageItem>
+          <AboutText>
             GooseTrack's Calendar view provides a comprehensive overview of your
             schedule, displaying all your tasks, events, and appointments in a
             visually appealing and intuitive layout.
-          </p>
+          </AboutText>
           <ImageContainer>
             <img
               src={ImageCalendar}
@@ -62,14 +68,14 @@ export const MobileHome = () => {
           </ImageContainer>
         </AboutContainer>
         <AboutContainer>
-          <p>2.</p>
-          <h2>Sidebar</h2>
-          <p>
+          <AdvantageNumber>2.</AdvantageNumber>
+          <Advantage>Sidebar</Advantage>
+          <AboutText>
             GooseTrack offers easy access to your account settings, calendar,
             and filters. The "My Account" section allows you to manage your
             profile information and preferences, while the calendar provides a
             quick and convenient way to view your upcoming events and tasks.
-          </p>
+          </AboutText>
           <ImageContainer>
             <img
               src={ImageSidebar}
@@ -80,13 +86,14 @@ export const MobileHome = () => {
           </ImageContainer>
         </AboutContainer>
         <AboutContainer>
-          <p>3.</p>
-          <h2>All in one</h2>
-          <p>
+          <AdvantageNumber>3.</AdvantageNumber>
+          <AdvantageColor>All in</AdvantageColor>
+          <AdvantageItem>one</AdvantageItem>
+          <AboutText>
             GooseTrack is an all-in-one productivity tool that helps you stay on
             top of your tasks, events, and deadlines. Say goodbye to scattered
             to-do lists and hello to streamlined productivity with GooseTrack.
-          </p>
+          </AboutText>
           <ImageContainer>
             <img
               src={ImageAllinOne}

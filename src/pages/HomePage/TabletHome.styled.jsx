@@ -5,30 +5,31 @@ export const Container = styled.div``;
 
 export const HeroHeader = styled.div`
   background-color: ${props => props.theme.colors.hero};
-  height: 812px;
+  height: 1024px;
 `;
 
 export const LogoContainer = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 232px;
+  padding-top: 321px;
 `;
 
 export const LogoText = styled.p`
   font-family: 'coolveticaItalic';
   font-weight: 400;
-  font-size: 44px;
-  line-height: 48px;
+  line-height: 150px;
   margin-top: 2px;
+  font-size: 120px;
   color: ${props => props.theme.colors.white};
 `;
 
 export const NavContainer = styled.nav`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-top: 32px;
+  margin-top: 40px;
 `;
 
 export const RedirectLinkLogin = styled(NavLink)`
@@ -58,7 +59,6 @@ export const RedirectLinkRegister = styled(NavLink)`
   color: ${props => props.theme.colors.white};
   font-family: 'InterSemiBolt';
   font-weight: 600;
-  margin-top: 208px;
   text-decoration: underline;
   text-underline-offset: 4px;
 
@@ -69,11 +69,15 @@ export const RedirectLinkRegister = styled(NavLink)`
 `;
 
 export const MainContainer = styled.section`
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 32px;
+  padding-right: 32px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const AboutContainer = styled.div`
+  max-width: 704px;
   display: block;
   align-items: center;
   margin-top: 64px;
@@ -84,23 +88,22 @@ export const ImageContainer = styled.div`
   justify-content: center;
 `;
 
-export const AdvantageNumber = styled.p`
+export const BenefitNumber = styled.p`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 80px;
+  font-size: 104px;
   color: ${props => props.theme.colors.hero};
 `;
 
 export const AdvantageColor = styled.h2`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 32px;
+  font-size: 40px;
   margin-top: 14px;
   margin-bottom: 8px;
-
   text-transform: uppercase;
-  width: 214px;
-  padding: 8px 16px;
+  width: 264px;
+  padding: 6px 16px;
   border-radius: 44px;
 
   padding: 8px 16px;
@@ -111,9 +114,10 @@ export const AdvantageColor = styled.h2`
 export const AdvantageItem = styled.span`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 32px;
-  margin-bottom: 14px;
+  font-size: 40px;
   display: block;
+  margin-top: 14px;
+  margin-bottom: 24px;
   text-transform: uppercase;
   color: ${props => props.theme.colors.text};
 `;
@@ -123,7 +127,7 @@ export const Advantage = styled.h2`
   font-weight: 700px;
   font-size: 32px;
   margin-top: 14px;
-  margin-bottom: 14px;
+  margin-bottom: 24px;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -136,7 +140,9 @@ export const AboutText = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  padding-bottom: 40px;
+  padding-bottom: 48px;
+
+  width: 275px;
 
   color: ${props => props.theme.colors.text};
 `;

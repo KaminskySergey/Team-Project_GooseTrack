@@ -6,6 +6,7 @@ export const theme = {
     primary: '#07c',
     secondary: '#05a',
     hero: '#3E85F3',
+    backgroundAdvantage: '#DCEBF7',
     backgroundColor: '#609',
     muted: '#f6f6f6',
     red: 'red',
