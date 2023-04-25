@@ -1,106 +1,78 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 
-import { Wrapper, Label, Input, Button, Title, AccountForm, Wrap } from '.';
+import { Wrapper, Button, Title, AccountForm, Wrap } from '.';
+import { userShema } from 'schemas/userShema';
+import { selectUserInfo } from 'redux/user/selectors';
+import { fetchUser, updateUser } from 'redux/user/operations';
 import { AvatarUploader } from 'components/AvatarUploader';
-const regex = {
-  name: /(^[A-Z]{1}[a-z]{1,14} [A-Z]{1}[a-z]{1,14}$)|(^[А-Я]{1}[а-я]{1,14} [А-Я]{1}[а-я]{1,14}$)/,
-  email:
-    /(^(?!.*@.*@.*$)(?!.*@.*--.*\..*$)(?!.*@.*-\..*$)(?!.*@.*-$)((.*)?@[a-z]{5}\.[a-z]{2,}(\.[a-z]{2,})?)$)/,
-  phone:
-    /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
-};
-
-const userSchema = Yup.object().shape({
-  name: Yup.string()
-    .matches(regex.name)
-    .min(3, 'At least 3 digits is required')
-    .max(50, 'At most 50 digits is required')
-    .required('User name is required'),
-  birthday: Yup.string().required(),
-  email: Yup.string().email().matches(regex.email).required(),
-  phone: Yup.string()
-    .matches(regex.phone)
-    .min(7, 'At least 7 digits is required')
-    .max(20, 'At most 15 digits is required'),
-  skype: Yup.string()
-    .min(3, 'At least 3 digits is required')
-    .max(50, 'At most 50 digits is required'),
-});
+import { UserFild } from 'components/UserFild';
 
 export const UserForm = () => {
-  const [userName, setUserName] = useState('Freddie Mercury');
-  const [data, setData] = useState({
-    name: userName,
-    birthday: '',
-    email: '',
-    phone: '',
-    skype: '',
-  });
-  const { name, birthday, email, phone, skype } = data;
+  const dispatch = useDispatch();
+  const userInfo = useSelector(selectUserInfo);
 
-  const initialValues = { name, birthday, email, phone, skype };
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log('form: ', values);
-    setData(values);
-  };
+  useEffect(() => {
+    const getUserInfo = async () => {
+      await dispatch(fetchUser());
+      setIsLoading(false);
+    };
 
-  const handleChangeName = evt => {
-    if (evt.target.name !== 'name') {
-      return;
-    }
-    console.log('name :>> ', evt.target.value);
-    setUserName(evt.target.value);
-  };
+    getUserInfo();
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  const { name, birthday, email, phone, telegram } = userInfo;
 
   return (
     <Formik
-      initialValues={initialValues}
-      validationSchema={userSchema}
-      onSubmit={handleSubmit}
+      initialValues={{
+        name: name,
+        birthday: birthday
+          ? new Date(birthday).toLocaleDateString('en-CA')
+          : '',
+        email: email,
+        phone: phone,
+        telegram: telegram,
+      }}
+      validationSchema={userShema}
+      onSubmit={values => dispatch(updateUser(values))}
     >
-      <AccountForm onChange={handleChangeName}>
-        <AvatarUploader />
-        <Title>{userName}</Title>
+      {({ values }) => (
+        <AccountForm>
+          <AvatarUploader />
+          <Title>{values.name}</Title>
+          <Wrap>
+            <Wrapper>
+              <UserFild title="User name" type="text" name="name" />
+              <UserFild title="Birthday" type="date" name="birthday" />
+              <UserFild title="Email" type="email" name="email" />
+            </Wrapper>
 
-        <Wrap>
-          <Wrapper>
-            <Label>
-              User Name
-              <Input type="text" name="name" />
-            </Label>
-            <Label>
-              Birthday
-              <Input type="date" name="birthday" />
-            </Label>
-            <Label>
-              Email
-              <Input type="email" name="email" placeholder="freddie@mail.com" />
-            </Label>
-          </Wrapper>
-          <Wrapper>
-            <Label>
-              Phone
-              <Input
-                type="phone"
+            <Wrapper>
+              <UserFild
+                title="Phone"
+                type="tel"
                 name="phone"
-                placeholder="+38 (098) 666-55-44"
+                placeholder="Add phone number"
               />
-            </Label>
-            <Label>
-              Skype
-              <Input
+              <UserFild
+                title="Telegram"
                 type="text"
-                name="skype"
-                placeholder="Add a skype number"
+                name="telegram"
+                placeholder="Add a telegram nickname"
               />
-            </Label>
-          </Wrapper>
-        </Wrap>
-        <Button type="submit">Save changes</Button>
-      </AccountForm>
+            </Wrapper>
+          </Wrap>
+          <Button type="submit">Save changes</Button>
+        </AccountForm>
+      )}
     </Formik>
   );
 };
