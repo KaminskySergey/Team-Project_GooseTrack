@@ -4,7 +4,7 @@ import { ReactComponent as AddIcon } from 'images/account/add.svg';
 import { Img, Input, Label, Wrap } from '.';
 import Box from 'components/Box/Box';
 
-export const AvatarUploader = () => {
+export const AvatarUploader = ({ avatarURL }) => {
   const [imagePreview, setImagePreview] = useState(avatar);
 
   const handleImageChange = e => {
@@ -12,6 +12,8 @@ export const AvatarUploader = () => {
     if (!selectedFile) {
       return;
     }
+
+    // const imageUrl = URL.createObjectURL(selectedFile);
 
     const fileReader = new FileReader();
     fileReader.onload = () => {
@@ -22,13 +24,10 @@ export const AvatarUploader = () => {
 
   return (
     <Box position="relative" display="block" m="0 auto" width="max-content">
-      {imagePreview ? (
-        <Wrap>
-          <Img src={imagePreview} alt="Avatar Preview" />
-        </Wrap>
-      ) : (
-        <div>Upload your avatar</div>
-      )}
+      <Wrap>
+        <Img src={imagePreview} alt="Avatar Preview" />
+      </Wrap>
+
       <Input
         type="file"
         onChange={handleImageChange}
