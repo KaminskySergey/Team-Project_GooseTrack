@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #dce3e5;
   padding: 40px 32px 32px 32px;
 `;
