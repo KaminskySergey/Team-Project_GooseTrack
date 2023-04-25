@@ -6,6 +6,7 @@ import { useAuth } from 'hooks/useAuth';
 import { Container } from './Layout.styled';
 
 import AsideBar from '../AsideBar/AsideBar';
+import { Header } from '../Header/Header';
 
 export const Layout = () => {
   const { isLoggedIn } = useAuth();
@@ -18,11 +19,14 @@ export const Layout = () => {
             {isLoggedIn ? (
               <>
                 <AsideBar />
-                <Main>
-                  <Suspense>
-                    <Outlet />
-                  </Suspense>
-                </Main>
+                <div style={{ width: '100%' }}>
+                  <Header />
+                  <Main>
+                    <Suspense>
+                      <Outlet />
+                    </Suspense>
+                  </Main>
+                </div>
               </>
             ) : (
               <Suspense>

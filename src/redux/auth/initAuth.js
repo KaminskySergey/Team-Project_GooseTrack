@@ -3,6 +3,5 @@ export const initAuth = {
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    isTheme: true,
     error: false,
 }

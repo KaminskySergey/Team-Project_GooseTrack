@@ -28,8 +28,8 @@ export const login = createAsyncThunk('auth/login', async (credentials, thunkAPI
     try {
         console.log(credentials, 'credentials')
         const {data} = await axios.post('/auth/login', credentials)
-
-        setAuthHeader(data.result.token)
+        console.log(data)
+        setAuthHeader(data.token)
         
         return data;
     } catch (error) {
@@ -48,7 +48,7 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 
 export const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI ) => {
     const {token} = thunkAPI.getState().auth
-    
+    console.log(token, 'qwqwqwqwqwqwqwwqwwq')
     if(!token){
         return thunkAPI.rejectWithValue('Not Valid Token')
     }
