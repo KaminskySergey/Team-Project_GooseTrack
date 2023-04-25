@@ -1,33 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { initUser } from "./initUser";
 import { fetchUser, updateUser } from "./operations";
-
-const handlePending = (state) => {
-  state.loading = true;
-  state.error = false;
-};
-
-const handleRejected = (state) => {
-  state.loading = false;
-  state.error = true;
-};
-
-const handleFulfilled = (state, action) => {
-  state.loading = false;
-  state.error = false;
-  state.info = action.payload;
-};
+import { handleFulfilled, handlePending, handleRejected } from "./userSliseRedusers";
 
 export const userInfoSlise = createSlice({
   name: 'user',
   initialState: initUser,
   extraReducers: builder => builder
-    //========fetchUser
-    .addCase(fetchUser.pending, handlePending)
-    .addCase(fetchUser.rejected, handleRejected)
-    .addCase(fetchUser.fulfilled, handleFulfilled)
-    //========updateUser
-    .addCase(updateUser.pending, handlePending)
-    .addCase(updateUser.rejected, handleRejected)
-    .addCase(updateUser.fulfilled, handleFulfilled),
+    .addMatcher(isAnyOf(fetchUser.pending, updateUser.pending), handlePending)
+    .addMatcher(isAnyOf(fetchUser.rejected, updateUser.rejected), handleRejected)
+    .addMatcher(isAnyOf(fetchUser.fulfilled, updateUser.fulfilled), handleFulfilled)
+  ,
 });
