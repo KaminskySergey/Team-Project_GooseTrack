@@ -13,7 +13,9 @@ import {
 
 import { ReactComponent as Logo } from '../../images/svg/logo.svg';
 import { ReactComponent as LogoLogin } from '../../images/svg/IconLogin.svg';
-import ImageCalendar from 'images/page/calendar.jpg';
+import ImageCalendar from 'images/page/Mobile/calendarMobile.jpg';
+import ImageSidebar from 'images/page/Mobile/sidebarMobile.png';
+import ImageAllinOne from 'images/page/Mobile/allinoneMobile.png';
 
 export const MobileHome = () => {
   const redirectLogin = '/login';
@@ -59,8 +61,41 @@ export const MobileHome = () => {
             />
           </ImageContainer>
         </AboutContainer>
-        <AboutContainer>2.</AboutContainer>
-        <AboutContainer>3.</AboutContainer>
+        <AboutContainer>
+          <p>2.</p>
+          <h2>Sidebar</h2>
+          <p>
+            GooseTrack offers easy access to your account settings, calendar,
+            and filters. The "My Account" section allows you to manage your
+            profile information and preferences, while the calendar provides a
+            quick and convenient way to view your upcoming events and tasks.
+          </p>
+          <ImageContainer>
+            <img
+              src={ImageSidebar}
+              alt="Callendar view"
+              width="335"
+              height="457"
+            />
+          </ImageContainer>
+        </AboutContainer>
+        <AboutContainer>
+          <p>3.</p>
+          <h2>All in one</h2>
+          <p>
+            GooseTrack is an all-in-one productivity tool that helps you stay on
+            top of your tasks, events, and deadlines. Say goodbye to scattered
+            to-do lists and hello to streamlined productivity with GooseTrack.
+          </p>
+          <ImageContainer>
+            <img
+              src={ImageAllinOne}
+              alt="Callendar view"
+              width="335"
+              height="457"
+            />
+          </ImageContainer>
+        </AboutContainer>
       </MainContainer>
     </Container>
   );
