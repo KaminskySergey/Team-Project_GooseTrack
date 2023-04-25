@@ -2,9 +2,9 @@ import {} from 'react-router-dom';
 
 import {} from './HomePage.styled';
 import { AuthNavigate } from 'components/AuthNavigate';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/authOperations';
+// import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { register } from 'redux/auth/authOperations';
 
 import { useResponce } from 'hooks/responce';
 
