@@ -10,7 +10,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1087px;
   margin: 0, auto;
   padding: 40px 32px 32px 32px;
 `;

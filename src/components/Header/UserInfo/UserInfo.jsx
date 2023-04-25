@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+
+import { useSelector } from 'react-redux';
 import { selectUserInfo } from 'redux/auth/selectors';
 
 import { Name, ImgWrapper, Avatar, NameFirstLetter } from './UserInfo.styled';
@@ -9,24 +9,25 @@ import { Name, ImgWrapper, Avatar, NameFirstLetter } from './UserInfo.styled';
 export const UserInfo = () => {
   const userInfo = useSelector(selectUserInfo);
 
-  const [userAvatar, setUserAvatar] = useState("");
-  const [username, setUsername] = useState('');
-  
 
-  const dispatch = useDispatch();
-  
   if (!userInfo) {
     return
   }
+
+  const userNameTSpit = userInfo.name.split("")
+  const firstLeterOfUserName = userNameTSpit[0].toUpperCase()
+
 
   return (
     <>
       <Name>{userInfo.name}</Name>
       <ImgWrapper>
-        <Avatar src={userInfo.avatarURL} alt="avatar" />
-        <NameFirstLetter></NameFirstLetter>
+        {userInfo.avatarURL !== '' ? (
+          <Avatar src={userInfo.avatarURL} alt="avatar" />
+        ) : (
+          <NameFirstLetter>{firstLeterOfUserName}</NameFirstLetter>
+        )}
       </ImgWrapper>
     </>
   );
 };
-
