@@ -16,14 +16,13 @@ export const UserForm = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchUser());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (userInfo) {
+    const getUserInfo = async () => {
+      await dispatch(fetchUser());
       setIsLoading(false);
-    }
-  }, [userInfo]);
+    };
+
+    getUserInfo();
+  }, [dispatch]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -34,13 +33,13 @@ export const UserForm = () => {
   return (
     <Formik
       initialValues={{
-        name: name || '',
+        name: name,
         birthday: birthday
           ? new Date(birthday).toLocaleDateString('en-CA')
           : '',
-        email: email || '',
-        phone: phone || '',
-        telegram: telegram || '',
+        email: email,
+        phone: phone,
+        telegram: telegram,
       }}
       validationSchema={userShema}
       onSubmit={values => dispatch(updateUser(values))}
