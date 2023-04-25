@@ -2,9 +2,9 @@ import {} from 'react-router-dom';
 
 import {} from './HomePage.styled';
 import { AuthNavigate } from 'components/AuthNavigate';
-// import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { register } from 'redux/auth/authOperations';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/authOperations';
 
 import { useResponce } from 'hooks/responce';
 
@@ -18,51 +18,51 @@ export default function HomePage() {
   const redirectLogin = '/login';
   const redirectRegister = '/register';
 
-  // const dispatch = useDispatch();
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // const handleChange = e => {
-  //   const { name, value } = e.target;
-  //   switch (name) {
-  //     case 'name':
-  //       setName(value);
-  //       break;
-  //     case 'email':
-  //       setEmail(value);
-  //       break;
-  //     case 'password':
-  //       setPassword(value);
-  //       break;
+  const handleChange = e => {
+    const { name, value } = e.target;
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+      case 'email':
+        setEmail(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
 
-  //     default:
-  //       break;
-  //   }
-  // };
+      default:
+        break;
+    }
+  };
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   dispatch(register({ name, email, password }));
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(register({ name, email, password }));
 
-  //   setName('');
-  //   setEmail('');
-  //   setPassword('');
-  // };
+    setName('');
+    setEmail('');
+    setPassword('');
+  };
   return (
     <div>
       {isDesktopOrLaptop && <DesktopHome />}
       {isTablet && <TabletHome />}
       {isMobile && <MobileHome />}
 
-      {/* <h1>
+      <h1>
         Team-Project_GooseTrack manager HOME page
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>
-      </h1> */}
+      </h1> 
 
-      {/* <form onSubmit={handleSubmit} style={{ outline: '1px solid black' }}>
+       <form onSubmit={handleSubmit} style={{ outline: '1px solid black' }}>
         <label>
           Name
           <input type="text" value={name} name="name" onChange={handleChange} />
@@ -86,7 +86,7 @@ export default function HomePage() {
           />
         </label>
         <button type="submit">submit</button>
-      </form> */}
+      </form>
 
       <nav>
         <AuthNavigate redirect={redirectLogin} nameLink="Log in" />
