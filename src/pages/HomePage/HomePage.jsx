@@ -1,7 +1,6 @@
 import {} from 'react-router-dom';
 
 import {} from './HomePage.styled';
-import { AuthNavigate } from 'components/AuthNavigate';
 // import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { register } from 'redux/auth/authOperations';
@@ -14,9 +13,6 @@ import { MobileHome } from './MobileHome';
 
 export default function HomePage() {
   const { isDesktopOrLaptop, isTablet, isMobile } = useResponce();
-
-  const redirectLogin = '/login';
-  const redirectRegister = '/register';
 
   // const dispatch = useDispatch();
   // const [name, setName] = useState('');
@@ -50,7 +46,7 @@ export default function HomePage() {
   //   setPassword('');
   // };
   return (
-    <div>
+    <>
       {isDesktopOrLaptop && <DesktopHome />}
       {isTablet && <TabletHome />}
       {isMobile && <MobileHome />}
@@ -87,11 +83,6 @@ export default function HomePage() {
         </label>
         <button type="submit">submit</button>
       </form> */}
-
-      <nav>
-        <AuthNavigate redirect={redirectLogin} nameLink="Log in" />
-        <AuthNavigate redirect={redirectRegister} nameLink="Sing up" />
-      </nav>
-    </div>
+    </>
   );
 }

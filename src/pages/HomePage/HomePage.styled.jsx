@@ -11,6 +11,7 @@ export const RedirectLink = styled(NavLink)`
   }
 `;
 
-export const container = styled.div`
-  background-color: green;
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
 `;

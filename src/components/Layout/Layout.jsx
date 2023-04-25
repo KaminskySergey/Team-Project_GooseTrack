@@ -14,7 +14,7 @@ export const Layout = () => {
     <>
       <Wrapper>
         <main>
-          <Container style={{ display: 'flex' }}>
+          <Container style={{ display: isLoggedIn ? 'flex' : 'block' }}>
             {isLoggedIn ? (
               <>
                 <AsideBar />
