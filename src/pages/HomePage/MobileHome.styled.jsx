@@ -8,11 +8,6 @@ export const HeroHeader = styled.div`
   height: 812px;
 `;
 
-export const HeroItem = styled.h1`
-  font-family: CoolveticaItalic;
-  font-weight: 400;
-`;
-
 export const LogoContainer = styled.h1`
   display: flex;
   flex-direction: column;
@@ -72,8 +67,17 @@ export const RedirectLinkRegister = styled(NavLink)`
 `;
 
 export const MainContainer = styled.section`
-  display: flex;
   padding-left: 20px;
   padding-right: 20px;
+`;
+
+export const AboutContainer = styled.div`
+  display: block;
+  align-items: center;
+  margin-top: 64px;
+`;
+
+export const ImageContainer = styled.div`
+  display: flex;
   justify-content: center;
 `;
