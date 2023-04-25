@@ -13,6 +13,7 @@ import {
   AdvantageColor,
   AdvantageItem,
   AboutText,
+  Advantage,
 } from './TabletHome.styled';
 
 import { ReactComponent as Logo } from '../../images/svg/logo.svg';
@@ -68,13 +69,13 @@ export const TabletHome = () => {
         </AboutContainer>
         <AboutContainer>
           <BenefitNumber>2.</BenefitNumber>
-          <h2>Sidebar</h2>
-          <p>
+          <Advantage>Sidebar</Advantage>
+          <AboutText>
             GooseTrack offers easy access to your account settings, calendar,
             and filters. The "My Account" section allows you to manage your
             profile information and preferences, while the calendar provides a
             quick and convenient way to view your upcoming events and tasks.
-          </p>
+          </AboutText>
           <ImageContainer>
             <img
               src={ImageSidebar}
@@ -86,12 +87,13 @@ export const TabletHome = () => {
         </AboutContainer>
         <AboutContainer>
           <BenefitNumber>3.</BenefitNumber>
-          <h2>All in one</h2>
-          <p>
+          <AdvantageColor>All in</AdvantageColor>
+          <AdvantageItem>one</AdvantageItem>
+          <AboutText>
             GooseTrack is an all-in-one productivity tool that helps you stay on
             top of your tasks, events, and deadlines. Say goodbye to scattered
             to-do lists and hello to streamlined productivity with GooseTrack.
-          </p>
+          </AboutText>
           <ImageContainer>
             <img
               src={ImageAllinOne}

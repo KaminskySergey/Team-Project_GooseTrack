@@ -125,7 +125,7 @@ export const AdvantageItem = styled.span`
 export const Advantage = styled.h2`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 32px;
+  font-size: 40px;
   margin-top: 14px;
   margin-bottom: 24px;
   text-transform: uppercase;
