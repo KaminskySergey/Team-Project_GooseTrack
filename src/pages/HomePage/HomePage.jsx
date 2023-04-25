@@ -18,37 +18,37 @@ export default function HomePage() {
   const redirectLogin = '/login';
   const redirectRegister = '/register';
 
-  const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const dispatch = useDispatch();
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'email':
-        setEmail(value);
-        break;
-      case 'password':
-        setPassword(value);
-        break;
+  // const handleChange = e => {
+  //   const { name, value } = e.target;
+  //   switch (name) {
+  //     case 'name':
+  //       setName(value);
+  //       break;
+  //     case 'email':
+  //       setEmail(value);
+  //       break;
+  //     case 'password':
+  //       setPassword(value);
+  //       break;
 
-      default:
-        break;
-    }
-  };
+  //     default:
+  //       break;
+  //   }
+  // };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(register({ name, email, password }));
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   dispatch(register({ name, email, password }));
 
-    setName('');
-    setEmail('');
-    setPassword('');
-  };
+  //   setName('');
+  //   setEmail('');
+  //   setPassword('');
+  // };
   return (
     <div>
       {isDesktopOrLaptop && <DesktopHome />}
