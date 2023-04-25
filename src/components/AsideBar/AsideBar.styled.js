@@ -6,6 +6,19 @@ import styled from 'styled-components';
 
 
 export const Aside = styled.aside`
+
+
+@media  (max-width: 1279px) {
+  /* display: none; */
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+  height: 95%;
+}
+
+@media (min-width: 1280px) {
+  
+}
   /* height: 100%; */
   width: 290px;
   background-color: '#FFFFFF';
@@ -38,6 +51,14 @@ border-radius: 8px;
     margin-bottom: 16px;
   }
 
+`
+
+export const ButtonClose = styled.button`
+width: 24px;
+height: 24px;
+border: none;
+background: transparent;
+margin-left: auto;
 `
 
 export const Link = styled(NavLink)`

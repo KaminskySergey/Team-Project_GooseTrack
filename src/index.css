@@ -25,6 +25,13 @@
 	font-weight: 600;
 	font-size: 14px;
 	src: url("./fonts/Inter-Bold.ttf") format("truetype");
+  }@font-face {
+	font-family: "coolveticaItalic"; 
+	font-style: normal; 
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 24px;
+	src: url("./fonts/coolvetica.ttf") format("truetype");
   }
 body {
   margin: 0;
