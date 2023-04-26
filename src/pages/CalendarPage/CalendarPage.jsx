@@ -1,3 +1,5 @@
+
+// import { ChoosedDay } from 'components/ChoosedDay/ChoosedDay';
 import {} from './CalendarPage.styled';
 
 export default function CalendarPage() {
@@ -8,7 +10,9 @@ export default function CalendarPage() {
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>
+        {/* <ChoosedDay/> */}
       </h1>
+    
     </div>
   );
 }

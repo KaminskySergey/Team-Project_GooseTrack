@@ -7,6 +7,7 @@ import { Container } from './Layout.styled';
 
 import AsideBar from '../AsideBar/AsideBar';
 
+
 export const Layout = () => {
   const { isLoggedIn } = useAuth();
 
@@ -17,6 +18,7 @@ export const Layout = () => {
           <Container style={{ display: 'flex' }}>
             {isLoggedIn ? (
               <>
+              
                 <AsideBar />
                 <Main>
                   <Suspense>
