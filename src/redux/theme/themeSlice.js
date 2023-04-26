@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 
 import { initTheme } from 'redux/theme/initTheme';
-
 
 const themeSlice = createSlice({
   name: 'theme',
@@ -13,8 +14,12 @@ const themeSlice = createSlice({
   },
 });
 
-
-
 export const { toggleThemeAction } = themeSlice.actions;
-export const themeReducer = themeSlice.reducer;
 
+const persistConfig = {
+  key: 'theme',
+  storage,
+  whitelist: ['isTheme'],
+};
+
+export const themeReducer = persistReducer(persistConfig, themeSlice.reducer);

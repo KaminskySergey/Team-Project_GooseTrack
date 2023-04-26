@@ -1,4 +1,10 @@
 export const theme = {
+  /* 
+    Хто використоувує для стилізаці своїх компонентів об'єкт 
+    colors - перепишіть свої змінні подібно до об'єктів light та dark.
+    
+    Звертатись до змінних у файлі .styled.jsx через ${props => props.theme.mainBackgroundColor};  
+  */
   colors: {
     text: '#000',
     background: '#fff',
@@ -18,23 +24,45 @@ export const theme = {
     statusHigh: '#EA3D65',
     statusLow: '#72C2F8',
   },
-  fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'system-ui, sans-serif',
-    monospace: 'Menlo, monospace',
+  // ======================================================================================================
+
+  // Стилі для світлої теми
+  light: {
+    // comon colors
+    mainBackgroundColor: '#FFFFFF',
+    secondaryBackgroundColor: '#F7F6F9',
+    accentColor: '#3E85F3',
+    mainTextColor: '#111111',
+    secondaryTextColor: '#FFFFFF',
+
+    // AsideBar
+    asideBarBackground: '#FFFFFF',
+    asideBarTitle: '#7E7D82', 
+    asideBarIcon: '#84828A',
+    asideBarLinkText: '#84828A',
+    asideBarActiveLinkText: '#3E85F3',
+    asideBarActiveLinkBackground: '#E3F3FF',
+    asideBarLinkBackgroundHover: 'rgba(120, 165, 191, 0.1)',
+    asideBarLogoutBtnShadow: '4px 2px 16px rgba(136, 165, 191, 0.48)',
   },
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fontWeights: {
-    body: 400,
-    heading: 700,
-    bold: 700,
-    normal: 500,
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
-  },
-  shadows: {
-    box: '0 1px 4px rgb(0 0 0), -23px 0 20px -23px rgb(0 0 0 / 80%), 23px 0 20px -23px rgb(0 0 0 / 80%), 0 0 40px rgb(0 0 0 / 10%) inset',
+
+  // Стилі для темної теми
+  dark: {
+    // comon colors
+    mainBackgroundColor: '#21222C',
+    secondaryBackgroundColor: '#171820',
+    accentColor: '#3E85F3',
+    mainTextColor: '#FFFFFF',
+    secondaryTextColor: '#FFFFFF',
+
+    // AsideBar
+    asideBarBackground: '#13151A',
+    asideBarTitle: '#585A5D', 
+    asideBarIcon: '#FFFFFF',
+    asideBarLinkText: '#FFFFFF',
+    asideBarActiveLinkText: '#FFFFFF',
+    asideBarActiveLinkBackground: '#3E85F3',
+    asideBarLinkBackgroundHover: 'rgba(120, 165, 191, 0.1)',
+    asideBarLogoutBtnShadow: '4px 2px 16px rgba(136, 165, 191, 0.3)',
   },
 };
