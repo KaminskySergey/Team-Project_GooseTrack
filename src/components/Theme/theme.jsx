@@ -10,6 +10,7 @@ export const theme = {
     backgroundColor: '#609',
     muted: '#f6f6f6',
     red: 'red',
+    grey: '#CEC9C1',
     border: 'rgb(206, 215, 19)',
     yellow: '#FFFF00',
     green: '#04ff00',

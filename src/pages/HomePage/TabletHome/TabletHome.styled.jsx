@@ -83,6 +83,10 @@ export const AboutContainer = styled.div`
   margin-top: 64px;
 `;
 
+export const ReverseContaiber = styled.div`
+  margin-left: 429px;
+`;
+
 export const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -111,7 +115,7 @@ export const AdvantageColor = styled.h2`
   color: ${props => props.theme.colors.hero};
 `;
 
-export const AdvantageItem = styled.span`
+export const AdvantageItem = styled.h2`
   font-family: 'InterBolt';
   font-weight: 700px;
   font-size: 40px;
