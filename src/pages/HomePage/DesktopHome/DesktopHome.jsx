@@ -15,14 +15,16 @@ import {
   AdvantageItem,
   AboutText,
   Advantage,
-  ReverseContaiber,
 } from './DesktopHome.styled';
 
 import { ReactComponent as Logo } from 'images/svg/logo.svg';
 import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
-import ImageCalendar from 'images/page/Tablet/calendarTablet.jpg';
-import ImageSidebar from 'images/page/Tablet/sidebarTablet.jpg';
-import ImageAllinOne from 'images/page/Tablet/allinTablet.jpg';
+import ImageCalendar from 'images/page/Desktop/calendarDesktop.png';
+import ImageCalendar2x from 'images/page/Desktop/calendarDesktop@2x.png';
+import ImageSidebar from 'images/page/Desktop/sidebarDesktop.png';
+import ImageSidebar2x from 'images/page/Desktop/sidebarDesktop@2x.png';
+import ImageAllinOne from 'images/page/Desktop/allinoneDecktop.png';
+import ImageAllinOne2x from 'images/page/Desktop/allinoneDecktop@2x.png';
 
 export const DesktopHome = () => {
   const redirectLogin = '/login';
@@ -64,9 +66,10 @@ export const DesktopHome = () => {
           </div>
           <ImageContainer>
             <img
+              srcset={`${ImageCalendar} 1x, ${ImageCalendar2x} 2x`}
               src={ImageCalendar}
               alt="Callendar view"
-              width="704"
+              width="604"
               height="700"
             />
           </ImageContainer>
@@ -84,9 +87,10 @@ export const DesktopHome = () => {
           </div>
           <ImageContainer>
             <img
+              srcset={`${ImageSidebar} 1x, ${ImageSidebar2x} 2x`}
               src={ImageSidebar}
               alt="Callendar view"
-              width="704"
+              width="604"
               height="700"
             />
           </ImageContainer>
@@ -105,9 +109,10 @@ export const DesktopHome = () => {
           </div>
           <ImageContainer>
             <img
+              srcset={`${ImageAllinOne} 1x, ${ImageAllinOne2x} 2x`}
               src={ImageAllinOne}
               alt="Callendar view"
-              width="704"
+              width="604"
               height="700"
             />
           </ImageContainer>

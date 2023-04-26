@@ -77,21 +77,19 @@ export const MainContainer = styled.section`
 `;
 
 export const AboutContainer = styled.div`
-  max-width: 1107px;
+  width: 1107px;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   margin-top: 64px;
 `;
 
 export const AboutContainerReverse = styled.div`
-  max-width: 1107px;
+  width: 1107px;
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  justify-content: space-between;
   margin-top: 64px;
 `;
-
-export const ReverseContaiber = styled.div``;
 
 export const ImageContainer = styled.div`
   display: flex;

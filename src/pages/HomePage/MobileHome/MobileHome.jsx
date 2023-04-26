@@ -18,9 +18,12 @@ import {
 
 import { ReactComponent as Logo } from 'images/svg/logo.svg';
 import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
-import ImageCalendar from 'images/page/Mobile/calendarMobile.jpg';
+import ImageCalendar from 'images/page/Mobile/calendarMobile.png';
+import ImageCalendar2x from 'images/page/Mobile/calendarMobile@2x.png';
 import ImageSidebar from 'images/page/Mobile/sidebarMobile.png';
+import ImageSidebar2x from 'images/page/Mobile/sidebarMobile@2x.png';
 import ImageAllinOne from 'images/page/Mobile/allinoneMobile.png';
+import ImageAllinOne2x from 'images/page/Mobile/allinoneMobile@2x.png';
 
 export const MobileHome = () => {
   const redirectLogin = '/login';
@@ -60,6 +63,7 @@ export const MobileHome = () => {
           </AboutText>
           <ImageContainer>
             <img
+              srcset={`${ImageCalendar} 1x, ${ImageCalendar2x} 2x`}
               src={ImageCalendar}
               alt="Callendar view"
               width="335"
@@ -78,6 +82,7 @@ export const MobileHome = () => {
           </AboutText>
           <ImageContainer>
             <img
+              srcset={`${ImageSidebar} 1x, ${ImageSidebar2x} 2x`}
               src={ImageSidebar}
               alt="Callendar view"
               width="335"
@@ -96,6 +101,7 @@ export const MobileHome = () => {
           </AboutText>
           <ImageContainer>
             <img
+              srcset={`${ImageAllinOne} 1x, ${ImageAllinOne2x} 2x`}
               src={ImageAllinOne}
               alt="Callendar view"
               width="335"
