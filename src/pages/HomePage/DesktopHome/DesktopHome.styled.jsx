@@ -69,8 +69,8 @@ export const RedirectLinkRegister = styled(NavLink)`
 `;
 
 export const MainContainer = styled.section`
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 128px;
+  padding-right: 128px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -89,6 +89,14 @@ export const AboutContainerReverse = styled.div`
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-top: 64px;
+`;
+
+export const Description = styled.div`
+  margin-left: 77px;
+`;
+
+export const DescriptionReverse = styled.div`
+  margin-right: 77px;
 `;
 
 export const ImageContainer = styled.div`

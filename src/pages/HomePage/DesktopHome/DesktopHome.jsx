@@ -9,6 +9,8 @@ import {
   LogoText,
   RedirectLinkLogin,
   RedirectLinkRegister,
+  Description,
+  DescriptionReverse,
   ImageContainer,
   BenefitNumber,
   AdvantageColor,
@@ -54,7 +56,7 @@ export const DesktopHome = () => {
 
       <MainContainer>
         <AboutContainer>
-          <div>
+          <Description>
             <BenefitNumber>1.</BenefitNumber>
             <AdvantageColor>Calendar</AdvantageColor>
             <AdvantageItem>view</AdvantageItem>
@@ -63,10 +65,10 @@ export const DesktopHome = () => {
               your schedule, displaying all your tasks, events, and appointments
               in a visually appealing and intuitive layout.
             </AboutText>
-          </div>
+          </Description>
           <ImageContainer>
             <img
-              srcset={`${ImageCalendar} 1x, ${ImageCalendar2x} 2x`}
+              srcSet={`${ImageCalendar} 1x, ${ImageCalendar2x} 2x`}
               src={ImageCalendar}
               alt="Callendar view"
               width="604"
@@ -75,7 +77,7 @@ export const DesktopHome = () => {
           </ImageContainer>
         </AboutContainer>
         <AboutContainerReverse>
-          <div>
+          <DescriptionReverse>
             <BenefitNumber>2.</BenefitNumber>
             <Advantage>Sidebar</Advantage>
             <AboutText>
@@ -84,10 +86,10 @@ export const DesktopHome = () => {
               profile information and preferences, while the calendar provides a
               quick and convenient way to view your upcoming events and tasks.
             </AboutText>
-          </div>
+          </DescriptionReverse>
           <ImageContainer>
             <img
-              srcset={`${ImageSidebar} 1x, ${ImageSidebar2x} 2x`}
+              srcSet={`${ImageSidebar} 1x, ${ImageSidebar2x} 2x`}
               src={ImageSidebar}
               alt="Callendar view"
               width="604"
@@ -96,7 +98,7 @@ export const DesktopHome = () => {
           </ImageContainer>
         </AboutContainerReverse>
         <AboutContainer>
-          <div>
+          <Description>
             <BenefitNumber>3.</BenefitNumber>
             <AdvantageColor>All in</AdvantageColor>
             <AdvantageItem>one</AdvantageItem>
@@ -106,10 +108,10 @@ export const DesktopHome = () => {
               scattered to-do lists and hello to streamlined productivity with
               GooseTrack.
             </AboutText>
-          </div>
+          </Description>
           <ImageContainer>
             <img
-              srcset={`${ImageAllinOne} 1x, ${ImageAllinOne2x} 2x`}
+              srcSet={`${ImageAllinOne} 1x, ${ImageAllinOne2x} 2x`}
               src={ImageAllinOne}
               alt="Callendar view"
               width="604"

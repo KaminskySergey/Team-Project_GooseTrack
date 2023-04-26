@@ -64,7 +64,7 @@ export const TabletHome = () => {
           </AboutText>
           <ImageContainer>
             <img
-              srcset={`${ImageCalendar} 1x, ${ImageCalendar2x} 2x`}
+              srcSet={`${ImageCalendar} 1x, ${ImageCalendar2x} 2x`}
               src={ImageCalendar}
               alt="Callendar view"
               width="704"
@@ -85,7 +85,7 @@ export const TabletHome = () => {
           </ReverseContaiber>
           <ImageContainer>
             <img
-              srcset={`${ImageSidebar} 1x, ${ImageSidebar2x} 2x`}
+              srcSet={`${ImageSidebar} 1x, ${ImageSidebar2x} 2x`}
               src={ImageSidebar}
               alt="Callendar view"
               width="704"
@@ -104,7 +104,7 @@ export const TabletHome = () => {
           </AboutText>
           <ImageContainer>
             <img
-              srcset={`${ImageAllinOne} 1x, ${ImageAllinOne2x} 2x`}
+              srcSet={`${ImageAllinOne} 1x, ${ImageAllinOne2x} 2x`}
               src={ImageAllinOne}
               alt="Callendar view"
               width="704"
