@@ -1,4 +1,10 @@
 export const theme = {
+  /* 
+    Хто використоувує для стилізаці своїх компонентів об'єкт 
+    colors - перепишіть свої змінні подібно до об'єктів light та dark.
+    
+    Звертатись до змінних у файлі .styled.jsx через ${props => props.theme.mainBackgroundColor};  
+  */
   colors: {
     text: '#000',
     background: '#fff',
@@ -17,8 +23,11 @@ export const theme = {
     statusHigh: '#EA3D65',
     statusLow: '#72C2F8',
   },
+  // ======================================================================================================
+
+  // Стилі для світлої теми
   light: {
-    // comon
+    // comon colors
     mainBackgroundColor: '#FFFFFF',
     secondaryBackgroundColor: '#F7F6F9',
     accentColor: '#3E85F3',
@@ -26,7 +35,8 @@ export const theme = {
     secondaryTextColor: '#FFFFFF',
 
     // AsideBar
-    asideBarTitle: '#7E7D82', //"User Panel"
+    asideBarBackground: '#FFFFFF',
+    asideBarTitle: '#7E7D82', 
     asideBarIcon: '#84828A',
     asideBarLinkText: '#84828A',
     asideBarActiveLinkText: '#3E85F3',
@@ -35,8 +45,9 @@ export const theme = {
     asideBarLogoutBtnShadow: '4px 2px 16px rgba(136, 165, 191, 0.48)',
   },
 
+  // Стилі для темної теми
   dark: {
-    // comon
+    // comon colors
     mainBackgroundColor: '#21222C',
     secondaryBackgroundColor: '#171820',
     accentColor: '#3E85F3',
@@ -44,7 +55,8 @@ export const theme = {
     secondaryTextColor: '#FFFFFF',
 
     // AsideBar
-    asideBarTitle: '#585A5D', //"User Panel"
+    asideBarBackground: '#13151A',
+    asideBarTitle: '#585A5D', 
     asideBarIcon: '#FFFFFF',
     asideBarLinkText: '#FFFFFF',
     asideBarActiveLinkText: '#FFFFFF',

@@ -9,7 +9,7 @@ export const Aside = styled.aside`
   @media (max-width: 1279px) {
     /* display: none; */
     position: absolute;
-    background-color: ${props => props.theme.mainBackgroundColor};
+    background-color: ${props => props.theme.asideBarBackground};
     z-index: 2;
     height: 95%;
   }
@@ -18,7 +18,7 @@ export const Aside = styled.aside`
   }
   /* height: 100%; */
   width: 290px;
-  background-color: ${props => props.theme.mainBackgroundColor};
+  background-color: ${props => props.theme.asideBarBackground};
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 32px;

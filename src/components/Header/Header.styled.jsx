@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   max-width: 1680px;
   margin: 0 auto;
-  background-color: #f7f6f9;
+  background-color: ${props => props.theme.secondaryBackgroundColor};
 `;
 
 export const Container = styled.div`
@@ -24,4 +24,5 @@ export const Title = styled.h2`
   font-family: 'InterBolt';
   font-size: 32px;
   line-height: 32px;
+  color: ${props => props.theme.mainTextColor};
 `;
