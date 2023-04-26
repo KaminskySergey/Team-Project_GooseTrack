@@ -16,6 +16,8 @@ import {
   AboutText,
 } from './MobileHome.styled';
 
+import { CarouselMobile } from 'components/Carousel/CarouselMobile';
+
 import { ReactComponent as Logo } from 'images/svg/logo.svg';
 import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
 import ImageCalendar from 'images/page/Mobile/calendarMobile.png';
@@ -109,6 +111,7 @@ export const MobileHome = () => {
             />
           </ImageContainer>
         </AboutContainer>
+        <CarouselMobile />
       </MainContainer>
     </Container>
   );

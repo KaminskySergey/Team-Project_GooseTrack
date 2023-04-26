@@ -19,6 +19,8 @@ import {
   Advantage,
 } from './DesktopHome.styled';
 
+import { CarouselDesktop } from 'components/Carousel/CarouselDesktop';
+
 import { ReactComponent as Logo } from 'images/svg/logo.svg';
 import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
 import ImageCalendar from 'images/page/Desktop/calendarDesktop.png';
@@ -119,6 +121,7 @@ export const DesktopHome = () => {
             />
           </ImageContainer>
         </AboutContainer>
+        <CarouselDesktop />
       </MainContainer>
     </Container>
   );

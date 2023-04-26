@@ -17,6 +17,8 @@ import {
   ReverseContaiber,
 } from './TabletHome.styled';
 
+import { CarouselTablet } from 'components/Carousel/CarouselTablet';
+
 import { ReactComponent as Logo } from 'images/svg/logo.svg';
 import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
 import ImageCalendar from 'images/page/Tablet/calendarTablet.png';
@@ -112,6 +114,7 @@ export const TabletHome = () => {
             />
           </ImageContainer>
         </AboutContainer>
+        <CarouselTablet />
       </MainContainer>
     </Container>
   );
