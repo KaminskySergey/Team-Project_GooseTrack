@@ -4,16 +4,17 @@ import { DayCalendarHead, TasksColumnsList } from './index';
 // import { selectIsitems } from '../../redux/tasks/selectors';
 // import { useEffect } from 'react';
 
-export const ChoosedDay = () => {
+export const ChoosedDay = ({ weekCalendar }) => {
   // const items = useSelector(selectIsitems);
   // const dispatch = useDispatch();
   // useEffect(() => {
   //   dispatch(fetchTasksAll());
   // }, [dispatch]);
   // console.log(items);
+
   return (
     <>
-      <DayCalendarHead />
+      <DayCalendarHead weekCalendar={weekCalendar} />
       <TasksColumnsList />
     </>
   );

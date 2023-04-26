@@ -9,48 +9,54 @@ import {
   RedirectLinkLogin,
   RedirectLinkRegister,
   ImageContainer,
-  AdvantageNumber,
-  Advantage,
+  BenefitNumber,
   AdvantageColor,
   AdvantageItem,
   AboutText,
-} from './MobileHome.styled';
+  Advantage,
+  ReverseContaiber,
+} from './TabletHome.styled';
 
-import { ReactComponent as Logo } from '../../images/svg/logo.svg';
-import { ReactComponent as LogoLogin } from '../../images/svg/IconLogin.svg';
-import ImageCalendar from 'images/page/Mobile/calendarMobile.jpg';
-import ImageSidebar from 'images/page/Mobile/sidebarMobile.png';
-import ImageAllinOne from 'images/page/Mobile/allinoneMobile.png';
+import { CarouselTablet } from 'components/Carousel/CarouselTablet';
 
-export const MobileHome = () => {
+import { ReactComponent as Logo } from 'images/svg/logo.svg';
+import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
+import ImageCalendar from 'images/page/Tablet/calendarTablet.png';
+import ImageCalendar2x from 'images/page/Tablet/calendarTablet@2x.png';
+import ImageSidebar from 'images/page/Tablet/sidebarTablet.png';
+import ImageSidebar2x from 'images/page/Tablet/sidebarTablet@2x.png';
+import ImageAllinOne from 'images/page/Tablet/allinoneTablet.png';
+import ImageAllinOne2x from 'images/page/Tablet/allinoneTablet@2x.png';
+
+export const TabletHome = () => {
   const redirectLogin = '/login';
   const redirectRegister = '/register';
   return (
     <Container>
       <HeroHeader>
         <LogoContainer>
-          <Logo style={{ width: '142px', height: '142px' }} />
+          <Logo style={{ width: '150px', height: '150px' }} />
           <LogoText>
             G<span style={{ fontStyle: 'italic' }}>oo</span>seTrack
           </LogoText>
         </LogoContainer>
 
         <NavContainer>
+          <RedirectLinkRegister to={redirectRegister}>
+            Sign up
+          </RedirectLinkRegister>
           <RedirectLinkLogin to={redirectLogin}>
             Log in{' '}
             <LogoLogin
               style={{ width: '13px', height: '13px', marginLeft: '8px' }}
             />
           </RedirectLinkLogin>
-          <RedirectLinkRegister to={redirectRegister}>
-            Sign up
-          </RedirectLinkRegister>
         </NavContainer>
       </HeroHeader>
 
       <MainContainer>
         <AboutContainer>
-          <AdvantageNumber>1.</AdvantageNumber>
+          <BenefitNumber>1.</BenefitNumber>
           <AdvantageColor>Calendar</AdvantageColor>
           <AdvantageItem>view</AdvantageItem>
           <AboutText>
@@ -60,33 +66,37 @@ export const MobileHome = () => {
           </AboutText>
           <ImageContainer>
             <img
+              srcSet={`${ImageCalendar} 1x, ${ImageCalendar2x} 2x`}
               src={ImageCalendar}
               alt="Callendar view"
-              width="335"
-              height="457"
+              width="704"
+              height="700"
             />
           </ImageContainer>
         </AboutContainer>
         <AboutContainer>
-          <AdvantageNumber>2.</AdvantageNumber>
-          <Advantage>Sidebar</Advantage>
-          <AboutText>
-            GooseTrack offers easy access to your account settings, calendar,
-            and filters. The "My Account" section allows you to manage your
-            profile information and preferences, while the calendar provides a
-            quick and convenient way to view your upcoming events and tasks.
-          </AboutText>
+          <ReverseContaiber>
+            <BenefitNumber>2.</BenefitNumber>
+            <Advantage>Sidebar</Advantage>
+            <AboutText>
+              GooseTrack offers easy access to your account settings, calendar,
+              and filters. The "My Account" section allows you to manage your
+              profile information and preferences, while the calendar provides a
+              quick and convenient way to view your upcoming events and tasks.
+            </AboutText>
+          </ReverseContaiber>
           <ImageContainer>
             <img
+              srcSet={`${ImageSidebar} 1x, ${ImageSidebar2x} 2x`}
               src={ImageSidebar}
               alt="Callendar view"
-              width="335"
-              height="457"
+              width="704"
+              height="700"
             />
           </ImageContainer>
         </AboutContainer>
         <AboutContainer>
-          <AdvantageNumber>3.</AdvantageNumber>
+          <BenefitNumber>3.</BenefitNumber>
           <AdvantageColor>All in</AdvantageColor>
           <AdvantageItem>one</AdvantageItem>
           <AboutText>
@@ -96,13 +106,15 @@ export const MobileHome = () => {
           </AboutText>
           <ImageContainer>
             <img
+              srcSet={`${ImageAllinOne} 1x, ${ImageAllinOne2x} 2x`}
               src={ImageAllinOne}
               alt="Callendar view"
-              width="335"
-              height="457"
+              width="704"
+              height="700"
             />
           </ImageContainer>
         </AboutContainer>
+        <CarouselTablet />
       </MainContainer>
     </Container>
   );

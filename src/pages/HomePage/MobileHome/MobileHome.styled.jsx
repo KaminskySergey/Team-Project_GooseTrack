@@ -4,32 +4,31 @@ import { NavLink } from 'react-router-dom';
 export const Container = styled.div``;
 
 export const HeroHeader = styled.div`
-  background-color: ${props => props.theme.colors.hero};
-  height: 1024px;
+  background-color: #3e85f3;
+  height: 812px;
 `;
 
 export const LogoContainer = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 321px;
+  padding-top: 232px;
 `;
 
 export const LogoText = styled.p`
   font-family: 'coolveticaItalic';
   font-weight: 400;
-  line-height: 150px;
+  font-size: 44px;
+  line-height: 48px;
   margin-top: 2px;
-  font-size: 120px;
-  color: ${props => props.theme.colors.white};
+  color: white;
 `;
 
 export const NavContainer = styled.nav`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 32px;
 `;
 
 export const RedirectLinkLogin = styled(NavLink)`
@@ -37,10 +36,10 @@ export const RedirectLinkLogin = styled(NavLink)`
   justify-content: center;
   align-items: center;
   border: none;
-  background-color: ${props => props.theme.colors.white};
+  background-color: white;
   padding: 16px 29px;
   border-radius: 16px;
-  color: ${props => props.theme.colors.hero};
+  color: #3e85f3;
   font-family: 'InterSemiBolt';
   font-weight: 600;
 
@@ -56,28 +55,25 @@ export const RedirectLinkRegister = styled(NavLink)`
   background-color: none;
   padding: 16px 29px;
   font-size: 14;
-  color: ${props => props.theme.colors.white};
+  color: white;
   font-family: 'InterSemiBolt';
   font-weight: 600;
+  margin-top: 208px;
   text-decoration: underline;
   text-underline-offset: 4px;
 
   :hover,
   :focus {
-    color: ${props => props.theme.colors.text};
+    color: black;
   }
 `;
 
 export const MainContainer = styled.section`
-  padding-left: 32px;
-  padding-right: 32px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export const AboutContainer = styled.div`
-  max-width: 704px;
   display: block;
   align-items: center;
   margin-top: 64px;
@@ -88,51 +84,51 @@ export const ImageContainer = styled.div`
   justify-content: center;
 `;
 
-export const BenefitNumber = styled.p`
+export const AdvantageNumber = styled.p`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 104px;
-  color: ${props => props.theme.colors.hero};
+  font-size: 80px;
+  color: #3e85f3;
 `;
 
 export const AdvantageColor = styled.h2`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 40px;
+  font-size: 32px;
   margin-top: 14px;
   margin-bottom: 8px;
+
   text-transform: uppercase;
-  width: 264px;
-  padding: 6px 16px;
+  width: 214px;
+  padding: 8px 16px;
   border-radius: 44px;
 
   padding: 8px 16px;
-  background-color: ${props => props.theme.colors.backgroundAdvantage};
-  color: ${props => props.theme.colors.hero};
+  background-color: #dcebf7;
+  color: #3e85f3;
 `;
 
 export const AdvantageItem = styled.span`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 40px;
+  font-size: 32px;
+  margin-bottom: 14px;
   display: block;
-  margin-top: 14px;
-  margin-bottom: 24px;
   text-transform: uppercase;
-  color: ${props => props.theme.colors.text};
+  color: black;
 `;
 
 export const Advantage = styled.h2`
   font-family: 'InterBolt';
   font-weight: 700px;
-  font-size: 40px;
+  font-size: 32px;
   margin-top: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
 
-  color: ${props => props.theme.colors.text};
+  color: black;
 `;
 
 export const AboutText = styled.p`
@@ -140,9 +136,7 @@ export const AboutText = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  padding-bottom: 48px;
+  padding-bottom: 40px;
 
-  width: 275px;
-
-  color: ${props => props.theme.colors.text};
+  color: black;
 `;
