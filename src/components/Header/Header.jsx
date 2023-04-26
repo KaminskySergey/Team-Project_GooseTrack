@@ -5,7 +5,7 @@ import { UserInfo } from './UserInfo/UserInfo';
 
 export const Header = () => {
   const location = useLocation();
-  
+
   let pageTitle = '';
 
   switch (location.pathname) {
@@ -23,15 +23,15 @@ export const Header = () => {
 
   return (
     <>
-      <Wrapper>
-        <Container>
-          <Title>{pageTitle}</Title>
-          <Menu>
-            <ThemeToggler />
-            <UserInfo />
-          </Menu>
-        </Container>
-      </Wrapper>
+      {/* <Wrapper> */}
+      <Container>
+        <Title>{pageTitle}</Title>
+        <Menu>
+          <ThemeToggler />
+          <UserInfo />
+        </Menu>
+      </Container>
+      {/* </Wrapper> */}
     </>
   );
 };
