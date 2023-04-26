@@ -9,7 +9,7 @@ export const Box = styled.div`
   padding-right: 14px;
   padding-bottom: 18px;
   padding-left: 15px;
-  background-color: ${p => p.theme.colors.muted};
+  background-color: #f6f6f6;
   not:last-child {
     margin-bottom: 18px;
   }
@@ -33,7 +33,7 @@ export const TodoText = styled.p`
   width: 90%;
   margin-bottom: 28px;
 
-  color: ${p => p.theme.colors.text};
+  color: #000;
   font-family: 'InterNormal', sans-serif;
   font-size: 14px;
   line-height: 1.29;
@@ -64,19 +64,10 @@ export const Status = styled.p`
   font-family: 'InterSemiBoltMinSize';
   font-size: 10px;
   line-height: 1.2;
-  color: ${p => p.theme.colors.muted};
-
-  background-color: ${p => {
-    if (p.status === 'Medium') {
-      return p.theme.colors.statusMedium;
-    }
-    if (p.status === 'High') {
-      return p.theme.colors.statusHigh;
-    }
-    if (p.status === 'Low') {
-      return p.theme.colors.statusLow;
-    }
-  }};
+  color: #f6f6f6;
+  
+  background-color: aqua;
+  
 `;
 
 export const Wrap = styled.div`

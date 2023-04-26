@@ -4,11 +4,11 @@ import { initTasks } from './initTasks';
 import { fetchTasksAll, addTasks, deleteTasks, editTasks } from './operations';
 
 const handlePending = state => {
-  state.tasks.isLoading = true;
+  state.isLoading = true;
 };
 const handleRejected = (state, action) => {
-  state.tasks.isLoading = false;
-  state.tasks.error = action.payload;
+  state.isLoading = false;
+  state.error = action.payload;
 };
 
 export const tasksSlise = createSlice({
@@ -18,15 +18,19 @@ export const tasksSlise = createSlice({
     builder
       //========fetchAllTasks
       .addCase(fetchTasksAll.pending, (state, action) => {
-        handlePending();
+        // handlePending();
+        state.isLoading = true;
       })
       .addCase(fetchTasksAll.rejected, (state, action) => {
-        handleRejected();
+        // handleRejected();
+        state.isLoading = false;
+  state.error = action.payload;
       })
       .addCase(fetchTasksAll.fulfilled, (state, action) => {
-        state.tasks.isLoading = false;
-        state.tasks.error = null;
-        state.tasks.items = action.payload;
+        console.log(action.payload, 'action.payload')
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
       })
 
       //========addTasks
@@ -37,9 +41,9 @@ export const tasksSlise = createSlice({
         handleRejected();
       })
       .addCase(addTasks.fulfilled, (state, action) => {
-        state.tasks.isLoading = false;
-        state.tasks.error = null;
-        state.tasks.items.push(action.payload);
+        state.isLoading = false;
+        state.error = null;
+        state.items.push(action.payload);
       })
 
       //========deleteTasks
@@ -50,9 +54,9 @@ export const tasksSlise = createSlice({
         handleRejected();
       })
       .addCase(deleteTasks.fulfilled, (state, action) => {
-        state.tasks.isLoading = false;
-        state.tasks.error = null;
-        const index = state.tasks.items.findIndex(
+        state.isLoading = false;
+        state.error = null;
+        const index = state.items.findIndex(
           tasks => tasks.id === action.payload.id
         );
         state.tasks.items.splice(index, 1);
@@ -63,13 +67,14 @@ export const tasksSlise = createSlice({
       })
       .addCase(editTasks.rejected, (state, action) => {
         handleRejected();
-      }),
-  // .addCase(editTasks.fulfilled, (state, action) => {
-  //   state.tasks.isLoading = false;
-  //   state.tasks.error = null;
-  //   const index = state.tasks.items.findIndex(
-  //     tasks => tasks.id === action.payload.id
-  //   );
+      })
+      .addCase(editTasks.fulfilled, (state, action) => {
+    state.isLoading = false;
+    state.error = null;
+    const index = state.items.findIndex(
+      tasks => tasks.id === action.payload.id
+    );
+    console.log(index, 'index')
 
-  // }),
+  }),
 });
