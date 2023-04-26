@@ -18,7 +18,7 @@
 	font-style: normal; 
 	font-weight: 600;
 	font-size: 16px;
-	src: url("./fonts/Inter-Bold.ttf") format("truetype");
+	src: url("./fonts/Inter-SemiBold.ttf") format("truetype");
   }@font-face {
 	font-family: "InterSemiBoltMinSize"; 
 	font-style: normal; 
@@ -26,7 +26,7 @@
 	font-size: 14px;
 	src: url("./fonts/Inter-Bold.ttf") format("truetype");
   }@font-face {
-	font-family: "coolveticaItalic"; 
+	font-family: "CoolveticaItalic"; 
 	font-style: normal; 
 	font-weight: 400;
 	font-size: 24px;
