@@ -1,7 +1,4 @@
-// import { addIcon } from '../../../../images/svg/index';
-import { AiOutlinePlusCircle } from 'react-icons/ai';
 
-// AiOutlinePlusCircle;
 
 import { Box, ColumnTitle, BtnAdd, BtnIcon } from './ColumnHeadBar.styled';
 

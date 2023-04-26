@@ -1,3 +1,4 @@
+
 import { endOfMonth, endOfWeek, startOfMonth, startOfToday, isSameDay, addDays, addMonths } from 'date-fns';
 import { startOfWeek } from 'date-fns';
 import { CalendarTools } from '../../components/CalendarTools/CalendarTools';
@@ -48,10 +49,12 @@ export default function CalendarPage () {
 
 
   return (
+
      <>
      <CalendarTools calendar={calendar} changeAskDay={changeAskDay} isChoosedMonth={isChoosedMonth} askDay={askDay} toogleChooseMonth={toogleChooseMonth}/>
      {isChoosedMonth ? <ChoosedMonth calendar={calendar} askDay={askDay}/> : <ChoosedDay weekCalendar={weekCalendar}/>}
      </> 
+
   );
 };
 
