@@ -13,12 +13,12 @@ export const Item = styled.h3`
   margin-bottom: 40px;
   text-transform: uppercase;
   display: block;
-  color: ${props => props.theme.colors.hero};
+  color: #3e85f3;
 `;
 
 export const Review = styled.div`
   border: 1px solid;
-  border-color: ${props => props.theme.colors.grey};
+  border-color: #cec9c1;
   border-radius: 4px;
 `;
 

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const RedirectLink = styled(NavLink)`
   border: none;
-  background-color: ${props => props.theme.colors.white};
+  background-color: white;
 
   :hover,
   :focus {
