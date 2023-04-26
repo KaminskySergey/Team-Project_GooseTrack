@@ -1,24 +1,24 @@
-import { Formik, Form, Field } from 'formik';
-import { useState } from 'react';
-import { Radio } from './ModalTodo.styled';
+// import { Formik, Form, Field } from 'formik';
+// import { useState } from 'react';
+// import { Radio } from './ModalTodo.styled';
 
 
 
 const ModalTodo = () => {
 
-    const [value, setValue] = useState('00:00');
+//     const [value, setValue] = useState('00:00');
 
-   const onChange = (timeValue) => {
-      setValue(timeValue);
-   }
+//    const onChange = (timeValue) => {
+//       setValue(timeValue);
+//    }
 
-   const handleSubmit = (values, {resetForm}) => {
-console.log(values)
-resetForm()
-   }
+//    const handleSubmit = (values, {resetForm}) => {
+// console.log(values)
+// resetForm()
+   
     return (
         <>
-        <Formik onSubmit={handleSubmit}
+        {/* <Formik onSubmit={handleSubmit}
         initialValues={{
             name: "",
   date: "2023-05-01T21:00:00.000+00:00",
@@ -51,7 +51,7 @@ resetForm()
             
           </div>
         </Form>
-        </Formik>
+        </Formik> */}
         </>
     )
 }

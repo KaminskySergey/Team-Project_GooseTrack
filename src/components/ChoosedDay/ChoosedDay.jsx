@@ -1,8 +1,8 @@
 import { DayCalendarHead, TasksColumnsList } from './index';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchTasksAll } from '../../redux/tasks/operations';
-import { selectIsitems } from '../../redux/tasks/selectors';
-import { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { fetchTasksAll } from '../../redux/tasks/operations';
+// import { selectIsitems } from '../../redux/tasks/selectors';
+// import { useEffect } from 'react';
 
 
 export const ChoosedDay = ({weekCalendar}) => {
