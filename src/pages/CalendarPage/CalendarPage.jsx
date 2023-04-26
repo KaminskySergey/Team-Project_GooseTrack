@@ -5,6 +5,9 @@ import { CalendarTools } from '../../components/CalendarTools/CalendarTools';
 import { useState } from 'react';
 import { ChoosedMonth } from '../../components/ChoosedMonth/ChoosedMonth';
 import { ChoosedDay } from '../../components/ChoosedDay/ChoosedDay';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { selectIsitems } from 'redux/tasks/selectors';
+// import { fetchTasksAll } from 'redux/tasks/operations';
 
 export default function CalendarPage () {
   const [askDay, setAskDay] = useState(startOfToday());
@@ -19,6 +22,13 @@ export default function CalendarPage () {
   const lastDayOfWeek = endOfWeek(askDay, {weekStartsOn: 1});
   const startNextWeek = addDays(lastDayOfWeek, 1);
   
+  // const items = useSelector(selectIsitems);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchTasksAll());
+  // }, [dispatch]);
+  // console.log(items);
+
   let calendar = [];
   let weekCalendar = [];
   let day = startDay;

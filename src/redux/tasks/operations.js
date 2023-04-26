@@ -1,11 +1,19 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+
+
+
 export const fetchTasksAll = createAsyncThunk(
   'tasks/fetchAll',
-  async (_, thunkAPI) => {
+  async (credentials, thunkAPI) => {
+    
+    const query = credentials.split('-')
+    
     try {
-      const { data } = await axios.get('/tasks');
+      const {data} = await axios.get(`/tasks?year=${query[0]}&month=${query[1]}`);
+      
+      
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
