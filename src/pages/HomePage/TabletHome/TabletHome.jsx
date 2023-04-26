@@ -14,10 +14,11 @@ import {
   AdvantageItem,
   AboutText,
   Advantage,
+  ReverseContaiber,
 } from './TabletHome.styled';
 
-import { ReactComponent as Logo } from '../../images/svg/logo.svg';
-import { ReactComponent as LogoLogin } from '../../images/svg/IconLogin.svg';
+import { ReactComponent as Logo } from 'images/svg/logo.svg';
+import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
 import ImageCalendar from 'images/page/Tablet/calendarTablet.jpg';
 import ImageSidebar from 'images/page/Tablet/sidebarTablet.jpg';
 import ImageAllinOne from 'images/page/Tablet/allinTablet.jpg';
@@ -68,14 +69,16 @@ export const TabletHome = () => {
           </ImageContainer>
         </AboutContainer>
         <AboutContainer>
-          <BenefitNumber>2.</BenefitNumber>
-          <Advantage>Sidebar</Advantage>
-          <AboutText>
-            GooseTrack offers easy access to your account settings, calendar,
-            and filters. The "My Account" section allows you to manage your
-            profile information and preferences, while the calendar provides a
-            quick and convenient way to view your upcoming events and tasks.
-          </AboutText>
+          <ReverseContaiber>
+            <BenefitNumber>2.</BenefitNumber>
+            <Advantage>Sidebar</Advantage>
+            <AboutText>
+              GooseTrack offers easy access to your account settings, calendar,
+              and filters. The "My Account" section allows you to manage your
+              profile information and preferences, while the calendar provides a
+              quick and convenient way to view your upcoming events and tasks.
+            </AboutText>
+          </ReverseContaiber>
           <ImageContainer>
             <img
               src={ImageSidebar}

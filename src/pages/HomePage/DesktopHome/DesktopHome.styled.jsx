@@ -77,11 +77,21 @@ export const MainContainer = styled.section`
 `;
 
 export const AboutContainer = styled.div`
-  max-width: 704px;
-  display: block;
+  max-width: 1107px;
+  display: flex;
   align-items: center;
   margin-top: 64px;
 `;
+
+export const AboutContainerReverse = styled.div`
+  max-width: 1107px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 64px;
+`;
+
+export const ReverseContaiber = styled.div``;
 
 export const ImageContainer = styled.div`
   display: flex;
@@ -111,7 +121,7 @@ export const AdvantageColor = styled.h2`
   color: ${props => props.theme.colors.hero};
 `;
 
-export const AdvantageItem = styled.span`
+export const AdvantageItem = styled.h2`
   font-family: 'InterBolt';
   font-weight: 700px;
   font-size: 40px;

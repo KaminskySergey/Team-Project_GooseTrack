@@ -1,0 +1,1 @@
+export { TabletHome } from './TabletHome'

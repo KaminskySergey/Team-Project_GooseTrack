@@ -16,8 +16,8 @@ import {
   AboutText,
 } from './MobileHome.styled';
 
-import { ReactComponent as Logo } from '../../images/svg/logo.svg';
-import { ReactComponent as LogoLogin } from '../../images/svg/IconLogin.svg';
+import { ReactComponent as Logo } from 'images/svg/logo.svg';
+import { ReactComponent as LogoLogin } from 'images/svg/IconLogin.svg';
 import ImageCalendar from 'images/page/Mobile/calendarMobile.jpg';
 import ImageSidebar from 'images/page/Mobile/sidebarMobile.png';
 import ImageAllinOne from 'images/page/Mobile/allinoneMobile.png';
