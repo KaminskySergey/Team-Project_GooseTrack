@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const Container = styled.div``;
 
 export const HeroHeader = styled.div`
-  background-color: ${props => props.theme.colors.hero};
+  background-color: #3e85f3;
   height: 812px;
 `;
 
@@ -21,7 +21,7 @@ export const LogoText = styled.p`
   font-size: 44px;
   line-height: 48px;
   margin-top: 2px;
-  color: ${props => props.theme.colors.white};
+  color: white;
 `;
 
 export const NavContainer = styled.nav`
@@ -36,10 +36,10 @@ export const RedirectLinkLogin = styled(NavLink)`
   justify-content: center;
   align-items: center;
   border: none;
-  background-color: ${props => props.theme.colors.white};
+  background-color: white;
   padding: 16px 29px;
   border-radius: 16px;
-  color: ${props => props.theme.colors.hero};
+  color: #3e85f3;
   font-family: 'InterSemiBolt';
   font-weight: 600;
 
@@ -55,7 +55,7 @@ export const RedirectLinkRegister = styled(NavLink)`
   background-color: none;
   padding: 16px 29px;
   font-size: 14;
-  color: ${props => props.theme.colors.white};
+  color: white;
   font-family: 'InterSemiBolt';
   font-weight: 600;
   margin-top: 208px;
@@ -64,7 +64,7 @@ export const RedirectLinkRegister = styled(NavLink)`
 
   :hover,
   :focus {
-    color: ${props => props.theme.colors.text};
+    color: black;
   }
 `;
 
@@ -88,7 +88,7 @@ export const AdvantageNumber = styled.p`
   font-family: 'InterBolt';
   font-weight: 700px;
   font-size: 80px;
-  color: ${props => props.theme.colors.hero};
+  color: #3e85f3;
 `;
 
 export const AdvantageColor = styled.h2`
@@ -104,8 +104,8 @@ export const AdvantageColor = styled.h2`
   border-radius: 44px;
 
   padding: 8px 16px;
-  background-color: ${props => props.theme.colors.backgroundAdvantage};
-  color: ${props => props.theme.colors.hero};
+  background-color: #dcebf7;
+  color: #3e85f3;
 `;
 
 export const AdvantageItem = styled.span`
@@ -115,7 +115,7 @@ export const AdvantageItem = styled.span`
   margin-bottom: 14px;
   display: block;
   text-transform: uppercase;
-  color: ${props => props.theme.colors.text};
+  color: black;
 `;
 
 export const Advantage = styled.h2`
@@ -128,7 +128,7 @@ export const Advantage = styled.h2`
   display: flex;
   flex-direction: column;
 
-  color: ${props => props.theme.colors.text};
+  color: black;
 `;
 
 export const AboutText = styled.p`
@@ -138,5 +138,5 @@ export const AboutText = styled.p`
   line-height: 18px;
   padding-bottom: 40px;
 
-  color: ${props => props.theme.colors.text};
+  color: black;
 `;
