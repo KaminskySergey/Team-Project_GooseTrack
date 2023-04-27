@@ -25,7 +25,7 @@ export const theme = {
     statusLow: '#72C2F8',
   },
   // ======================================================================================================
-
+  
   // Стилі для світлої теми
   light: {
     // comon colors
@@ -34,6 +34,7 @@ export const theme = {
     accentColor: '#3E85F3',
     mainTextColor: '#111111',
     secondaryTextColor: '#FFFFFF',
+    
 
     // AsideBar
     asideBarBackground: '#FFFFFF',

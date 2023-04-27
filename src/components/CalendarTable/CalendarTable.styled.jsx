@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const GridWrapper = styled.div`
@@ -5,7 +6,7 @@ display: grid;
 grid-template-columns: repeat(7, 1fr);
 border-radius: 8px;`;
 
-export const CellWrapper = styled.div`
+export const CellWrapper = styled(NavLink)`
 min-width: 48px;
 min-height: 68px;
 background: #FFFFFF;

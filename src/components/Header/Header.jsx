@@ -3,22 +3,22 @@ import { Wrapper, Container, Menu, Title } from './Header.styled';
 import { ThemeToggler } from './ThemeToggler/ThemeToggler';
 import { UserInfo } from './UserInfo/UserInfo';
 
-export const Header = () => {
-  const location = useLocation();
-  
+export const Header = ({ onSidebarShow }) => {
+  const { pathname } = useLocation();
   let pageTitle = '';
+  const words = pathname.split('/');
+  const title = words.find(word => word === 'calendar' || word === 'account');
 
-  switch (location.pathname) {
-    case '/account':
-      pageTitle = 'User Profile';
-      break;
-
-    case '/calendar':
+  switch (title) {
+    case 'calendar':
       pageTitle = 'Calendar';
       break;
-
+    case 'account':
+      pageTitle = 'User Profile';
+      break;
     default:
       pageTitle = 'Title';
+      break;
   }
 
   return (

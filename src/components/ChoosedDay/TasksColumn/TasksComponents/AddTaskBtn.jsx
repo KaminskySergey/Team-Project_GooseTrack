@@ -9,7 +9,7 @@ export const AddTaskBtn = () => {
    return (
    <>
    <button type="button" onClick={handleToggle}>ADD TODO</button>
-   {!isModalOpen && 
+   {isModalOpen && 
     <ModalCreate onClose={handleToggle}>
       <ModalTodo />
     </ModalCreate>}
