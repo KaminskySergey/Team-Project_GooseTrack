@@ -10,6 +10,7 @@ import { refresh } from 'redux/auth/authOperations';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'components/Theme/theme';
 import { selectIsTheme } from 'redux/theme/selectors';
+import { ChoosedDay } from './ChoosedDay/ChoosedDay';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
@@ -31,8 +32,24 @@ export const App = () => {
       {!isRefreshing && (
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/register" element={<RegisterPage />} />
+            <Route
+              index
+              element={
+                <RestrictedRoute
+                  redirectTo="/account"
+                  component={<HomePage />}
+                />
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  redirectTo="/login"
+                  component={<RegisterPage />}
+                />
+              }
+            />
             <Route
               path="/login"
               element={
@@ -45,20 +62,19 @@ export const App = () => {
             <Route
               path="/calendar"
               element={
-                <PrivateRoute redirectTo="/login" component={<CalendarPage />} />
+                <PrivateRoute
+                  redirectTo="/login"
+                  component={<CalendarPage />}
+                />
               }
-            />
-            <Route
-              path="/account"
-              element={
-                <AccountPage />
-                // <PrivateRoute redirectTo="/login" component={<AccountPage />} />
-              }
-            />
+            >
+              <Route path="month" element={<ChoosedDay />} />
+              <Route path="day" element={<ChoosedDay />} />
+            </Route>
+            <Route path="/account" element={<AccountPage />} />
           </Route>
         </Routes>
       )}
     </ThemeProvider>
-    
   );
 };

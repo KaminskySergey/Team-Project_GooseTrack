@@ -1,9 +1,10 @@
-import { UserForm } from 'components/UserForm';
+// import { UserForm } from 'components/UserForm';
 import {} from './AccountPage.styled';
 
 export default function AccountPage() {
   return (
-    <UserForm />
+    <div></div>
+    // <UserForm />
     // <div>
     //   <h1>
     //     Account Page

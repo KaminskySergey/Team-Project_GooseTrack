@@ -1,11 +1,11 @@
 import { useLocation } from 'react-router';
 import { Wrapper, Container, Menu, Title } from './Header.styled';
 import { ThemeToggler } from './ThemeToggler/ThemeToggler';
-import { UserInfo } from './UserInfo/UserInfo';
+// import { UserInfo } from './UserInfo/UserInfo';
 
 export const Header = () => {
   const location = useLocation();
-  
+
   let pageTitle = '';
 
   switch (location.pathname) {
@@ -28,7 +28,7 @@ export const Header = () => {
           <Title>{pageTitle}</Title>
           <Menu>
             <ThemeToggler />
-            <UserInfo />
+            {/* <UserInfo /> */}
           </Menu>
         </Container>
       </Wrapper>

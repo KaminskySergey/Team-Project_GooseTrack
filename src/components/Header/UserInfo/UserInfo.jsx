@@ -1,4 +1,3 @@
-
 import { useSelector } from 'react-redux';
 import { selectUserInfo } from 'redux/auth/selectors';
 
@@ -9,14 +8,12 @@ import { Name, ImgWrapper, Avatar, NameFirstLetter } from './UserInfo.styled';
 export const UserInfo = () => {
   const userInfo = useSelector(selectUserInfo);
 
-
   if (!userInfo) {
-    return
+    return;
   }
 
-  const userNameTSpit = userInfo.name.split("")
-  const firstLeterOfUserName = userNameTSpit[0].toUpperCase()
-
+  const userNameTSpit = userInfo.name.split('');
+  const firstLeterOfUserName = userNameTSpit[0].toUpperCase();
 
   return (
     <>
