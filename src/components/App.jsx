@@ -62,16 +62,18 @@ export const App = () => {
             <Route
               path="/calendar"
               element={
-                <PrivateRoute
-                  redirectTo="/login"
-                  component={<CalendarPage />}
-                />
+                <PrivateRoute redirectTo="/" component={<CalendarPage />} />
               }
             >
               <Route path="month" element={<ChoosedDay />} />
               <Route path="day" element={<ChoosedDay />} />
             </Route>
-            <Route path="/account" element={<AccountPage />} />
+            <Route
+              path="/account"
+              element={
+                <PrivateRoute redirectTo="/" component={<AccountPage />} />
+              }
+            />
           </Route>
         </Routes>
       )}
