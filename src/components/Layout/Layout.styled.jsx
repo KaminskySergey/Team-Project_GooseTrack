@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  outline: 1px solid tomato;
   min-height: 100vh;
   width: 100%;
 `;
