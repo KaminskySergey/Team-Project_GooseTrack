@@ -44,6 +44,7 @@ export const Input = styled(Field)`
   padding: 0 14px;
   border-color: rgb(17 17 17 / 15%);
   color: #111111;
+  font-family: 'InterSemiBolt';
   font-weight: 600;
   font-size: 14px;
   line-height: calc((18 / 14) * 100%);

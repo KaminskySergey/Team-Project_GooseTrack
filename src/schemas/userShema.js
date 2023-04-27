@@ -15,7 +15,7 @@ export const userShema = Yup.object().shape({
     .min(2, 'Must be at least 2 characters!')
     .max(50, 'Must be up to 50 characters!')
     .required('Name is required'),
-  birthday: Yup.date('Please enter your full date of birth').required(
+  birthday: Yup.string('Please enter your full date of birth').required(
     'Birthday is required'
   ),
   email: Yup.string()
