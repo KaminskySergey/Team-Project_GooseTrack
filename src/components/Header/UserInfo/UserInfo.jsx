@@ -3,12 +3,10 @@ import { selectUserInfo } from 'redux/auth/selectors';
 
 import { Name, ImgWrapper, Avatar, NameFirstLetter } from './UserInfo.styled';
 
-// import test_avatar from 'images/account/test_avatar.jpg';
-
 export const UserInfo = () => {
   const userInfo = useSelector(selectUserInfo);
 
-  if (!userInfo) {
+  if (!userInfo.name || !userInfo.name) {
     return;
   }
 
@@ -17,7 +15,8 @@ export const UserInfo = () => {
 
   return (
     <>
-      <Name>{userInfo.name}</Name>
+      {userInfo.name ? <Name>{userInfo.name}</Name> : <Name>User</Name>}
+
       <ImgWrapper>
         {userInfo.avatarURL !== '' ? (
           <Avatar src={userInfo.avatarURL} alt="avatar" />
