@@ -71,6 +71,12 @@ export const App = () => {
               <Route path="month" element={<ChoosedDay />} />
               <Route path="day" element={<ChoosedDay />} />
             </Route>
+            <Route
+              path="/account"
+              element={
+                <PrivateRoute redirectTo="/login" component={<AccountPage />} />
+              }
+            />
             <Route path="/account" element={<AccountPage />} />
           </Route>
         </Routes>

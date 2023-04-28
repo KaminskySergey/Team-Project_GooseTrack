@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router';
-import { Wrapper, Container, Menu, Title } from './Header.styled';
+import { Container, Menu, Title } from './Header.styled';
 import { ThemeToggler } from './ThemeToggler/ThemeToggler';
 import { UserInfo } from './UserInfo/UserInfo';
 
@@ -23,15 +23,15 @@ export const Header = ({ onSidebarShow }) => {
 
   return (
     <>
-      <Wrapper>
-        <Container>
-          <Title>{pageTitle}</Title>
-          <Menu>
-            <ThemeToggler />
-            <UserInfo />
-          </Menu>
-        </Container>
-      </Wrapper>
+      {/* <Wrapper> */}
+      <Container>
+        <Title>{pageTitle}</Title>
+        <Menu>
+          <ThemeToggler />
+          <UserInfo />
+        </Menu>
+      </Container>
+      {/* </Wrapper> */}
     </>
   );
 };

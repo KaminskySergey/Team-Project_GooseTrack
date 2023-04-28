@@ -11,6 +11,7 @@ export const Label = styled.label`
   flex-direction: column;
   row-gap: 8px;
   max-width: 354px;
+  font-family: 'InterNormal';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

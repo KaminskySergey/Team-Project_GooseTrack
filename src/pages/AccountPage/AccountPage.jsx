@@ -1,17 +1,5 @@
-// import { UserForm } from 'components/UserForm';
-import {} from './AccountPage.styled';
+import { UserForm } from 'components/UserForm';
 
 export default function AccountPage() {
-  return (
-    <div></div>
-    // <UserForm />
-    // <div>
-    //   <h1>
-    //     Account Page
-    //     <span role="img" aria-label="Greeting icon">
-    //       💁‍♀️
-    //     </span>
-    //   </h1>
-    // </div>
-  );
+  return <UserForm />;
 }

@@ -12,8 +12,7 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: #dce3e5;
-  padding: 40px 32px 32px 32px;
+  flex-grow: 1;
+  /* background-color: #dce3e5; */
+  padding-top: 32px;
 `;
