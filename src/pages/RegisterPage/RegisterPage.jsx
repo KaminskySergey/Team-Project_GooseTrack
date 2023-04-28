@@ -1,4 +1,4 @@
-import {} from './RegisterPage.styled';
+import { Сontainer } from './RegisterPage.styled';
 
 import { RegisterForm } from 'components/RegisterForm';
 import { AuthNavigate } from 'components/AuthNavigate';
@@ -7,9 +7,9 @@ export default function RegisterPage() {
   const redirectLogin = '/login';
 
   return (
-    <div>
+    <Сontainer>
       <RegisterForm />
       <AuthNavigate redirect={redirectLogin} nameLink="Log in" />
-    </div>
+    </Сontainer>
   );
 }
