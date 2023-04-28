@@ -25,6 +25,7 @@ export const ReviewMain = styled.div`
 
 export const ButtonContainer = styled.div`
   text-align: center;
+  margin-top: 18px;
 `;
 
 export const Review = styled.div`
@@ -41,7 +42,7 @@ export const ItemUser = styled.h4`
   margin-bottom: 13px;
 `;
 
-export const Text = styled.h4`
+export const Text = styled.p`
   font-family: 'InterNormal';
   font-weight: 500px;
   font-size: 14px;
