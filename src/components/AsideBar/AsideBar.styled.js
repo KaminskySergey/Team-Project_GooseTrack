@@ -86,7 +86,7 @@ export const Link = styled(NavLink)`
     transition: ${props => props.theme.defaultTransition};
   }
   &.active svg {
-    stroke: ${props => props.theme.asideBarIcon};
+    stroke: ${props => props.theme.asideBarIconActive};
     transition: ${props => props.theme.defaultTransition};
   }
 `;

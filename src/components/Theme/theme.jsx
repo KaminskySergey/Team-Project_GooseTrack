@@ -13,11 +13,13 @@ export const theme = {
     accentColor: '#3E85F3',
     mainTextColor: '#111111',
     secondaryTextColor: '#FFFFFF',
+    borderColor: 'rgba(255, 255, 255, 0.15)',
 
     // AsideBar
     asideBarBackground: '#FFFFFF',
     asideBarTitle: '#7E7D82',
     asideBarIcon: '#84828A',
+    asideBarIconActive: '#3E85F3',
     asideBarLinkText: '#84828A',
     asideBarActiveLinkText: '#3E85F3',
     asideBarActiveLinkBackground: '#E3F3FF',
@@ -34,11 +36,13 @@ export const theme = {
     accentColor: '#3E85F3',
     mainTextColor: '#FFFFFF',
     secondaryTextColor: '#FFFFFF',
+    borderColor: 'rgba(255, 255, 255, 0.15)',
 
     // AsideBar
     asideBarBackground: '#13151A',
     asideBarTitle: '#585A5D',
     asideBarIcon: '#FFFFFF',
+    asideBarIconActive: '#FFFFFF',
     asideBarLinkText: '#FFFFFF',
     asideBarActiveLinkText: '#FFFFFF',
     asideBarActiveLinkBackground: '#3E85F3',
