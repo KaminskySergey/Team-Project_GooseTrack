@@ -1,16 +1,15 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
-export const RedirectLink = styled(NavLink)`
-  border: 1px solid black;
+export const Сontainer = styled.div`
+  min-height: 100vh;
+  background: #dcebf7;
 
-  :hover,
-  :focus {
-    background-color: #290b78;
-    color: white;
-  }
-`;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-export const container = styled.div`
-  background-color: green;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
