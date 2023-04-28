@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$/;
 // min 5 max 20 characters , 1 upper case letter, 1 lower case letter, 1 numeric digit
 
-export const validationSchema = Yup.object().shape({
+export const RegisterValidSchema = Yup.object().shape({
     name: Yup.string()
         .required('Name is required')
         .min(3, 'Name is too short')
