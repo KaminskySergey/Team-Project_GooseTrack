@@ -22,7 +22,24 @@ export const Review = styled.div`
   border-color: #ebe8e4;
   border-radius: 8px;
   width: 490px;
-  padding: 20px;
+  padding: 25px;
+`;
+
+export const ItemUser = styled.h4`
+  font-weight: 700px;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 13px;
+`;
+
+export const Text = styled.h4`
+  font-family: 'InterNormal';
+  font-weight: 500px;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: rgba(17, 17, 17, 0.7);
+  margin-top: 13px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -37,4 +54,7 @@ export const UserFeedback = styled.div`
 export const ImageContainer = styled.div`
   display: block;
 `;
-export const AboutContainer = styled.div``;
+export const AboutContainer = styled.div`
+  font-family: 'InterBolt';
+  margin-left: 18px;
+`;

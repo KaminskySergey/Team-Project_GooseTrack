@@ -71,6 +71,9 @@ export const RedirectLinkRegister = styled(NavLink)`
 export const MainContainer = styled.section`
   padding-left: 20px;
   padding-right: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const AboutContainer = styled.div`

@@ -8,6 +8,8 @@ import {
   UserFeedback,
   ImageContainer,
   AboutContainer,
+  ItemUser,
+  Text,
 } from './CarouselDesktop.styled';
 
 import { ReactComponent as Back } from 'images/svg/arrowBack.svg';
@@ -39,12 +41,12 @@ export const CarouselDesktop = () => {
               />
             </ImageContainer>
             <AboutContainer>
-              <h4>Olena Doe </h4>
+              <ItemUser>Olena Doe </ItemUser>
               <img src={stars} alt="stars" width="110" height="14" />
-              <p>
+              <Text>
                 GooseTrack is impressive, the calendar view and filter options
                 make it easy to stay organized and focused. Highly recommended.
-              </p>
+              </Text>
             </AboutContainer>
           </Review>
           <Review>
@@ -57,13 +59,13 @@ export const CarouselDesktop = () => {
               />
             </ImageContainer>
             <AboutContainer>
-              <h4>Alexander Hubbard </h4>
+              <ItemUser>Alexander Hubbard </ItemUser>
               <img src={stars} alt="stars" width="110" height="14" />
-              <p>
+              <Text>
                 GooseTrack is incredibly helpful, the sidebar with account
                 management, calendar, and filter options make navigation
                 seamless. Great for staying organized.
-              </p>
+              </Text>
             </AboutContainer>
           </Review>
         </UserFeedback>
@@ -73,12 +75,12 @@ export const CarouselDesktop = () => {
               <img src={avatar1} alt="avatar" width="100" height="100" />
             </ImageContainer>
             <AboutContainer>
-              <h4>Marina Bohach </h4>
+              <ItemUser>Marina Bohach </ItemUser>
               <img src={stars} alt="stars" width="110" height="14" />
-              <p>
+              <Text>
                 GooseTrack is impressive, the calendar view and filter options
                 make it easy to stay organized and focused. Highly recommended.
-              </p>
+              </Text>
             </AboutContainer>
           </Review>
           <Review>
@@ -86,13 +88,13 @@ export const CarouselDesktop = () => {
               <img src={avatar2} alt="avatar" width="120" height="120" />
             </ImageContainer>
             <AboutContainer>
-              <h4>Vladimir Kalinskiy </h4>
+              <ItemUser>Vladimir Kalinskiy </ItemUser>
               <img src={stars} alt="stars" width="110" height="14" />
-              <p>
+              <Text>
                 GooseTrack is incredibly helpful, the sidebar with account
                 management, calendar, and filter options make navigation
                 seamless. Great for staying organized.
-              </p>
+              </Text>
             </AboutContainer>
           </Review>
         </UserFeedback>
