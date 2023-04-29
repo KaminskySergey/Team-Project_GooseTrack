@@ -2,9 +2,6 @@ import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-
-
-
 export const Aside = styled.aside`
   @media (max-width: 1279px) {
     /* display: none; */

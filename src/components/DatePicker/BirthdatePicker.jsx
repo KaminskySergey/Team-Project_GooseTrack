@@ -13,7 +13,7 @@ const customStyle = {
   lineHeight: 'calc((18/16) * 100%)',
   margin: 0,
   padding: '0 14px',
-  color: '#111111',
+  color: `${props => props.theme.mainTextColor}`,
   height: '42px',
   borderRadius: '8px',
   borderColor: 'rgb(17 17 17 / 15%)',
