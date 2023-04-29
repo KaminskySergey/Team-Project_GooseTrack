@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </PersistGate>
     </Provider>
-    <ToastContainer autoClose={2000} />;
+    <ToastContainer autoClose={2000} />
     {/* </ThemeProvider> */}
   </React.StrictMode >
 );
