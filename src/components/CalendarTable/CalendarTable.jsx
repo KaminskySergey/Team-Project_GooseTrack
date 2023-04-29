@@ -70,4 +70,4 @@ export const CalendarTable = ({calendar, askDay}) => {
             </CellWrapper>))}
         </GridWrapper>
     )
-} 
+}

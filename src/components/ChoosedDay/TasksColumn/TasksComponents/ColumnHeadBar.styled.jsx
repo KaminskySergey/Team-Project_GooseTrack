@@ -14,7 +14,7 @@ export const ColumnTitle = styled.h3`
   font-weight: 700;
   font-size: 18px;
   line-height: 1.11;
-  color: #000;
+  color:  ${props => props.theme.mainTextColor};
 
   @media (min-width: 768px) {
     font-size: 20px;
@@ -30,5 +30,5 @@ export const BtnAdd = styled.button`
 export const BtnIcon = styled(AiOutlinePlusCircle)`
   width: 24px;
   height: 24px;
-  fill: #000;
+  fill:  ${props => props.theme.mainTextColor};
 `;

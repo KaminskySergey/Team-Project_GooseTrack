@@ -1,19 +1,17 @@
 import styled from 'styled-components';
 
-export const container = styled.div`
-  background-color: green;
-`;
-
 export const Form = styled.form`
   max-width: 335px;
   height: 469px;
 
-  background-color: #fff;
+  background-color:  ${props => props.theme.mainBackgroundColor};
   border-radius: 8px;
   padding: 40px 24px;
+  margin-bottom: 8px;
 
   @media (min-width: 768px) {
     width: 480px;
+    margin-bottom: 14px;
   }
 `;
 
@@ -22,7 +20,7 @@ export const TitleForm = styled.h1`
   font-weight: 600;
   font-size: 18px;
   line-height: 1.3;
-  color: #3e85f3;
+  color: ${props => props.theme.accentColor};
 
   @media (min-width: 768px) {
     font-size: 24px;
@@ -37,7 +35,7 @@ export const Label = styled.label`
   font-size: 12px;
   line-height: 1.25;
 
-  color: #111111;
+  color:  ${props => props.theme.mainTextColor};
   margin-top: 24px;
   margin-bottom: 8px;
 
@@ -90,10 +88,10 @@ export const Button = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 1.3;
-  background: #3e85f3;
+  background: ${props => props.theme.accentColor};
   box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   border-radius: 16px;
-  color: #fff;
+  color: ${props => props.theme.secondaryTextColor};
 
   padding: 14px;
   margin-top: 32px;

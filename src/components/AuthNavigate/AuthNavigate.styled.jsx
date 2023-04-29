@@ -9,7 +9,7 @@ export const RedirectLink = styled(NavLink)`
   line-height: 14px;
   border: none;
   background-color: inherit;
-  color: #3e85f3;
+  color: ${props => props.theme.accentColor};
   padding: 10px 10px;
   text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
     0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);

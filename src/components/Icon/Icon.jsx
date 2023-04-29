@@ -42,8 +42,8 @@ const Icon = ({id}) => {
             <path d="M18 6.5L6 18.5" stroke="#343434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M6 6.5L18 18.5" stroke="#343434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            
-            
+        
+        
         default:
             return <svg></svg>
             // break;

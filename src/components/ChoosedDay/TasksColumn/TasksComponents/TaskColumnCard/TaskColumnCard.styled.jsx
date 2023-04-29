@@ -9,7 +9,7 @@ export const Box = styled.div`
   padding-right: 14px;
   padding-bottom: 18px;
   padding-left: 15px;
-  background-color: #f6f6f6;
+  background-color: ${props => props.theme.secondaryBackgroundColor};
   not:last-child {
     margin-bottom: 18px;
   }
@@ -33,7 +33,7 @@ export const TodoText = styled.p`
   width: 90%;
   margin-bottom: 28px;
 
-  color: #000;
+  color: ${props => props.theme.mainTextColor};
   font-family: 'InterNormal', sans-serif;
   font-size: 14px;
   line-height: 1.29;
@@ -46,7 +46,7 @@ export const AvatarImg = styled.img`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1.8px solid #3e85f3;
+  border: 1.8px solid ${props => props.theme.mainTextColor};
   margin-right: 8px;
 `;
 
@@ -64,7 +64,7 @@ export const Status = styled.p`
   font-family: 'InterSemiBoltMinSize';
   font-size: 10px;
   line-height: 1.2;
-  color: #f6f6f6;
+  color: ${props => props.theme.secondaryBackgroundColor};
   
   background-color: aqua;
   

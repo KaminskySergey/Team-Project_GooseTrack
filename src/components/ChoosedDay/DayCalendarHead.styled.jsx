@@ -9,8 +9,8 @@ margin-bottom: 14px;`;
 
 export const CellWrapper = styled.div`
 min-width: 48px;
-height: 34px;
-background: #FFFFFF;
+height: 50px;
+background: ${props => props.theme.mainBackgroundColor};
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
@@ -18,15 +18,16 @@ font-size: ${props => props.dates ? '12px' : '16px'};
 line-height: 1.12;
 text-align: center;
 text-transform: uppercase;
-color: ${props => props.weekend ? '#3E85F3': props.dates ? '#343434' : '#616161'};
+color: ${props => props.weekend ? props.theme.accentColor: props.dates ? props.theme.mainTextColor : props.theme.asideBarTitle};
 display: flex;
 align-items: center;
 justify-content: center;
 `;
 
 export const CurrentDay = styled.div`
-background: #3E85F3;
-color: #fff;
+background: ${props => props.theme.accentColor};
+color:${props => props.theme.mainTextColor};
+
 padding: 4px 6px;
 border-radius: 6px;
 display: flex;

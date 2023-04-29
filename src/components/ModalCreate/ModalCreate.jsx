@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Backdrop, Modal } from './ModalCreate.styled';
+
+import { Backdrop, Modal, CloseModal } from './ModalCreate.styled';
+
 const rootModal = document.querySelector('#createModal')
 console.log(rootModal)
 
@@ -31,10 +33,11 @@ const ModalCreate = ({children, onClose}) => {
     return (
         createPortal (
             <Backdrop onClick={handleClose}  >
-                <Modal  >
+                <Modal >
+                <CloseModal onClick={onClose} style={{position: 'absolute', top: 19, right: 19} } />
                 {children}
                 </Modal>
-        </Backdrop> , 
+            </Backdrop> , 
         rootModal
         )
     )

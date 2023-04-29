@@ -2,9 +2,11 @@
 import { endOfMonth, endOfWeek, startOfMonth, startOfToday, isSameDay, addDays, addMonths } from 'date-fns';
 import { startOfWeek } from 'date-fns';
 import { CalendarTools } from '../../components/CalendarTools/CalendarTools';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChoosedMonth } from '../../components/ChoosedMonth/ChoosedMonth';
 import { ChoosedDay } from '../../components/ChoosedDay/ChoosedDay';
+import { useDispatch } from 'react-redux';
+import { fetchTasksAll } from 'redux/tasks/operations';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { selectIsitems } from 'redux/tasks/selectors';
 // import { fetchTasksAll } from 'redux/tasks/operations';
@@ -57,7 +59,19 @@ export default function CalendarPage () {
     setIsChoosedMonth(prev => !prev);
   };
 
+console.log(askDay, 'wqeweqweqweqweqwewqwewe')
+const newFormat = new Date(askDay);
+    console.log(newFormat, 'newFormat')
+const isoString = newFormat.toISOString().substr(0, 7);
 
+console.log(isoString)
+
+
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchTasksAll(isoString));
+  }, [dispatch, isoString]);
   return (
 
      <>

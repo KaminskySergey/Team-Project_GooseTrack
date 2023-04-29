@@ -4,7 +4,7 @@ export const Wrap = styled.div`
   width: 72px;
   height: 72px;
   margin: 0 auto;
-  border: 1px solid #3e85f3;
+  border: 1px solid ${props => props.theme.accentColor};
   border-radius: 50%;
   overflow: hidden;
 
