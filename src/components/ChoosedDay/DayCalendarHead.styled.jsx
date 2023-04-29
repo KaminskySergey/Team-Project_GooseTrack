@@ -13,7 +13,7 @@ height: 50px;
 background: ${props => props.theme.mainBackgroundColor};
 font-family: 'Inter';
 font-style: normal;
-font-weight: 600;
+font-weight: 700;
 font-size: ${props => props.dates ? '12px' : '16px'};
 line-height: 1.12;
 text-align: center;
@@ -25,19 +25,16 @@ justify-content: center;
 `;
 
 export const CurrentDay = styled.div`
-height: 22px;
-width: 20px;
 background: ${props => props.theme.accentColor};
-color: ${props => props.theme.mainTextColor};
+color:${props => props.theme.mainTextColor};
+
 padding: 4px 6px;
 border-radius: 6px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin: -4px -6px;
 
 @media(min-width: 768px) {
     padding: 4px 8px;
-    margin: -4px -8px;
     border-radius: 8px;
   }`;

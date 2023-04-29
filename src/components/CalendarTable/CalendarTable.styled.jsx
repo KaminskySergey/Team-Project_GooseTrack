@@ -35,10 +35,13 @@ color: ${props => props.iscurrentmonth === 'true' ? props.theme.mainTextColor : 
 
 export const RowInCell = styled.div`
 display: flex;
-justify-content: ${props => props.justifyContent ? props.justifyContent : 'flex-start'}`;
+justify-content: ${props => props.justifyContent ? props.justifyContent : 'flex-start'};
+flex-direction: column;`;
 
 export const DayWrapper = styled.div`
 padding: 10px 12px;
+font-weight: 700;
+font-family: 'Inter-Bold';
 
 @media(min-width: 768px) {
     padding: 18px 22px;
@@ -62,5 +65,13 @@ margin: -4px -6px;
 
 export const ShowDayWrapper = styled.div`
 display: flex;
-justify-content: flex-end;`;
+justify-content: flex-end;
+`;
+
+export const TaskListWrapper = styled.ul`
+list-style-type: none;
+padding: 0 8px 8px 8px;`;
+
+export const TaskItem = styled.li`
+overflow: hidden;`
 
