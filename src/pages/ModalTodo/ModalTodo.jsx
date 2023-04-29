@@ -1,7 +1,8 @@
 import { Formik, Form, ErrorMessage } from 'formik';
-import { FormControl,  RadioGroup, Box } from '@mui/material';
+import { FormControl,  RadioGroup, Box, Radio } from '@mui/material';
 import React from 'react';
 import { StyledInput,  StyledInputTime,  StyledTextField, StyledTextFieldTime, TitleInput, StyledFormControlLabel, StyledRadioBlau, StyledRadioYellow, StyledRadioRed, ButtonForm, Edit } from './ModalTodo.styled';
+import { size } from 'styled-system';
 
 
 
@@ -84,36 +85,102 @@ const ModalTodo = ({ onSubmit }) => {
 
           <Box display='flex' marginBottom='32px'  flexDirection={'row'}>
             <FormControl component="fieldset">
-              <RadioGroup style={{display: 'block'}}  name="priority" value={values.priority} onChange={e => setFieldValue('priority', e.target.value)}>
-                <StyledFormControlLabel value="low" control={<StyledRadioBlau sx={{
+              <RadioGroup style={{ display: 'block' }} name="priority" value={values.priority} onChange={e => setFieldValue('priority', e.target.value)}>
+                <StyledFormControlLabel value="low" control={<Radio sx={{
+
+    marginLeft: "8px",               
     marginRight: '6px',
-    
-    '&.Mui-checked': {
-      
+      '& .MuiSvgIcon-root': {
+      width: 10,
+      height: 10,
+      fill: '#72c2f8',
+      transform: 'none',
+      padding: 0,
+      backgroundColor: '#72c2f8',
+      borderRadius: 50,
+    },
+
+   '&.Mui-checked': {
       border: '2px solid #72C2F84d',
-      padding: '1px'
-
-    },
+      padding: '2px',
+      marginLeft: "4px",
+      marginRight: "2px",
+     '& .MuiSvgIcon-root': {
+            
+          fontSize: 8,
+          fill: '#72c2f8',
+          transform: 'none',
+          padding: 0,
+          backgroundColor: '#72c2f8',
+            borderRadius: 50,
+          },
+        },
+   
   }} />} label="Low" />
-                <StyledFormControlLabel value="medium" control={<StyledRadioYellow sx={{
+                <StyledFormControlLabel value="medium" control={<Radio sx={{
+    marginLeft: "18px",               
     marginRight: '6px',
-    marginLeft: '16px',
-    '&.Mui-checked': {
-      
-      border: '2px solid #F3B2494d',
-      padding: '1px'
-
+                  
+      '& .MuiSvgIcon-root': {
+      width: 10,
+      height: 10,
+      fill: '#f3b249',
+      transform: 'none',
+      padding: 0,
+      backgroundColor: '#f3b249',
+      borderRadius: 50,
     },
+
+   '&.Mui-checked': {
+      border: '2px solid #f3b2494d',
+      padding: '2px',
+      marginLeft: "14px",
+      marginRight: "2px",
+      
+          '& .MuiSvgIcon-root': {
+          fontSize: 8,
+          fill: '#f3b249',
+          transform: 'none',
+          padding: 0,
+          backgroundColor: '#f3b249',
+          borderRadius: 50,
+          },
+        },             
+                      
   }}/>} label="Medium" />
-                <StyledFormControlLabel value="high" control={<StyledRadioRed sx={{
-    marginRight: '6px',
-    marginLeft: '16px',
-    '&.Mui-checked': {
-      
-      border: '2px solid #EA3D654d',
-      padding: '1px'
+                <StyledFormControlLabel value="high" control={<Radio sx={{
 
+    marginLeft: "18px",               
+    marginRight: '6px',
+                  
+      '& .MuiSvgIcon-root': {
+      width: 10,
+      height: 10,
+      fill: '#ea3d65',
+      transform: 'none',
+      padding: 0,
+      backgroundColor: '#ea3d65',
+      borderRadius: 50,
     },
+
+   '&.Mui-checked': {
+      border: '2px solid #ea3d654d',
+      padding: '2px',
+      marginLeft: "14px",
+      marginRight: "2px",
+      
+          '& .MuiSvgIcon-root': {
+          fontSize: 8,
+          fill: '#ea3d65',
+          transform: 'none',
+          padding: 0,
+          backgroundColor: '#ea3d65',
+          borderRadius: 50,
+          },
+        },      
+                  
+                  
+  
   }}/>} label="High" />
               </RadioGroup>
             </FormControl>
