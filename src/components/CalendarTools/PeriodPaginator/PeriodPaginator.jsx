@@ -6,19 +6,9 @@ import { fetchTasksAll } from "redux/tasks/operations";
 
 export const PeriodPaginator = ({isChoosedMonth, changeAskDay, calendar, askDay}) => {
     const date = isChoosedMonth ? format(askDay, 'MMMM yyyy') : format(askDay, 'dd MMMM yyyy');
-    console.log(date)
+    console.log(date, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
     
-    const newFormat = new Date(date);
-    console.log(newFormat, 'newFormat')
-const isoString = newFormat.toISOString().substr(0, 7);
-console.log(isoString, 'isoString')
-
-  
-  
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchTasksAll(isoString));
-  }, [dispatch, isoString]);
+    
   
     return (
         <CurrentWrapper>

@@ -4,14 +4,13 @@ import { CellWrapper, DayWrapper, GridWrapper, RowInCell, CurrentDay } from "./C
 // import { selectIsitems } from "redux/tasks/selectors";
 
 export const CalendarTable = ({calendar, askDay}) => {
-    console.log(calendar, 'calendar')
-    console.log(askDay, 'askDay')
+    
 
     const isCurrentMonth = (day) => isSameMonth(askDay, day);
-console.log(isCurrentMonth, 'isCurrentMonth')
+    
     return (
         <GridWrapper>{
-            calendar.map((dayItem) => (<CellWrapper to={'colendar/month/:'}
+            calendar.map((dayItem) => (<CellWrapper to={`/month/:`}
             key={getUnixTime(dayItem)}
             isCurrentMonth={isCurrentMonth(dayItem)}><RowInCell justifyContent={'flex-end'}>
                 <DayWrapper>

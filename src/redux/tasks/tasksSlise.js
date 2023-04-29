@@ -3,13 +3,13 @@ import { initTasks } from './initTasks';
 
 import { fetchTasksAll, addTasks, deleteTasks, editTasks } from './operations';
 
-const handlePending = state => {
-  state.isLoading = true;
-};
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-};
+// const handlePending = state => {
+//   state.isLoading = true;
+// };
+// const handleRejected = (state, action) => {
+//   state.isLoading = false;
+//   state.error = action.payload;
+// };
 
 export const tasksSlise = createSlice({
   name: 'tasks',
@@ -30,15 +30,18 @@ export const tasksSlise = createSlice({
         console.log(action.payload, 'action.payload')
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload;
+        state.items = action.payload.task;
       })
 
       //========addTasks
       .addCase(addTasks.pending, (state, action) => {
-        handlePending();
+        // handlePending();
+        state.isLoading = true;
       })
       .addCase(addTasks.rejected, (state, action) => {
-        handleRejected();
+        // handleRejected();
+        state.isLoading = false;
+  state.error = action.payload;
       })
       .addCase(addTasks.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -48,25 +51,33 @@ export const tasksSlise = createSlice({
 
       //========deleteTasks
       .addCase(deleteTasks.pending, (state, action) => {
-        handlePending();
+        // handlePending();
+        state.isLoading = true;
       })
       .addCase(deleteTasks.rejected, (state, action) => {
-        handleRejected();
+        // handleRejected();
+        state.isLoading = false;
+  state.error = action.payload;
       })
       .addCase(deleteTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const index = state.items.findIndex(
-          tasks => tasks.id === action.payload.id
-        );
-        state.tasks.items.splice(index, 1);
+        console.log(action.payload.task._id, 'state.items')
+        state.items = state.items.filter(task => task._id !== action.payload.task._id)
+        // const index = state.items.findIndex(
+        //   tasks => tasks._id === action.payload.task._id
+        // );
+        // state.tasks.items.splice(index, 1);
       })
       //========editTasks
       .addCase(editTasks.pending, (state, action) => {
-        handlePending();
+        // handlePending();
+        state.isLoading = true;
       })
       .addCase(editTasks.rejected, (state, action) => {
-        handleRejected();
+        // handleRejected();
+        state.isLoading = false;
+  state.error = action.payload;
       })
       .addCase(editTasks.fulfilled, (state, action) => {
     state.isLoading = false;

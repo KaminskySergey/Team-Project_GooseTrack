@@ -5,11 +5,12 @@ import {
 } from '../../../../../../images/svg/index';
 import { Box } from './TaskToolbar.styled';
 
-export const TaskToolbar = () => {
+export const TaskToolbar = ({handleDeleteTask, id}) => {
+  console.log(id, 'iddddddddddddddddd')
   return (
     <Box>
       <li>
-        <img src={iconDelete} alt="Delete" />
+        <img src={iconDelete} alt="Delete" onClick={() => handleDeleteTask(id)}/>
       </li>
       <li>
         <img src={iconEdit} alt="Edit" />

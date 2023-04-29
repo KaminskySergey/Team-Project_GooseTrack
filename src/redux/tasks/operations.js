@@ -9,7 +9,8 @@ export const fetchTasksAll = createAsyncThunk(
   async (credentials, thunkAPI) => {
     
     const query = credentials.split('-')
-    
+    const month = Number(query[1]) - 1
+    console.log(month,)
     try {
       const {data} = await axios.get(`/tasks?year=${query[0]}&month=${query[1]}`);
       
