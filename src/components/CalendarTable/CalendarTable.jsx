@@ -1,11 +1,12 @@
 import { format, isToday, getUnixTime, isSameMonth, startOfDay, endOfDay } from "date-fns";
-import { CellWrapper, DayWrapper, GridWrapper, RowInCell, CurrentDay, ShowDayWrapper } from "./CalendarTable.styled";
+import { CellWrapper, DayWrapper, GridWrapper, RowInCell, CurrentDay, ShowDayWrapper, TaskListWrapper, TaskItem } from "./CalendarTable.styled";
+import { nanoid } from "nanoid";
 // import { useSelector } from "react-redux";
 // import { selectIsitems } from "redux/tasks/selectors";
 
 const tasks = [{
     name: 'Task-1',
-    date: '2023-05-01T21:00:00.000+00:00',
+    date: '2023-05-01T00:00:00.000+00:00',
     startTime: '10:30',
     endTime: '15:00',
     priority: 'medium',
@@ -19,7 +20,7 @@ const tasks = [{
     category: 'toDo',
 }, {
     name: 'Task-3',
-    date: '2023-04-30T21:00:00.000+00:00',
+    date: '2023-04-29T00:00:00.000+00:00',
     startTime: '10:30',
     endTime: '15:00',
     priority: 'medium',
@@ -27,14 +28,15 @@ const tasks = [{
 }];
 
 export const CalendarTable = ({calendar, askDay}) => {
+    // const tasks = useSelector(selectIsitems);
 
     const isCurrentMonth = (day) => isSameMonth(askDay, day);
-console.log(isCurrentMonth, 'isCurrentMonth');
+
     let filteredTasks = [];
 
     const getDayTasks = (day) => {
         filteredTasks = tasks?.filter(
-            task => task.date >= startOfDay(day) && task.date <= endOfDay(day)
+            task => getUnixTime(new Date(task.date)) >= getUnixTime(startOfDay(day)) && getUnixTime(new Date(task.date)) < getUnixTime(endOfDay(day))
         );
     };
 
@@ -43,7 +45,7 @@ console.log(isCurrentMonth, 'isCurrentMonth');
             calendar.map((dayItem) => (
             <CellWrapper 
             to={'colendar/month/:'}
-            key={getUnixTime(dayItem)}
+            key={nanoid()}
             iscurrentmonth={isCurrentMonth(dayItem).toString()}
             >
                 <RowInCell justifyContent={'flex-end'}>
@@ -58,12 +60,12 @@ console.log(isCurrentMonth, 'isCurrentMonth');
                         }
                         </DayWrapper>
                     </ShowDayWrapper>
-                    <div>
+                    <TaskListWrapper>
                         {getDayTasks(dayItem)}
                         {filteredTasks.map(task => (
-                            <div>{task.name}</div>
+                            <TaskItem key={nanoid()}>{task.name}</TaskItem>
                         ))}
-                    </div>
+                    </TaskListWrapper>
                 </RowInCell>
             </CellWrapper>))}
         </GridWrapper>

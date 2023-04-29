@@ -9,11 +9,11 @@ margin-bottom: 14px;`;
 
 export const CellWrapper = styled.div`
 min-width: 48px;
-height: 50px;
+height: 34px;
 background: #FFFFFF;
 font-family: 'Inter';
 font-style: normal;
-font-weight: 600;
+font-weight: 700;
 font-size: ${props => props.dates ? '12px' : '16px'};
 line-height: 1.12;
 text-align: center;
@@ -25,8 +25,6 @@ justify-content: center;
 `;
 
 export const CurrentDay = styled.div`
-height: 22px;
-width: 20px;
 background: #3E85F3;
 color: #fff;
 padding: 4px 6px;
@@ -34,10 +32,8 @@ border-radius: 6px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin: -4px -6px;
 
 @media(min-width: 768px) {
     padding: 4px 8px;
-    margin: -4px -8px;
     border-radius: 8px;
   }`;

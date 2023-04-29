@@ -4,6 +4,7 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 export const BiChevronLeftStyled = styled(BiChevronLeft)`
 height: 30px;
 width: 36px;
+fill: #616161;
 
 :hover{
   fill: #3E85F3;
@@ -12,6 +13,7 @@ width: 36px;
 export const BiChevronRightStyled = styled(BiChevronRight)`
 height: 30px;
 width: 36px;
+fill: #616161;
 
 :hover{
   fill: #3E85F3;
@@ -50,7 +52,7 @@ margin-bottom: 18px;`;
 
 export const ButtonPeriodPaginator = styled.button`
 width: 36px;
-height: 30px;
+height: 34px;
 box-sizing: border-box;
 font-size: 24px;
 fill: red;
@@ -58,7 +60,6 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 8px 12px;
 
 background: #FFFFFF;
 border: 1px solid rgba(220, 227, 229, 0.5);

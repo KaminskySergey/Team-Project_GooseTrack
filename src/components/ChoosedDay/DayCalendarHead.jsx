@@ -1,5 +1,6 @@
+import { nanoid } from "nanoid";
 import { CellWrapper, GridWrapper, CurrentDay } from "./DayCalendarHead.styled";
-import { format, isToday, getUnixTime } from "date-fns";
+import { format, isToday } from "date-fns";
 
 export const DayCalendarHead = ({weekCalendar}) => {
     return (
@@ -12,7 +13,7 @@ export const DayCalendarHead = ({weekCalendar}) => {
             <CellWrapper>F</CellWrapper>
             <CellWrapper weekend={true}>S</CellWrapper>
             <CellWrapper weekend={true}>S</CellWrapper>
-            {weekCalendar.map((dayItem) => (<CellWrapper key={getUnixTime(dayItem)} dates={true} color="#343434">{!isToday(dayItem) && format(dayItem, 'd')}
+            {weekCalendar.map((dayItem) => (<CellWrapper key={nanoid()} dates={true} color="#343434">{!isToday(dayItem) && format(dayItem, 'd')}
                 {isToday(dayItem) && <CurrentDay>{format(dayItem, 'd')}</CurrentDay>}</CellWrapper>))}
         </GridWrapper>
         </>
