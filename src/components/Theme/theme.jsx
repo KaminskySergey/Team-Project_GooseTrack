@@ -12,6 +12,7 @@ export const theme = {
     secondaryBackgroundColor: '#F7F6F9',
     accentColor: '#3E85F3',
     mainTextColor: '#111111',
+    TextColorUserProfile: '#111111',
     secondaryTextColor: '#FFFFFF',
     borderColor: 'rgba(255, 255, 255, 0.15)',
 
@@ -35,6 +36,7 @@ export const theme = {
     secondaryBackgroundColor: '#171820',
     accentColor: '#3E85F3',
     mainTextColor: '#FFFFFF',
+    TextColorUserProfile: '#111111',
     secondaryTextColor: '#FFFFFF',
     borderColor: 'rgba(255, 255, 255, 0.15)',
 

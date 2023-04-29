@@ -43,7 +43,7 @@ export const Input = styled(Field)`
   border-radius: 8px;
   padding: 0 14px;
   border-color: rgb(17 17 17 / 15%);
-  color: ${props => props.theme.mainTextColor};
+  color: ${props => props.theme.TextColorUserProfile};
   font-family: 'InterSemiBolt';
   font-weight: 600;
   font-size: 14px;
@@ -96,7 +96,7 @@ export const Title = styled.h2`
   font-weight: 700;
   font-size: 14px;
   line-height: calc((18 / 14) * 100%);
-  color: #343434;
+  color: ${props => props.theme.mainTextColor};
 
   @media (min-width: 768px) {
     font-size: 18px;
