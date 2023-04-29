@@ -11,9 +11,11 @@ export const Form = styled.form`
   background-color: #fff;
   border-radius: 8px;
   padding: 40px 24px;
+  margin-bottom: 8px;
 
   @media (min-width: 768px) {
     width: 480px;
+    margin-bottom: 14px;
   }
 `;
 
