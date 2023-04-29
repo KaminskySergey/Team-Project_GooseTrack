@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const container = styled.div`
-  background-color: green;
-`;
-
 export const Form = styled.form`
   max-width: 335px;
   height: 469px;
