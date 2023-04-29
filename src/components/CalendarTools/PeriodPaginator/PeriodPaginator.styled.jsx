@@ -6,7 +6,7 @@ height: 30px;
 width: 36px;
 
 :hover{
-  fill: #3E85F3;
+  fill: ${props => props.theme.accentColor};
 };`;
 
 export const BiChevronRightStyled = styled(BiChevronRight)`
@@ -14,7 +14,7 @@ height: 30px;
 width: 36px;
 
 :hover{
-  fill: #3E85F3;
+  fill: ${props => props.theme.accentColor};
 };`;
 
 export const CurrentDate = styled.span`
@@ -23,9 +23,9 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 6px 12px;
-background: #3E85F3;
+background: ${props => props.theme.accentColor};
 border-radius: 8px;
-color: #fff;
+color: ${props => props.theme.secondaryTextColor};
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
@@ -60,7 +60,7 @@ justify-content: center;
 align-items: center;
 padding: 8px 12px;
 
-background: #FFFFFF;
+background: ${props => props.theme.mainBackgroundColor};
 border: 1px solid rgba(220, 227, 229, 0.5);
 border-radius: 8px;`;
 

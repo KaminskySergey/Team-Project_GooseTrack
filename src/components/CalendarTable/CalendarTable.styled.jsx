@@ -9,14 +9,14 @@ border-radius: 8px;`;
 export const CellWrapper = styled(NavLink)`
 min-width: 48px;
 min-height: 68px;
-background: #FFFFFF;
+background: ${props => props.theme.mainBackgroundColor};
 border: 1px solid rgba(220, 227, 229, 0.5);
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
 line-height: 1.17;
-color: ${props => props.iscurrentmonth === 'true' ? '#343434' : '#fff'};
+color: ${props => props.iscurrentmonth === 'true' ? props.theme.mainTextColor : props.theme.mainBackgroundColor};
 
 @media(min-width: 768px) {
     min-width: 100px;
@@ -45,7 +45,7 @@ padding: 10px 12px;
   }`;
 
 export const CurrentDay = styled.div`
-background: #3E85F3;
+background: ${props => props.theme.accentColor};
 color: #fff;
 padding: 4px 6px;
 border-radius: 6px;

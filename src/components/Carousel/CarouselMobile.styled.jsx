@@ -12,7 +12,7 @@ export const Item = styled.h3`
   margin-bottom: 40px;
   text-transform: uppercase;
   display: block;
-  color: #3e85f3;
+  color: ${props => props.theme.accentColor};
 `;
 
 export const ReviewMain = styled.div`

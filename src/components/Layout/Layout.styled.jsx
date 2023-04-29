@@ -8,7 +8,7 @@ export const Box = styled.div`
   min-height: 100vh;
   padding: 40px 32px 32px;
   transition: ${props => props.theme.defaultTransition};
-  background-color: ${props => props.theme.mainBackgroundColor};
+  background-color: ${props => props.theme.secondaryBackgroundColor};
 `;
 
 export const Wrapper = styled.div`
