@@ -16,7 +16,7 @@ font-style: normal;
 font-weight: 700;
 font-size: 12px;
 line-height: 1.17;
-color: ${props => props.isCurrentMonth ? '#343434' : '#fff'};
+color: ${props => props.iscurrentmonth === 'true' ? '#343434' : '#fff'};
 
 @media(min-width: 768px) {
     min-width: 100px;
@@ -45,8 +45,6 @@ padding: 10px 12px;
   }`;
 
 export const CurrentDay = styled.div`
-height: 100%;
-width: 100%;
 background: #3E85F3;
 color: #fff;
 padding: 4px 6px;
@@ -61,4 +59,8 @@ margin: -4px -6px;
     margin: -4px -8px;
     border-radius: 8px;
   }`;
+
+export const ShowDayWrapper = styled.div`
+display: flex;
+justify-content: flex-end;`;
 
