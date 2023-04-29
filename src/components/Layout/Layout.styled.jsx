@@ -1,19 +1,31 @@
 import styled from 'styled-components';
 
+export const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 32px 32px;
+  transition: ${props => props.theme.defaultTransition};
+  background-color: ${props => props.theme.secondaryBackgroundColor};
+`;
+
 export const Wrapper = styled.div`
   max-width: 1680px;
   margin: 0 auto;
 `;
 
 export const Container = styled.div`
-  outline: 1px solid tomato;
   min-height: 100vh;
   width: 100%;
 `;
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+`;
+
 export const Main = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: #dce3e5;
-  padding: 40px 32px 32px 32px;
+  flex-grow: 1;
+  padding-top: 32px;
 `;

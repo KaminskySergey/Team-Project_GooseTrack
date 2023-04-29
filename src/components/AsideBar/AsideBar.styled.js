@@ -2,9 +2,6 @@ import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-
-
-
 export const Aside = styled.aside`
   @media (max-width: 1279px) {
     /* display: none; */
@@ -12,6 +9,7 @@ export const Aside = styled.aside`
     background-color: ${props => props.theme.asideBarBackground};
     z-index: 2;
     height: 95%;
+    transition: ${props => props.theme.defaultTransition};
   }
 
   @media (min-width: 1280px) {
@@ -26,9 +24,10 @@ export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 250ms;
 
   p {
-    font-family: InterSemiBoltMinSize;
+    font-family: 'InterSemiBoltMinSize';
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 32px;
@@ -67,7 +66,7 @@ export const Link = styled(NavLink)`
   display: block;
   padding: 16px 20px;
   border-radius: 8px;
-  transition: all 250ms;
+  transition: ${props => props.theme.defaultTransition};
   display: flex;
   align-items: center;
   color: ${props => props.theme.asideBarLinkText};
@@ -81,9 +80,11 @@ export const Link = styled(NavLink)`
   }
   svg {
     stroke: ${props => props.theme.asideBarIcon};
+    transition: ${props => props.theme.defaultTransition};
   }
   &.active svg {
-    stroke: ${props => props.theme.asideBarIcon};
+    stroke: ${props => props.theme.asideBarIconActive};
+    transition: ${props => props.theme.defaultTransition};
   }
 `;
 
@@ -103,7 +104,7 @@ export const Button = styled.button`
   line-height: 24px;
   font-family: InterSemiBolt;
   transform: scale(1);
-  transition: 250ms all;
+  transition: ${props => props.theme.defaultTransition};
   &:hover,
   &:focus {
     transform: scale(1.1);

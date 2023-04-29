@@ -8,6 +8,7 @@ import { selectUserInfo } from 'redux/user/selectors';
 import { fetchUser, updateUser } from 'redux/user/operations';
 import { AvatarUploader } from 'components/AvatarUploader';
 import { UserFild } from 'components/UserFild';
+import { GooseDatePicker } from 'components/DatePicker/BirthdatePicker';
 
 export const UserForm = () => {
   const dispatch = useDispatch();
@@ -34,9 +35,7 @@ export const UserForm = () => {
     <Formik
       initialValues={{
         name: name,
-        birthday: birthday
-          ? new Date(birthday).toLocaleDateString('en-CA')
-          : '',
+        birthday: birthday,
         email: email,
         phone: phone,
         telegram: telegram,
@@ -51,7 +50,18 @@ export const UserForm = () => {
           <Wrap>
             <Wrapper>
               <UserFild title="User name" type="text" name="name" />
-              <UserFild title="Birthday" type="date" name="birthday" />
+              {/* <UserFild
+                title="Birthday"
+                type="date"
+                name="birthday"
+                value={values.birthday}
+              /> */}
+              <GooseDatePicker
+                title={'Birthday'}
+                name="birthday"
+                date={values.birthday}
+                onChange={date => (values.birthday = date)}
+              />
               <UserFild title="Email" type="email" name="email" />
             </Wrapper>
 

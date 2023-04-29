@@ -4,6 +4,7 @@ export const Name = styled.p`
   font-family: 'InterBolt';
   font-size: 18px;
   line-height: 18px;
+  transition: ${props => props.theme.defaultTransition};
   color: ${props => props.theme.mainTextColor};
 `;
 export const ImgWrapper = styled.div`

@@ -43,7 +43,8 @@ export const Input = styled(Field)`
   border-radius: 8px;
   padding: 0 14px;
   border-color: rgb(17 17 17 / 15%);
-  color: #111111;
+  color: ${props => props.theme.mainTextColor};
+  font-family: 'InterSemiBolt';
   font-weight: 600;
   font-size: 14px;
   line-height: calc((18 / 14) * 100%);
@@ -72,8 +73,8 @@ export const Button = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: calc((18 / 14) * 100%);
-  background-color: #3e85f3;
-  color: #ffffff;
+  background-color: ${props => props.theme.accentColor};
+  color: ${props => props.theme.secondaryTextColor};
   border: none;
   cursor: pointer;
 
@@ -105,7 +106,7 @@ export const Title = styled.h2`
 
 export const AccountForm = styled(Form)`
   padding: 40px 18px;
-  background-color: #ffffff;
+  background-color: ${props => props.theme.mainBackgroundColor};
   border-radius: 16px;
   height: 100%;
 

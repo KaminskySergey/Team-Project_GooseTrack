@@ -15,7 +15,7 @@ position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: ${props => props.theme.mainBackgroundColor};
     @media (min-width: 375px) {
         width: 90%;
         height: 50%;

@@ -11,11 +11,12 @@ export const Label = styled.label`
   flex-direction: column;
   row-gap: 8px;
   max-width: 354px;
+  font-family: 'InterNormal';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: calc((14 / 12) * 100%);
-  color: #111111;
+  color: ${props => props.theme.mainTextColor};
 
   @media (min-width: 768px) {
     width: 354px;

@@ -14,10 +14,9 @@ const setClearHeader = () => {
 
 export const register = createAsyncThunk('auth/register', async (credentials, thunkAPI) => {
     try {
-        
-        const {data} = await axios.post('/auth/register', credentials)
-        
-        setAuthHeader(data.token)
+        console.log(credentials, "credentials")
+        const { data } = await axios.post('/auth/register', credentials)
+        setAuthHeader(data.data.token)
         return data
     } catch (error) {
         return thunkAPI.rejectWithValue(error)
@@ -27,10 +26,10 @@ export const register = createAsyncThunk('auth/register', async (credentials, th
 export const login = createAsyncThunk('auth/login', async (credentials, thunkAPI) => {
     try {
         console.log(credentials, 'credentials')
-        const {data} = await axios.post('/auth/login', credentials)
-        
+        const { data } = await axios.post('/auth/login', credentials)
+
         setAuthHeader(data.data.token)
-        
+
         return data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error)
@@ -46,17 +45,17 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     }
 })
 
-export const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI ) => {
-    const {token} = thunkAPI.getState().auth
+export const refresh = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
+    const { token } = thunkAPI.getState().auth
     console.log(token, 'qwqwqwqwqwqwqwwqwwq')
-    if(!token){
+    if (!token) {
         return thunkAPI.rejectWithValue('Not Valid Token')
     }
 
     setAuthHeader(token)
-    
+
     try {
-        const {data} = await axios.get('/user/current')
+        const { data } = await axios.get('/user/current')
         return data
     } catch (error) {
         return thunkAPI.rejectWithValue(error)

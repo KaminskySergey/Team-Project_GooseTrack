@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { useAuth } from '../hooks/useAuth';
 import { refresh } from 'redux/auth/authOperations';
 
@@ -71,6 +72,12 @@ export const App = () => {
               <Route path="month" element={<ChoosedDay />} />
               <Route path="day" element={<ChoosedDay />} />
             </Route>
+            <Route
+              path="/account"
+              element={
+                <PrivateRoute redirectTo="/login" component={<AccountPage />} />
+              }
+            />
             <Route path="/account" element={<AccountPage />} />
           </Route>
         </Routes>

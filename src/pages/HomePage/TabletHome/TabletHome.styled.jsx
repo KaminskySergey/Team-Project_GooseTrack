@@ -16,12 +16,12 @@ export const LogoContainer = styled.h1`
 `;
 
 export const LogoText = styled.p`
-  font-family: 'coolveticaItalic';
+  font-family: 'CoolveticaItalic';
   font-weight: 400;
   line-height: 150px;
   margin-top: 2px;
   font-size: 120px;
-  color: #3e85f3;
+  color: white;
 `;
 
 export const NavContainer = styled.nav`

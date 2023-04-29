@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 const regex = {
   name: /^[a-z]*$/,
   email:
-    /^(?!.*@.*@.*$)(?!.*@.*--.*\..*$)(?!.*@.*-\..*$)(?!.*@.*-$)((.*)?@[a-z]{5}\.[a-z]{2,}(\.[a-z]{2,})?)$/,
+    /^(?!.@.@.$)(?!.@.--...$)(?!.@.-..$)(?!.@.-$)((.*)?@[a-z0-9]{1,}.[a-z]{2,}(.[a-z]{2,})?)$/,
   phone:
     /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,3}[-\s.]?[0-9]{1,4}[-\s.]?[0-9]{1,4}$/,
   telegram: /^@[A-Za-z0-9_.-]{3,50}$/,
@@ -13,9 +13,9 @@ export const userShema = Yup.object().shape({
   name: Yup.string()
     .matches(/^[^0-9]+$/, 'Name should contain only letters')
     .min(2, 'Must be at least 2 characters!')
-    .max(50, 'Must be up to 50 characters!')
+    .max(16, 'Must be up to 50 characters!')
     .required('Name is required'),
-  birthday: Yup.date('Please enter your full date of birth').required(
+  birthday: Yup.string('Please enter your full date of birth').required(
     'Birthday is required'
   ),
   email: Yup.string()

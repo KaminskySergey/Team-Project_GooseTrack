@@ -13,13 +13,14 @@ export const AvatarUploader = ({ avatarURL }) => {
       return;
     }
 
-    // const imageUrl = URL.createObjectURL(selectedFile);
+    const imageUrl = URL.createObjectURL(selectedFile);
+    setImagePreview(imageUrl);
 
-    const fileReader = new FileReader();
-    fileReader.onload = () => {
-      setImagePreview(fileReader.result);
-    };
-    fileReader.readAsDataURL(selectedFile);
+    // const fileReader = new FileReader();
+    // fileReader.onload = () => {
+    //   setImagePreview(fileReader.result);
+    // };
+    // fileReader.readAsDataURL(selectedFile);
   };
 
   return (
