@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const container = styled.div`
-  background-color: green;
-`;
-
 export const Form = styled.form`
   max-width: 335px;
   height: 469px;
@@ -11,9 +7,11 @@ export const Form = styled.form`
   background-color:  ${props => props.theme.mainBackgroundColor};
   border-radius: 8px;
   padding: 40px 24px;
+  margin-bottom: 8px;
 
   @media (min-width: 768px) {
     width: 480px;
+    margin-bottom: 14px;
   }
 `;
 
