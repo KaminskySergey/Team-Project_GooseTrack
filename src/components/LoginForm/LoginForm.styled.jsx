@@ -92,7 +92,7 @@ export const Button = styled.button`
   background: ${props => props.theme.accentColor};
   box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   border-radius: 16px;
-  color: ${props => props.theme.accentColor};
+  color: ${props => props.theme.secondaryTextColor};
 
   padding: 14px;
   margin-top: 32px;
