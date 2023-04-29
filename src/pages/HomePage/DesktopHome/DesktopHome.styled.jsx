@@ -5,14 +5,14 @@ export const Container = styled.div``;
 
 export const HeroHeader = styled.div`
   background-color: #3e85f3;
-  height: 1024px;
+  height: 770px;
 `;
 
 export const LogoContainer = styled.h1`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 321px;
+  padding-top: 158px;
 `;
 
 export const LogoText = styled.p`
