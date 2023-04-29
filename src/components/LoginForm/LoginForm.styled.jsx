@@ -47,6 +47,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   font-family: 'InterRegular';
+
   font-weight: 400;
   width: 100%;
   display: block;

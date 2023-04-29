@@ -127,7 +127,7 @@ export const LoginForm = () => {
           id="password"
           name="password"
           type={showPassword ? 'text' : 'password'}
-          placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+          placeholder="**********"
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.password}
