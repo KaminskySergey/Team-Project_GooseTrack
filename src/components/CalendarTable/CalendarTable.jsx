@@ -44,7 +44,7 @@ export const CalendarTable = ({calendar, askDay}) => {
         <GridWrapper>{
             calendar.map((dayItem) => (
             <CellWrapper 
-            to={'colendar/month/:'}
+            to={'/month:'}
             key={nanoid()}
             iscurrentmonth={isCurrentMonth(dayItem).toString()}
             >
