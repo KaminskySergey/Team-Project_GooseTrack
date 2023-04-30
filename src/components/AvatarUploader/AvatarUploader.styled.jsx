@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ReactComponent as Icon } from 'images/account/add.svg';
 
 export const Wrap = styled.div`
   width: 72px;
@@ -42,5 +43,17 @@ export const Label = styled.label`
   @media (min-width: 768px) {
     width: 24px;
     height: 24px;
+  }
+`;
+
+export const AddIcon = styled(Icon)`
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: ${props => props.theme.defaultTransition};
+  fill: ${props => props.theme.buttonBackgroundColor};
+  &:hover,
+  &:focus {
+    fill: ${props => props.theme.buttonBackgroundColorHover};
   }
 `;

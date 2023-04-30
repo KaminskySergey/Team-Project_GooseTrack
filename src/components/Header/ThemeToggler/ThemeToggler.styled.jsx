@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Toggler = styled.label`
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: ${props => props.theme.defaultTransition};
 `;

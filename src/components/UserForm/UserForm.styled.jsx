@@ -44,6 +44,7 @@ export const Input = styled(Field)`
   padding: 0 14px;
   border-color: rgb(17 17 17 / 15%);
   color: ${props => props.theme.TextColorUserProfile};
+  transition: ${props => props.theme.defaultTransition};
   font-family: 'InterSemiBolt';
   font-weight: 600;
   font-size: 14px;
@@ -73,11 +74,15 @@ export const Button = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: calc((18 / 14) * 100%);
-  background-color: ${props => props.theme.accentColor};
-  color: ${props => props.theme.secondaryTextColor};
+  background-color: ${props => props.theme.buttonBackgroundColor};
+  color: ${props => props.theme.buttontextColor};
+  transition: ${props => props.theme.defaultTransition};
   border: none;
   cursor: pointer;
-
+  &:hover,
+  &:focus {
+    background: ${props => props.theme.buttonBackgroundColorHover};
+  }
   @media (min-width: 960px) {
     margin-top: 88px;
   }
@@ -96,6 +101,7 @@ export const Title = styled.h2`
   font-weight: 700;
   font-size: 14px;
   line-height: calc((18 / 14) * 100%);
+  transition: ${props => props.theme.defaultTransition};
   color: ${props => props.theme.mainTextColor};
 
   @media (min-width: 768px) {
@@ -106,6 +112,7 @@ export const Title = styled.h2`
 
 export const AccountForm = styled(Form)`
   padding: 40px 18px;
+  transition: ${props => props.theme.defaultTransition};
   background-color: ${props => props.theme.mainBackgroundColor};
   border-radius: 16px;
   height: 100%;

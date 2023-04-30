@@ -1,5 +1,15 @@
 import { useLocation } from 'react-router';
-import { Container, Menu, Title } from './Header.styled';
+import {
+  Container,
+  Menu,
+  Title,
+  GooseIcon,
+  Motivation,
+  Accent,
+  BurgerButton,
+  BurgerIcon,
+} from './Header.styled';
+import Box from 'components/Box/Box';
 import { ThemeToggler } from './ThemeToggler/ThemeToggler';
 import { UserInfo } from './UserInfo/UserInfo';
 
@@ -23,15 +33,24 @@ export const Header = ({ onSidebarShow }) => {
 
   return (
     <>
-      {/* <Wrapper> */}
       <Container>
-        <Title>{pageTitle}</Title>
+        <Box display="flex" alignItems="center" gap="8px">
+          <BurgerButton type="button" onClick={() => onSidebarShow()}>
+            <BurgerIcon />
+          </BurgerButton>
+          <GooseIcon />
+          <div>
+            <Title>{pageTitle}</Title>
+            <Motivation>
+              <Accent>Let go</Accent> of the past and focus on the present!
+            </Motivation>
+          </div>
+        </Box>
         <Menu>
           <ThemeToggler />
           <UserInfo />
         </Menu>
       </Container>
-      {/* </Wrapper> */}
     </>
   );
 };
