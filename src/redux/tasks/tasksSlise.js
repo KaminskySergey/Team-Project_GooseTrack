@@ -82,10 +82,9 @@ export const tasksSlise = createSlice({
       .addCase(editTasks.fulfilled, (state, action) => {
     state.isLoading = false;
     state.error = null;
-    const index = state.items.findIndex(
-      tasks => tasks.id === action.payload.id
-    );
-    console.log(index, 'index')
+    const updatedTodo = action.payload.task;
+    console.log(updatedTodo, 'updatedTodoupdatedTodoupdatedTodoupdatedTodo')
+    state.items.filter(task => task._id !== action.payload.task._id)
 
   }),
 });

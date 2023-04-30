@@ -39,7 +39,7 @@ export const addTasks = createAsyncThunk(
 export const deleteTasks = createAsyncThunk(
   'tasks/deleteTasks',
   async (tasksID, thunkAPI) => {
-    console.log(tasksID, 'tasksIDtasksIDtasksID')
+    
     try {
       const { data } = await axios.delete(`/tasks/${tasksID}`);
       return data;
@@ -51,10 +51,10 @@ export const deleteTasks = createAsyncThunk(
 
 export const editTasks = createAsyncThunk(
   'tasks/editTasks',
-  async (task, thunkAPI) => {
-    console.log(task, 'task')
+  async ({title, startTime, endTime, priority, _id}, thunkAPI) => {
+    console.log({title, startTime, endTime, priority, _id}, '{title, startTime, endTime, priority, _id}')
     try {
-      const { data } = await axios.patch(`/tasks/${task._id}`, task);
+      const { data } = await axios.patch(`/tasks/${_id}`, {title, startTime, endTime, priority});
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

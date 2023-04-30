@@ -9,7 +9,7 @@ import {
 } from './TaskColumnCard.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsitems } from 'redux/tasks/selectors';
-import { deleteTasks } from 'redux/tasks/operations';
+import { deleteTasks, editTasks } from 'redux/tasks/operations';
 import ModalCreate from 'components/ModalCreate/ModalCreate';
 import ModalTodo from 'pages/ModalTodo/ModalTodo';
 import { useState } from 'react';
@@ -20,13 +20,11 @@ import { useState } from 'react';
 export const TaskColumnCard = () => {
   const [isModalOpen, setIsOpenModal] = useState(false)
   const items = useSelector(selectIsitems) 
-  
+  const [todoId, setTodoId] = useState('')
+  const [currentTodo, setCurrentTodo] = useState(null)
+
+
   const dispatch = useDispatch()
-   
-  
-  
-  
-  
   
   
   const handleDeleteTodo = (value) => {
@@ -38,8 +36,13 @@ export const TaskColumnCard = () => {
   const handleToggle = () => setIsOpenModal(pS => !pS)
   
   
-    
+  const handleTodoId = (data) => {
+    setCurrentTodo(data)
 
+    
+  }
+
+  
 
   return (
     <>
@@ -55,14 +58,14 @@ export const TaskColumnCard = () => {
           />
           <Status status={el.status}>Medium</Status>
         </Wrap>
-        <TaskToolbar  handleDeleteTodo={handleDeleteTodo} todo={el} handleToggle={handleToggle} />
+        <TaskToolbar handleTodoId={handleTodoId}  handleDeleteTodo={handleDeleteTodo} todo={el} handleToggle={handleToggle} />
       </ToolBarBox >
       <TaskModal />
     </li>
       ))
     }
     {isModalOpen && <ModalCreate  onClose={handleToggle}>
-      <ModalTodo  handleDeleteTodo={handleDeleteTodo}/>
+      <ModalTodo handleToggle={handleToggle}  currentTodo={currentTodo}/>
     </ModalCreate>}
     </>
   );

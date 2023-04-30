@@ -1,7 +1,9 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { FormControl,  RadioGroup, Box, Radio } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyledInput,  StyledInputTime,  StyledTextField, StyledTextFieldTime, TitleInput, StyledFormControlLabel, ButtonForm, Edit } from './ModalTodo.styled';
+import { useDispatch } from 'react-redux';
+import { editTasks, fetchTasksAll } from 'redux/tasks/operations';
 
 
 
@@ -33,18 +35,40 @@ const validate = values => {
   return errors;
 };
 
-const ModalTodo = ({ onSubmit, handleAddTodo,}) => {
-  
-  const handleSubmit = (values, { resetForm }) => {
-    
-      handleAddTodo(values)
+const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
+  const dispatch = useDispatch()
+  // const handlePatchTodo = () => {
+  //   dispatch(editTasks(currentTodo))
+  // }
+  console.log(currentTodo, 'currentTodocurrentTodocurrentTodocurrentTodo')
 
-    
-    
-    resetForm()
+
+  const handleSubmit =  (values, { resetForm }) => {
+    console.log(currentTodo, 'currentTodocurrentTodocurrentTodocurrentTodo')
+      if(!currentTodo){
+          handleAddTodo(values)
+          resetForm()
+          handleToggle()
+          return;
+      }
+      console.log(values, 'values')
+      const todo = {
+        title: values.title,
+        startTime: values.startTime,
+        endTime: values.endTime,
+        priority: values.priority,
+        _id: currentTodo._id,
+      }
+      
+      // console.log(, 'idddddddddddddddddddddddddddddddd')
+      console.log(todo, 'oooooooooooooooooooooooooo')
+      dispatch(editTasks(todo))
+      // dispatch(fetchTasksAll());
+      resetForm()
+      
+      handleToggle()
   };
 
- 
 
   
   return (
