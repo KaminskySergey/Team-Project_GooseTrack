@@ -24,6 +24,7 @@ export const theme = {
 
     // AsideBar
     asideBarBackground: '#FFFFFF',
+    asideBarLogoText: '#3E85F3',
     asideBarTitle: '#7E7D82',
     asideBarIcon: '#84828A',
     asideBarIconActive: '#3E85F3',
@@ -51,6 +52,7 @@ export const theme = {
 
     // AsideBar
     asideBarBackground: '#13151A',
+    asideBarLogoText: '#FFFFFF',
     asideBarTitle: '#585A5D',
     asideBarIcon: '#FFFFFF',
     asideBarIconActive: '#FFFFFF',

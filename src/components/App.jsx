@@ -64,7 +64,7 @@ export const App = () => {
               path="/calendar"
               element={
                 <PrivateRoute
-                  redirectTo="/login"
+                  redirectTo="/"
                   component={<CalendarPage />}
                 />
               }
@@ -75,7 +75,7 @@ export const App = () => {
             <Route
               path="/account"
               element={
-                <PrivateRoute redirectTo="/login" component={<AccountPage />} />
+                <PrivateRoute redirectTo="/" component={<AccountPage />} />
               }
             />
             <Route path="/account" element={<AccountPage />} />

@@ -6,6 +6,8 @@ import {
   Aside,
   Item,
   Link,
+  LogoText,
+  PanelTitle,
   Button,
   ButtonClose,
   IconClose,
@@ -32,23 +34,16 @@ const AsideBar = ({ onSidebarShow }) => {
           >
             <Box display="flex" alignItems="center">
               <Logo style={{ width: '71px', height: '68px' }} />
-              <p
-                style={{
-                  fontFamily: 'coolveticaItalic',
-                  fontSize: 24,
-                  marginBottom: 0,
-                  marginLeft: 10,
-                }}
-              >
+              <LogoText>
                 G<span style={{ fontStyle: 'italic' }}>oo</span>seTrack
-              </p>
+              </LogoText>
             </Box>
             <ButtonClose type="buton" onClick={() => onSidebarShow()}>
               <IconClose />
             </ButtonClose>
           </Box>
 
-          <p>User Panel</p>
+          <PanelTitle>User Panel</PanelTitle>
           <nav>
             <Item>
               <Link to="/account">

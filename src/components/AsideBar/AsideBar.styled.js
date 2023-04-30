@@ -31,16 +31,44 @@ export const Aside = styled.aside`
   justify-content: space-between;
   transition: all 250ms;
 
-  p {
+  /* p {
     font-family: 'InterSemiBoltMinSize';
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 32px;
-    color: ${props => props.theme.asideBarTitle};
-  }
+    color: ${props => props.theme.asideBarLogoText};
+  } */
 `;
 
+export const LogoText = styled.p`
+  font-family: 'coolveticaItalic';
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 0;
 
+  color: ${props => props.theme.asideBarLogoText};
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+`;
+export const PanelTitle = styled.p`
+  font-family: 'InterSemiBolt';
+  font-size: 12px;
+  line-height: 15px;
+  color: ${props => props.theme.asideBarTitle};
+  margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+`;
 
 export const Item = styled.li`
 
