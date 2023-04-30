@@ -27,7 +27,6 @@ export const tasksSlise = createSlice({
   state.error = action.payload;
       })
       .addCase(fetchTasksAll.fulfilled, (state, action) => {
-        console.log(action.payload, 'action.payload')
         state.isLoading = false;
         state.error = null;
         state.items = action.payload.task;
@@ -44,9 +43,10 @@ export const tasksSlise = createSlice({
   state.error = action.payload;
       })
       .addCase(addTasks.fulfilled, (state, action) => {
+        
         state.isLoading = false;
         state.error = null;
-        state.items.push(action.payload);
+        state.items = [action.payload.task, ...state.items]
       })
 
       //========deleteTasks
@@ -62,7 +62,6 @@ export const tasksSlise = createSlice({
       .addCase(deleteTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        console.log(action.payload.task._id, 'state.items')
         state.items = state.items.filter(task => task._id !== action.payload.task._id)
         // const index = state.items.findIndex(
         //   tasks => tasks._id === action.payload.task._id
@@ -80,12 +79,14 @@ export const tasksSlise = createSlice({
   state.error = action.payload;
       })
       .addCase(editTasks.fulfilled, (state, action) => {
-    state.isLoading = false;
-    state.error = null;
-    const index = state.items.findIndex(
-      tasks => tasks.id === action.payload.id
-    );
-    console.log(index, 'index')
-
-  }),
+        state.isLoading = false;
+        state.error = null;
+        state.items = state.items.map(task => {
+          if (task._id === action.payload.task._id) {
+            return action.payload.task;
+          } else {
+            return task;
+          }
+        });
+      }),
 });

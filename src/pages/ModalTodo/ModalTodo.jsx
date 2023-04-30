@@ -1,7 +1,11 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { FormControl,  RadioGroup, Box, Radio } from '@mui/material';
-import React from 'react';
+
+
 import { StyledInput,  StyledInputTime,  StyledTextField, StyledTextFieldTime, TitleInput, StyledFormControlLabel, ButtonForm, Edit } from './ModalTodo.styled';
+import { useDispatch } from 'react-redux';
+import { editTasks } from 'redux/tasks/operations';
+
 
 
 
@@ -33,14 +37,34 @@ const validate = values => {
   return errors;
 };
 
-const ModalTodo = ({ onSubmit }) => {
+const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
+  const dispatch = useDispatch()
   
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values)
-    resetForm()
+
+  const handleSubmit =  (values, { resetForm }) => {
+      if(!currentTodo){
+          handleAddTodo(values)
+          resetForm()
+          // handleToggle()
+          return;
+      }
+      
+      const todo = {
+        title: values.title,
+        startTime: values.startTime,
+        endTime: values.endTime,
+        priority: values.priority,
+        _id: currentTodo._id,
+      }
+      
+      dispatch(editTasks(todo))
+      resetForm()
+      
+      handleToggle()
   };
 
 
+  
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validate={validate}>
       {({ values, errors, touched, setFieldValue }) => (
@@ -130,8 +154,7 @@ const ModalTodo = ({ onSubmit }) => {
       backgroundColor: '#f3b249',
       borderRadius: 50,
     },
-
-   '&.Mui-checked': {
+'&.Mui-checked': {
       border: '2px solid #f3b2494d',
       padding: '2px',
       marginLeft: "14px",

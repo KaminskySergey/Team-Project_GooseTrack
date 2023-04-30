@@ -10,7 +10,7 @@ export const fetchTasksAll = createAsyncThunk(
     
     const query = credentials.split('-')
     const month = Number(query[1]) - 1
-    console.log(month,)
+    console.log(month)
     try {
       const {data} = await axios.get(`/tasks?year=${query[0]}&month=${query[1]}`);
       
@@ -25,6 +25,8 @@ export const fetchTasksAll = createAsyncThunk(
 export const addTasks = createAsyncThunk(
   'tasks/addTasks',
   async (tasksInfo, thunkAPI) => {
+    
+    
     try {
       const { data } = await axios.post('/tasks', tasksInfo);
       return data;
@@ -37,6 +39,7 @@ export const addTasks = createAsyncThunk(
 export const deleteTasks = createAsyncThunk(
   'tasks/deleteTasks',
   async (tasksID, thunkAPI) => {
+    
     try {
       const { data } = await axios.delete(`/tasks/${tasksID}`);
       return data;
@@ -48,9 +51,9 @@ export const deleteTasks = createAsyncThunk(
 
 export const editTasks = createAsyncThunk(
   'tasks/editTasks',
-  async (tasksID, thunkAPI) => {
+  async ({title, startTime, endTime, priority, _id}, thunkAPI) => {
     try {
-      const { data } = await axios.patch(`/tasks/${tasksID}`);
+      const { data } = await axios.patch(`/tasks/${_id}`, {title, startTime, endTime, priority});
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
