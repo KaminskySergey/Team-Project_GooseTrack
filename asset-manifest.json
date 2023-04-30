@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Team-Project_GooseTrack/static/css/main.0201af2f.css",
-    "main.js": "/Team-Project_GooseTrack/static/js/main.ecf53b3e.js",
-    "static/js/142.9a3d11f1.chunk.js": "/Team-Project_GooseTrack/static/js/142.9a3d11f1.chunk.js",
+    "main.js": "/Team-Project_GooseTrack/static/js/main.4cc20188.js",
+    "static/js/254.f861b11a.chunk.js": "/Team-Project_GooseTrack/static/js/254.f861b11a.chunk.js",
     "static/js/332.ec6d9c0d.chunk.js": "/Team-Project_GooseTrack/static/js/332.ec6d9c0d.chunk.js",
     "static/js/351.3a6a90ab.chunk.js": "/Team-Project_GooseTrack/static/js/351.3a6a90ab.chunk.js",
     "static/css/148.572efaa2.chunk.css": "/Team-Project_GooseTrack/static/css/148.572efaa2.chunk.css",
-    "static/js/148.a67df458.chunk.js": "/Team-Project_GooseTrack/static/js/148.a67df458.chunk.js",
+    "static/js/148.8a68603e.chunk.js": "/Team-Project_GooseTrack/static/js/148.8a68603e.chunk.js",
     "static/js/995.d28c230f.chunk.js": "/Team-Project_GooseTrack/static/js/995.d28c230f.chunk.js",
     "static/js/727.4969c875.chunk.js": "/Team-Project_GooseTrack/static/js/727.4969c875.chunk.js",
     "static/js/844.a05e7860.chunk.js": "/Team-Project_GooseTrack/static/js/844.a05e7860.chunk.js",
     "static/js/63.af7ced35.chunk.js": "/Team-Project_GooseTrack/static/js/63.af7ced35.chunk.js",
-    "static/js/721.42942d1d.chunk.js": "/Team-Project_GooseTrack/static/js/721.42942d1d.chunk.js",
+    "static/js/965.a497c27e.chunk.js": "/Team-Project_GooseTrack/static/js/965.a497c27e.chunk.js",
     "static/media/calendarTablet@2x.png": "/Team-Project_GooseTrack/static/media/calendarTablet@2x.d0c338b0d05aefed530a.png",
     "static/media/calendarDesktop@2x.png": "/Team-Project_GooseTrack/static/media/calendarDesktop@2x.2ccf9ab9c6efda0851e4.png",
     "static/media/Goose.svg": "/Team-Project_GooseTrack/static/media/Goose.764179788a9653e62ccd2be8b954da70.svg",
@@ -21,6 +21,7 @@
     "static/media/Inter-Regular.ttf": "/Team-Project_GooseTrack/static/media/Inter-Regular.b559a93b35af397f4b6f.ttf",
     "static/media/calendarMobile@2x.png": "/Team-Project_GooseTrack/static/media/calendarMobile@2x.437b65729ba6b42111d7.png",
     "static/media/sidebarDesktop@2x.png": "/Team-Project_GooseTrack/static/media/sidebarDesktop@2x.df66a13af51def774f7d.png",
+    "static/media/gooseMotivator.svg": "/Team-Project_GooseTrack/static/media/gooseMotivator.890ff5cbce9657a512c71244d45e95b0.svg",
     "static/media/calendarTablet.png": "/Team-Project_GooseTrack/static/media/calendarTablet.367a251c2809fb9f7dca.png",
     "static/media/allinoneTablet@2x.png": "/Team-Project_GooseTrack/static/media/allinoneTablet@2x.5e6366bce8034afc7ce6.png",
     "static/media/calendarDesktop.png": "/Team-Project_GooseTrack/static/media/calendarDesktop.1e927603c71f385481ee.png",
@@ -53,25 +54,27 @@
     "static/media/IconLogin.svg": "/Team-Project_GooseTrack/static/media/IconLogin.e77e85dd4703c7ecf995b84341f1f543.svg",
     "static/media/buttonLogReg.svg": "/Team-Project_GooseTrack/static/media/buttonLogReg.023fdfdffec2b43c232c1941d7d1f222.svg",
     "static/media/arrowNext.svg": "/Team-Project_GooseTrack/static/media/arrowNext.87505d84e6e7b322c94ee4d60533dd47.svg",
-    "static/media/add.svg": "/Team-Project_GooseTrack/static/media/add.13f498cd8303f7e5c4171c2f7a7aafd8.svg",
+    "static/media/menuBurger.svg": "/Team-Project_GooseTrack/static/media/menuBurger.124d90fc5ebafab80ca744ae6457678a.svg",
+    "static/media/add.svg": "/Team-Project_GooseTrack/static/media/add.d555f61bebb0a2bee5a0bb5655474396.svg",
     "static/media/addIcon.svg": "/Team-Project_GooseTrack/static/media/addIcon.fb379af87ed8cc812aa31c7b74fb9b38.svg",
     "static/media/closeModal.svg": "/Team-Project_GooseTrack/static/media/closeModal.4cc7f7442113d86db1e58057c51ed3ce.svg",
+    "static/media/close.svg": "/Team-Project_GooseTrack/static/media/close.daf96128c73ae33db5051253d4aad605.svg",
     "static/media/arrowBack.svg": "/Team-Project_GooseTrack/static/media/arrowBack.a24bc4f2d3f004d9549a80985e7c88ba.svg",
     "main.0201af2f.css.map": "/Team-Project_GooseTrack/static/css/main.0201af2f.css.map",
-    "main.ecf53b3e.js.map": "/Team-Project_GooseTrack/static/js/main.ecf53b3e.js.map",
-    "142.9a3d11f1.chunk.js.map": "/Team-Project_GooseTrack/static/js/142.9a3d11f1.chunk.js.map",
+    "main.4cc20188.js.map": "/Team-Project_GooseTrack/static/js/main.4cc20188.js.map",
+    "254.f861b11a.chunk.js.map": "/Team-Project_GooseTrack/static/js/254.f861b11a.chunk.js.map",
     "332.ec6d9c0d.chunk.js.map": "/Team-Project_GooseTrack/static/js/332.ec6d9c0d.chunk.js.map",
     "351.3a6a90ab.chunk.js.map": "/Team-Project_GooseTrack/static/js/351.3a6a90ab.chunk.js.map",
     "148.572efaa2.chunk.css.map": "/Team-Project_GooseTrack/static/css/148.572efaa2.chunk.css.map",
-    "148.a67df458.chunk.js.map": "/Team-Project_GooseTrack/static/js/148.a67df458.chunk.js.map",
+    "148.8a68603e.chunk.js.map": "/Team-Project_GooseTrack/static/js/148.8a68603e.chunk.js.map",
     "995.d28c230f.chunk.js.map": "/Team-Project_GooseTrack/static/js/995.d28c230f.chunk.js.map",
     "727.4969c875.chunk.js.map": "/Team-Project_GooseTrack/static/js/727.4969c875.chunk.js.map",
     "844.a05e7860.chunk.js.map": "/Team-Project_GooseTrack/static/js/844.a05e7860.chunk.js.map",
     "63.af7ced35.chunk.js.map": "/Team-Project_GooseTrack/static/js/63.af7ced35.chunk.js.map",
-    "721.42942d1d.chunk.js.map": "/Team-Project_GooseTrack/static/js/721.42942d1d.chunk.js.map"
+    "965.a497c27e.chunk.js.map": "/Team-Project_GooseTrack/static/js/965.a497c27e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0201af2f.css",
-    "static/js/main.ecf53b3e.js"
+    "static/js/main.4cc20188.js"
   ]
 }
