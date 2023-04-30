@@ -8,6 +8,7 @@ import { LoginValidSchema } from './LoginValidSchema';
 
 import { ReactComponent as ShowIcon } from 'images/svg/show.svg';
 import { ReactComponent as HideIcon } from 'images/svg/hide.svg';
+import { ReactComponent as IconButton } from 'images/svg/buttonLogReg.svg';
 
 import {
   Form,
@@ -25,82 +26,38 @@ import { useFormik } from 'formik';
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
-  // const handleChange = e => {
-  //   const { name, value } = e.target;
-  //   switch (name) {
-  //     case 'email':
-  //       setEmail(value);
-  //       break;
-  //     case 'password':
-  //       setPassword(value);
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-  // };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   dispatch(login({ email, password }));
-  //   console.log({ email, password });
-
-  //   setEmail('');
-  //   setPassword('');
-  // };
-
-  const formik = useFormik(
-    {
-      initialValues: {
-        name: '',
-        email: '',
-        password: '',
-      },
-      validationSchema: LoginValidSchema,
-      onSubmit: async (values, { setSubmitting, resetForm }) => {
-        try {
-          const actionResult = await dispatch(
-            login({
-              email: values.email,
-              password: values.password,
-            })
-          );
-          if (actionResult) {
-            toast.success('Success');
-            navigate('/calendar/month');
-            setSubmitting(false);
-            resetForm();
-          }
-        } catch (e) {
-          toast.error('Login or password wrong');
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      password: '',
+    },
+    validationSchema: LoginValidSchema,
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      try {
+        const actionResult = await dispatch(
+          login({
+            email: values.email,
+            password: values.password,
+          })
+        );
+        if (actionResult) {
+          toast.success('Success');
+          navigate('/calendar/month');
+          setSubmitting(false);
+          resetForm();
         }
-      },
-    }
-
-    //   if (actionResult) {
-    //     toast.success('Success');
-    //     navigate('/calendar/month');
-    //     setSubmitting(false);
-    //     resetForm();
-    //   }
-
-    //   if (!actionResult) {
-    //     toast.error('Login or password wrong');
-    //   }
-    //   catch (e) {
-    //   console.log(e);
-    // }
-  );
+      } catch (e) {
+        toast.error('Login or password wrong');
+      }
+    },
+  });
 
   return (
     <Form onSubmit={formik.handleSubmit}>
@@ -145,7 +102,12 @@ export const LoginForm = () => {
         <Error>{formik.errors.password}</Error>
       ) : null}
 
-      <Button type="submit">Log in</Button>
+      <Button type="submit">
+        Log in
+        <IconButton
+          style={{ width: '13px', height: '13px', marginLeft: '13px' }}
+        />
+      </Button>
     </Form>
   );
 };
