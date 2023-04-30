@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
 
 import { register } from 'redux/auth/authOperations';
-// import { useResponce } from 'hooks/responce';
 import { ReactComponent as ShowIcon } from 'images/svg/show.svg';
 import { ReactComponent as HideIcon } from 'images/svg/hide.svg';
+import { ReactComponent as IconButton } from 'images/svg/buttonLogReg.svg';
 
 import { RegisterValidSchema } from './RegisterValidSchema';
 
@@ -23,7 +23,6 @@ import {
 } from './RegisterForm.styled';
 
 export const RegisterForm = () => {
-  // const { isDesktopOrLaptop, isTablet, isMobile } = useResponce();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -32,39 +31,6 @@ export const RegisterForm = () => {
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   dispatch(register({ name, email, password }));
-
-  //   setName('');
-  //   setEmail('');
-  //   setPassword('');
-  // };
-
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-
-  // const handleChange = e => {
-  //   const { name, value } = e.target;
-  //   switch (name) {
-  //     case 'name':
-  //       setName(value);
-  //       break;
-  //     case 'email':
-  //       setEmail(value);
-  //       break;
-  //     case 'password':
-  //       setPassword(value);
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-  // };
-
-  // style={{ width: '13px', height: '13px', marginLeft: '8px' }}
 
   const formik = useFormik({
     initialValues: {
@@ -147,6 +113,9 @@ export const RegisterForm = () => {
 
       <Button type="submit" disabled={!formik.isValid || !formik.dirty}>
         Sign Up
+        <IconButton
+          style={{ width: '13px', height: '13px', marginLeft: '13px' }}
+        />
       </Button>
     </Form>
   );
