@@ -17,7 +17,6 @@ export const ImgWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #e3f3ff;
-  cursor: pointer;
 `;
 export const Avatar = styled.img`
   object-fit: cover;

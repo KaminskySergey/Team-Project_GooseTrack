@@ -1,20 +1,25 @@
+import styled from 'styled-components';
+import { ReactComponent as Icon } from 'images/svg/close.svg';
 import { NavLink } from 'react-router-dom';
 
-import styled from 'styled-components';
 
 export const Aside = styled.aside`
   @media (max-width: 1279px) {
-    /* display: none; */
     position: absolute;
     background-color: ${props => props.theme.asideBarBackground};
     z-index: 2;
-    height: 95%;
+
     transition: ${props => props.theme.defaultTransition};
+    @media (min-width: 768px) {
+      width: 290px;
+    }
+    @media (min-width: 1280px) {
+      z-index: 1;
+      position: relative;
+    }
   }
 
-  @media (min-width: 1280px) {
-  }
-  /* height: 100%; */
+  height: 100vh;
   width: 290px;
   background-color: ${props => props.theme.asideBarBackground};
   padding-left: 24px;
@@ -50,12 +55,28 @@ border-radius: 8px;
 `
 
 export const ButtonClose = styled.button`
-width: 24px;
-height: 24px;
-border: none;
-background: transparent;
-margin-left: auto;
-`
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  margin-left: auto;
+  cursor: pointer;
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
+`;
+
+export const IconClose = styled(Icon)`
+  stroke: ${props => props.theme.assideBarCloseIconColor};
+  box-shadow: none;
+  height: 24px;
+  width: 24px;
+  @media (min-width: 768px) {
+    height: 33px;
+    width: 33px;
+  }
+`;
 
 export const Link = styled(NavLink)`
   font-size: 16px;
