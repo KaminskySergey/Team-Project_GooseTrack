@@ -10,6 +10,7 @@ import {
   LogoText,
   PanelTitle,
   Button,
+  ButtonText,
   ButtonClose,
   IconClose,
 } from './AsideBar.styled';
@@ -63,7 +64,7 @@ const AsideBar = ({ onSidebarShow }) => {
 
         <div>
           <Button type="button" onClick={handleLogout}>
-            <span style={{ marginRight: 11 }}>Log out</span>
+            <ButtonText>Log out</ButtonText>
             <Icon id="logout" />
           </Button>
         </div>

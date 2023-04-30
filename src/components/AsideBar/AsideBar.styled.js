@@ -155,8 +155,8 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 141px;
-  height: 56px;
+  width: 131px;
+  height: 46px;
   background: ${props => props.theme.buttonBackgroundColor};
   box-shadow: ${props => props.theme.buttonShadow};
   border: none;
@@ -175,5 +175,15 @@ export const Button = styled.button`
   @media (min-width: 768px) {
     height: 56px;
     width: 141px;
+  }
+`;
+
+export const ButtonText = styled.span`
+  margin-right: 11px;
+  font-size: 14px;
+  line-height: calc((18 / 14) * 100%);
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: calc((24 / 18) * 100%);
   }
 `;
