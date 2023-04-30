@@ -10,7 +10,7 @@ export const fetchTasksAll = createAsyncThunk(
     
     const query = credentials.split('-')
     const month = Number(query[1]) - 1
-    console.log(month,)
+    console.log(month)
     try {
       const {data} = await axios.get(`/tasks?year=${query[0]}&month=${query[1]}`);
       
@@ -25,7 +25,7 @@ export const fetchTasksAll = createAsyncThunk(
 export const addTasks = createAsyncThunk(
   'tasks/addTasks',
   async (tasksInfo, thunkAPI) => {
-    console.log(tasksInfo, 'tasksInfo')
+    
     
     try {
       const { data } = await axios.post('/tasks', tasksInfo);
@@ -52,7 +52,6 @@ export const deleteTasks = createAsyncThunk(
 export const editTasks = createAsyncThunk(
   'tasks/editTasks',
   async ({title, startTime, endTime, priority, _id}, thunkAPI) => {
-    console.log({title, startTime, endTime, priority, _id}, '{title, startTime, endTime, priority, _id}')
     try {
       const { data } = await axios.patch(`/tasks/${_id}`, {title, startTime, endTime, priority});
       return data;

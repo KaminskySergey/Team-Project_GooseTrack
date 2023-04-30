@@ -9,7 +9,7 @@ import {
 } from './TaskColumnCard.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsitems } from 'redux/tasks/selectors';
-import { deleteTasks, editTasks } from 'redux/tasks/operations';
+import { deleteTasks } from 'redux/tasks/operations';
 import ModalCreate from 'components/ModalCreate/ModalCreate';
 import ModalTodo from 'pages/ModalTodo/ModalTodo';
 import { useState } from 'react';
@@ -20,7 +20,6 @@ import { useState } from 'react';
 export const TaskColumnCard = () => {
   const [isModalOpen, setIsOpenModal] = useState(false)
   const items = useSelector(selectIsitems) 
-  const [todoId, setTodoId] = useState('')
   const [currentTodo, setCurrentTodo] = useState(null)
 
 

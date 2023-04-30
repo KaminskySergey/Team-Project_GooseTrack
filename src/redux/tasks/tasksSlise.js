@@ -27,7 +27,6 @@ export const tasksSlise = createSlice({
   state.error = action.payload;
       })
       .addCase(fetchTasksAll.fulfilled, (state, action) => {
-        console.log(action.payload, 'action.payload')
         state.isLoading = false;
         state.error = null;
         state.items = action.payload.task;
@@ -47,7 +46,7 @@ export const tasksSlise = createSlice({
         
         state.isLoading = false;
         state.error = null;
-        state.items.push(action.payload.task);
+        state.items = [action.payload.task, ...state.items]
       })
 
       //========deleteTasks
@@ -80,11 +79,14 @@ export const tasksSlise = createSlice({
   state.error = action.payload;
       })
       .addCase(editTasks.fulfilled, (state, action) => {
-    state.isLoading = false;
-    state.error = null;
-    const updatedTodo = action.payload.task;
-    console.log(updatedTodo, 'updatedTodoupdatedTodoupdatedTodoupdatedTodo')
-    state.items.filter(task => task._id !== action.payload.task._id)
-
-  }),
+        state.isLoading = false;
+        state.error = null;
+        state.items = state.items.map(task => {
+          if (task._id === action.payload.task._id) {
+            return action.payload.task;
+          } else {
+            return task;
+          }
+        });
+      }),
 });
