@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ReactComponent as Icon } from 'images/svg/close.svg';
 import { NavLink } from 'react-router-dom';
+import { ReactComponent as LogoIcon } from '../../images/svg/logo.svg';
 
 
 export const Aside = styled.aside`
@@ -29,15 +30,24 @@ export const Aside = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 250ms;
+  transition: ${props => props.theme.defaultTransition};
+`;
 
-  /* p {
-    font-family: 'InterSemiBoltMinSize';
-    font-size: 14px;
-    line-height: 17px;
-    margin-bottom: 32px;
-    color: ${props => props.theme.asideBarLogoText};
-  } */
+export const Logo = styled(LogoIcon)`
+  height: 35px;
+  width: 36px;
+  margin-right: 6px;
+
+  @media (min-width: 768px) {
+    height: 58px;
+    width: 60px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 68px;
+    width: 71px;
+    margin-right: 10px;
+  }
 `;
 
 export const LogoText = styled.p`
@@ -83,16 +93,16 @@ border-radius: 8px;
 `
 
 export const ButtonClose = styled.button`
-  width: 24px;
-  height: 24px;
   border: none;
   background: transparent;
   margin-left: auto;
   cursor: pointer;
+  padding: 0;
 
   @media (min-width: 1280px) {
     display: none;
   }
+
 `;
 
 export const IconClose = styled(Icon)`
@@ -100,9 +110,14 @@ export const IconClose = styled(Icon)`
   box-shadow: none;
   height: 24px;
   width: 24px;
+  transition: ${props => props.theme.defaultTransition};
   @media (min-width: 768px) {
     height: 33px;
     width: 33px;
+  }
+  &:hover,
+  &:focus {
+    stroke: ${props => props.theme.buttonBackgroundColorHover};
   }
 `;
 
@@ -144,20 +159,19 @@ export const Button = styled.button`
   justify-content: center;
   width: 141px;
   height: 56px;
-  background: ${props => props.theme.accentColor};
-  box-shadow: ${props => props.theme.asideBarLogoutBtnShadow};
+  background: ${props => props.theme.buttonBackgroundColor};
+  box-shadow: ${props => props.theme.buttonShadow};
   border: none;
   border-radius: 16px;
-  color: ${props => props.theme.secondaryTextColor};
+  color: ${props => props.theme.buttontextColor};
   cursor: pointer;
   line-height: 24px;
-  font-family: InterSemiBolt;
+  font-family: "InterSemiBolt";
   transform: scale(1);
   transition: ${props => props.theme.defaultTransition};
   &:hover,
   &:focus {
-    transform: scale(1.1);
-    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.7);
+    background: ${props => props.theme.buttonBackgroundColorHover};
   }
 `;
 

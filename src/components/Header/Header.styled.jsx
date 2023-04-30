@@ -24,6 +24,11 @@ export const BurgerIcon = styled(Icon)`
   width: 34px;
   height: 34px;
   stroke: ${props => props.theme.headerBurgerIcon};
+  transition: ${props => props.theme.defaultTransition};
+  &:hover,
+  &:focus {
+    stroke: ${props => props.theme.buttonBackgroundColorHover};
+  }
 `;
 
 export const Menu = styled.div`

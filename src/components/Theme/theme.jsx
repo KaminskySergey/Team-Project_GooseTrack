@@ -41,6 +41,11 @@ export const theme = {
   // Стилі для темної теми
   dark: {
     defaultTransition: 'all 250ms',
+    // buttons
+    buttontextColor: '#FFFFFF',
+    buttonBackgroundColor: '#3E85F3',
+    buttonBackgroundColorHover: '#2B78EF',
+    buttonShadow: '4px 2px 16px rgba(136, 165, 191, 0.3);',
     // comon colors
     mainBackgroundColor: '#21222C',
     secondaryBackgroundColor: '#171820',

@@ -6,6 +6,7 @@ import {
   Aside,
   Item,
   Link,
+  Logo,
   LogoText,
   PanelTitle,
   Button,
@@ -15,7 +16,7 @@ import {
 import Icon from '../Icon/Icon';
 import { useDispatch } from 'react-redux';
 import { logout } from 'redux/auth/authOperations';
-import { ReactComponent as Logo } from '../../images/svg/logo.svg';
+
 
 const AsideBar = ({ onSidebarShow }) => {
   const dispatch = useDispatch();
@@ -27,13 +28,13 @@ const AsideBar = ({ onSidebarShow }) => {
       <Aside>
         <div>
           <Box
-            mb={32}
+            mb={64}
             display="flex"
             alignItems="center"
-            justifyContent="spaceBeween"
+            justifyContent="space-between"
           >
             <Box display="flex" alignItems="center">
-              <Logo style={{ width: '71px', height: '68px' }} />
+              <Logo />
               <LogoText>
                 G<span style={{ fontStyle: 'italic' }}>oo</span>seTrack
               </LogoText>
