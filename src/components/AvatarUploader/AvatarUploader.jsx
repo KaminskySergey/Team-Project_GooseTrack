@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import avatar from 'images/account/avatar.png';
-import { ReactComponent as AddIcon } from 'images/account/add.svg';
-import { Img, Input, Label, Wrap } from '.';
+import { Img, Input, Label, Wrap, AddIcon } from '.';
 import Box from 'components/Box/Box';
 
 export const AvatarUploader = ({ avatarURL }) => {
@@ -36,7 +35,7 @@ export const AvatarUploader = ({ avatarURL }) => {
         id="add-image"
       />
       <Label htmlFor="add-image">
-        <AddIcon width="100%" height="100%" display="block" />
+        <AddIcon />
       </Label>
     </Box>
   );

@@ -10,7 +10,9 @@ export const Container = styled.div`
 `;
 
 export const BurgerButton = styled.button`
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   border: none;
   padding: 0;
@@ -56,7 +58,7 @@ export const Title = styled.h2`
   margin-bottom: 8px;
   font-family: 'InterBolt';
   font-size: 32px;
-  line-height: 32px;
+  line-height: calc((32/ 32) * 100%);
   color: ${props => props.theme.mainTextColor};
 `;
 
@@ -67,10 +69,12 @@ export const Motivation = styled.p`
 
   font-family: 'InterSemiBolt';
   font-size: 14px;
-  line-height: 18px;
+  line-height: calc((18 / 14) * 100%);
   color: ${props => props.theme.mainTextColor};
 `;
 
 export const Accent = styled.span`
+  font-size: 14px;
+  line-height: calc((18 / 14) * 100%);
   color: ${props => props.theme.accentColor};
 `;

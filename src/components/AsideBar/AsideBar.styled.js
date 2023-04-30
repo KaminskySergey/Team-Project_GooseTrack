@@ -3,7 +3,6 @@ import { ReactComponent as Icon } from 'images/svg/close.svg';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as LogoIcon } from '../../images/svg/logo.svg';
 
-
 export const Aside = styled.aside`
   @media (max-width: 1279px) {
     position: absolute;
@@ -53,46 +52,47 @@ export const Logo = styled(LogoIcon)`
 export const LogoText = styled.p`
   font-family: 'coolveticaItalic';
   font-size: 16px;
-  line-height: 22px;
+  line-height: calc((22 / 16) * 100%);
   margin-bottom: 0;
 
   color: ${props => props.theme.asideBarLogoText};
 
   @media (min-width: 768px) {
     font-size: 18px;
-    line-height: 24px;
+    line-height: calc((24 / 18) * 100%);
   }
   @media (min-width: 1280px) {
     font-size: 24px;
-    line-height: 24px;
+    line-height: calc((24 / 24) * 100%);
   }
 `;
+
 export const PanelTitle = styled.p`
   font-family: 'InterSemiBolt';
   font-size: 12px;
-  line-height: 15px;
+  line-height: calc((15 / 12) * 100%);
   color: ${props => props.theme.asideBarTitle};
   margin-bottom: 24px;
 
   @media (min-width: 768px) {
     font-size: 14px;
-    line-height: 17px;
+    line-height: calc((17 / 14) * 100%);
   }
 `;
 
 export const Item = styled.li`
-
-border-radius: 8px;
+  border-radius: 8px;
   width: 241px;
   height: 50px;
-  
-  &:not(:last-child){
+
+  &:not(:last-child) {
     margin-bottom: 16px;
   }
-
-`
-
+`;
 export const ButtonClose = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   background: transparent;
   margin-left: auto;
@@ -102,7 +102,6 @@ export const ButtonClose = styled.button`
   @media (min-width: 1280px) {
     display: none;
   }
-
 `;
 
 export const IconClose = styled(Icon)`
@@ -123,7 +122,7 @@ export const IconClose = styled(Icon)`
 
 export const Link = styled(NavLink)`
   font-size: 16px;
-  line-height: 19px;
+  line-height: calc((19 / 16) * 100%);
   font-family: 'InterSemiBolt';
   width: 100%;
   height: 100%;
@@ -152,7 +151,6 @@ export const Link = styled(NavLink)`
   }
 `;
 
-
 export const Button = styled.button`
   display: flex;
   align-items: center;
@@ -165,8 +163,9 @@ export const Button = styled.button`
   border-radius: 16px;
   color: ${props => props.theme.buttontextColor};
   cursor: pointer;
-  line-height: 24px;
-  font-family: "InterSemiBolt";
+  font-size: 18px;
+  line-height: calc((24 / 18) * 100%);
+  font-family: 'InterSemiBolt';
   transform: scale(1);
   transition: ${props => props.theme.defaultTransition};
   &:hover,
@@ -174,5 +173,3 @@ export const Button = styled.button`
     background: ${props => props.theme.buttonBackgroundColorHover};
   }
 `;
-
-
