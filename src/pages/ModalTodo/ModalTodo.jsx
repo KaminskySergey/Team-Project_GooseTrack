@@ -1,8 +1,8 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { FormControl,  RadioGroup, Box, Radio } from '@mui/material';
 import React from 'react';
-import { StyledInput,  StyledInputTime,  StyledTextField, StyledTextFieldTime, TitleInput, StyledFormControlLabel, StyledRadioBlau, StyledRadioYellow, StyledRadioRed, ButtonForm, Edit } from './ModalTodo.styled';
-import { size } from 'styled-system';
+import { StyledInput,  StyledInputTime,  StyledTextField, StyledTextFieldTime, TitleInput, StyledFormControlLabel, ButtonForm, Edit } from './ModalTodo.styled';
+
 
 
 
@@ -33,14 +33,20 @@ const validate = values => {
   return errors;
 };
 
-const ModalTodo = ({ onSubmit }) => {
+const ModalTodo = ({ onSubmit, handleAddTodo,}) => {
   
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values)
+    
+      handleAddTodo(values)
+
+    
+    
     resetForm()
   };
 
+ 
 
+  
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validate={validate}>
       {({ values, errors, touched, setFieldValue }) => (
@@ -130,8 +136,7 @@ const ModalTodo = ({ onSubmit }) => {
       backgroundColor: '#f3b249',
       borderRadius: 50,
     },
-
-   '&.Mui-checked': {
+'&.Mui-checked': {
       border: '2px solid #f3b2494d',
       padding: '2px',
       marginLeft: "14px",

@@ -2,7 +2,7 @@ import { Field } from 'formik';
 import styled from 'styled-components';
 import { ReactComponent as EditModal } from 'images/svg/editModal.svg';
 
-import { Button, FormControlLabel, RadioGroup, Radio } from '@mui/material';
+import { Button, FormControlLabel, RadioGroup } from '@mui/material';
 
 export const Label = styled(Field)``;
 

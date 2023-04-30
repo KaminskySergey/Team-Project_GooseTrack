@@ -44,9 +44,10 @@ export const tasksSlise = createSlice({
   state.error = action.payload;
       })
       .addCase(addTasks.fulfilled, (state, action) => {
+        
         state.isLoading = false;
         state.error = null;
-        state.items.push(action.payload);
+        state.items.push(action.payload.task);
       })
 
       //========deleteTasks
@@ -62,7 +63,6 @@ export const tasksSlise = createSlice({
       .addCase(deleteTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        console.log(action.payload.task._id, 'state.items')
         state.items = state.items.filter(task => task._id !== action.payload.task._id)
         // const index = state.items.findIndex(
         //   tasks => tasks._id === action.payload.task._id

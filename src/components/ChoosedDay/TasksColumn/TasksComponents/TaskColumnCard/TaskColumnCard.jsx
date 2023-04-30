@@ -10,17 +10,36 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsitems } from 'redux/tasks/selectors';
 import { deleteTasks } from 'redux/tasks/operations';
+import ModalCreate from 'components/ModalCreate/ModalCreate';
+import ModalTodo from 'pages/ModalTodo/ModalTodo';
+import { useState } from 'react';
 
 
 
 
 export const TaskColumnCard = () => {
-  const items = useSelector(selectIsitems)
+  const [isModalOpen, setIsOpenModal] = useState(false)
+  const items = useSelector(selectIsitems) 
+  
   const dispatch = useDispatch()
-
-  const handleDeleteTask = (taskId) => {
-    dispatch(deleteTasks(taskId))
+   
+  
+  
+  
+  
+  
+  
+  const handleDeleteTodo = (value) => {
+  console.log(value, 'taskId')
+    dispatch(deleteTasks(value))
   }
+
+  
+  const handleToggle = () => setIsOpenModal(pS => !pS)
+  
+  
+    
+
 
   return (
     <>
@@ -36,12 +55,15 @@ export const TaskColumnCard = () => {
           />
           <Status status={el.status}>Medium</Status>
         </Wrap>
-        <TaskToolbar id={el._id} handleDeleteTask={handleDeleteTask}/>
-      </ToolBarBox>
+        <TaskToolbar  handleDeleteTodo={handleDeleteTodo} todo={el} handleToggle={handleToggle} />
+      </ToolBarBox >
       <TaskModal />
     </li>
       ))
     }
+    {isModalOpen && <ModalCreate  onClose={handleToggle}>
+      <ModalTodo  handleDeleteTodo={handleDeleteTodo}/>
+    </ModalCreate>}
     </>
   );
 };
