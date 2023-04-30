@@ -166,10 +166,14 @@ export const Button = styled.button`
   font-size: 18px;
   line-height: calc((24 / 18) * 100%);
   font-family: 'InterSemiBolt';
-  transform: scale(1);
   transition: ${props => props.theme.defaultTransition};
   &:hover,
   &:focus {
     background: ${props => props.theme.buttonBackgroundColorHover};
+  }
+
+  @media (min-width: 768px) {
+    height: 56px;
+    width: 141px;
   }
 `;
