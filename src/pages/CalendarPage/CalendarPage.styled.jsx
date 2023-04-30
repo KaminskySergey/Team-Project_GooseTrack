@@ -12,5 +12,5 @@ export const RedirectLink = styled(NavLink)`
 `;
 
 export const container = styled.div`
-  background-color: green;
+  background-color: purple;
 `;

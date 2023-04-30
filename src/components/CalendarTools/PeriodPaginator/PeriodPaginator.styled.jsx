@@ -5,19 +5,11 @@ export const BiChevronLeftStyled = styled(BiChevronLeft)`
 height: 30px;
 width: 36px;
 fill: #616161;
-
-:hover{
-  fill: ${props => props.theme.accentColor};
-};`;
+`;
 
 export const BiChevronRightStyled = styled(BiChevronRight)`
-height: 30px;
-width: 36px;
 fill: #616161;
-
-:hover{
-  fill: ${props => props.theme.accentColor};
-};`;
+`;
 
 export const CurrentDate = styled.span`
 display: flex;
@@ -35,6 +27,7 @@ font-size: 14px;
 line-height: 1.29;
 text-align: center;
 text-transform: uppercase;
+min-width: 170px;
 
 @media(min-width: 768px) {
     padding: 8px 12px;
@@ -63,7 +56,17 @@ align-items: center;
 
 background: ${props => props.theme.mainBackgroundColor};
 border: 1px solid rgba(220, 227, 229, 0.5);
-border-radius: 8px;`;
+border-radius: 8px;
+
+:hover {
+  cursor: pointer;
+} 
+
+:hover svg {
+  cursor: pointer;
+  fill: ${props => props.theme.accentColor};
+};  
+  `
 
 export const ConteinerForButtons = styled.div`
 display: flex;`
