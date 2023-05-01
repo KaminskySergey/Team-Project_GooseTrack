@@ -5,16 +5,14 @@ import { selectIsitems } from 'redux/tasks/selectors';
 
 export const TasksColumnsList = () => {
   const items = useSelector(selectIsitems)
-  console.log(items.inProgress, 'inProgress')
-  console.log(items.todo, 'todo')
-  console.log(items.done, 'done')
+  
 
   return (
     <>
       <List>
-      <TasksColumn items={items.todo}/>
-      <TasksColumn items={items.inProgress}/>
-      <TasksColumn items={items.done}/>
+      <TasksColumn listId="toDo" items={items.todo}/>
+      <TasksColumn listId="inProgress" items={items.inProgress}/>
+      <TasksColumn listId="done" items={items.done}/>
       
       </List>
     </>

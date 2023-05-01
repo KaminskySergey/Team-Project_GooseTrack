@@ -48,16 +48,30 @@ export const tasksSlise = createSlice({
   state.error = action.payload;
       })
       .addCase(addTasks.fulfilled, (state, action) => {
-        
         state.isLoading = false;
         state.error = null;
-        // state.todo = [action.payload.task, ...state.todo]
-        // state.inProgress = [action.payload.task, ...state.inProgress]
-        // state.done = [action.payload.task, ...state.done]
         
-        // state.todo = action.payload.todo;
-        // state.inProgress = action.payload.inProgress;
-        // state.done = action.payload.done;
+        // const todo = action.payload.filter(todo => todo.category === 'toDo')
+        // state.todo = [todo, ...state.todo]
+        // const inProgress = action.payload.filter(todo => todo.category === 'inProgress')
+        // state.inProgress = [inProgress, ...state.inProgress]
+        // const done = action.payload.filter(todo => todo.category === 'done')
+        // state.done = [done, ...state.done]
+        const newItem = action.payload.task;
+        switch (newItem.category) {
+          case "toDo":
+            state.todo = [newItem, ...state.todo]
+            break;
+          case "inProgress":
+            state.inProgress = [newItem, ...state.inProgress]
+            break;
+          case "done":
+            state.done = [newItem, ...state.done]
+            break;
+          default:
+            break;
+        }
+        
       })
 
       //========deleteTasks
@@ -73,26 +87,44 @@ export const tasksSlise = createSlice({
       .addCase(deleteTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = state.items.filter(task => task._id !== action.payload.task._id)
-        // const index = state.items.findIndex(
-        //   tasks => tasks._id === action.payload.task._id
-        // );
-        // state.tasks.items.splice(index, 1);
+        
+        state.todo = state.todo.filter(task => task._id !== action.payload.task._id)
+        state.inProgress = state.inProgress.filter(task => task._id !== action.payload.task._id)
+        state.done = state.done.filter(task => task._id !== action.payload.task._id)
+        
       })
       //========editTasks
       .addCase(editTasks.pending, (state, action) => {
-        // handlePending();
+        
         state.isLoading = true;
       })
       .addCase(editTasks.rejected, (state, action) => {
-        // handleRejected();
+        
         state.isLoading = false;
-  state.error = action.payload;
+        state.error = action.payload;
       })
       .addCase(editTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = state.items.map(task => {
+        // todoList
+        
+        state.todo = state.todo.map(task => {
+          if (task._id === action.payload.task._id) {
+            return action.payload.task;
+          } else {
+            return task;
+          }
+        });
+        // isProgressList
+        state.inProgress = state.inProgress.map(task => {
+          if (task._id === action.payload.task._id) {
+            return action.payload.task;
+          } else {
+            return task;
+          }
+        });
+        // isDone
+        state.done = state.done.map(task => {
           if (task._id === action.payload.task._id) {
             return action.payload.task;
           } else {

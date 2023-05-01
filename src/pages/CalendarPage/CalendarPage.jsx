@@ -59,12 +59,12 @@ export default function CalendarPage () {
     setIsChoosedMonth(prev => !prev);
   };
 
-console.log(askDay, 'wqeweqweqweqweqwewqwewe')
+
 const newFormat = new Date(askDay);
-    console.log(newFormat, 'newFormat')
+
 const isoString = newFormat.toISOString().substr(0, 7);
 
-console.log(isoString)
+
 
 
 

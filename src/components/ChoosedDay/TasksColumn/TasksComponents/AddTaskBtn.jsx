@@ -5,13 +5,13 @@ import { useDispatch } from "react-redux";
 import { addTasks } from "redux/tasks/operations";
 
 
-export const AddTaskBtn = () => {
+export const AddTaskBtn = ({listId}) => {
   const [isModalOpen, setIsOpenModal] = useState(false)
-  
+
   // const [isAddTodo, setIsAddTodo] = useState(false)
   // const [isPatchTodo, setIsPatchTodo] = useState(false)
 
-
+  
   
 
   const dispatch = useDispatch()
@@ -23,14 +23,14 @@ export const AddTaskBtn = () => {
   const date = new Date(now)
   const isoString = date.toISOString();
 // Das ist ToDo!!!
-console.log(value, 'wwewewewewewewewewewewewewewew')
+
   const todo = {
     date: isoString,
     ...value,
-    category: 'toDo'
+    category: listId,
 
   }
-  console.log(todo, 'todo')
+  
     dispatch(addTasks(todo))
     handleToggle()
   }

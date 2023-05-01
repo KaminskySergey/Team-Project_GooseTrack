@@ -7,13 +7,13 @@ import {
   Status,
   Wrap,
 } from './TaskColumnCard.styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,  } from 'react-redux';
 
 import { deleteTasks } from 'redux/tasks/operations';
 import ModalCreate from 'components/ModalCreate/ModalCreate';
 import ModalTodo from 'pages/ModalTodo/ModalTodo';
 import { useState } from 'react';
-import { selectIsitems } from 'redux/tasks/selectors';
+
 
 
 
@@ -29,7 +29,7 @@ export const TaskColumnCard = ({items}) => {
   
   
   const handleDeleteTodo = (value) => {
-  console.log(value, 'taskId')
+  
     dispatch(deleteTasks(value))
   }
 

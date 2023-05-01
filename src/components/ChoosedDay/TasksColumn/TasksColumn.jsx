@@ -7,12 +7,12 @@ import {
 
 
 
-export const TasksColumn = ({items}) => {
+export const TasksColumn = ({items, listId}) => {
   return (
     <Item>
       <ColumnHeadBar />
       <ColumnTasksList items={items}/>
-      <AddTaskBtn />
+      <AddTaskBtn listId={listId} />
     </Item>
   );
 };

@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import { Backdrop, Modal, CloseModal } from './ModalCreate.styled';
 
 const rootModal = document.querySelector('#createModal')
-console.log(rootModal)
+
 
 
 const ModalCreate = ({children, onClose}) => {

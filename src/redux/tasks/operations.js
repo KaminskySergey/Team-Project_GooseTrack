@@ -13,7 +13,7 @@ export const fetchTasksAll = createAsyncThunk(
     console.log(month)
     try {
       const {data} = await axios.get(`/tasks?year=${query[0]}&month=${query[1]}`);
-      console.log(data, 'dataaaaaaaaaa')
+      
       
       return data;
     } catch (error) {
