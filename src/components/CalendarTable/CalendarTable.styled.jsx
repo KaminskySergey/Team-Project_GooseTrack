@@ -89,8 +89,15 @@ justify-content: flex-end;
 
 export const TaskListWrapper = styled.ul`
 list-style-type: none;
-padding: 0 8px 8px 8px;`;
+padding: 0 8px 0px 8px;`;
 
 export const TaskItem = styled.li`
-overflow: hidden;`
+overflow: hidden;`;
+
+export const TasksMoreLabel = styled.div`
+margin-top: auto;
+margin: auto;
+text-align: center;
+overflow: hidden;
+text-overflow: ellipsis;`
 
