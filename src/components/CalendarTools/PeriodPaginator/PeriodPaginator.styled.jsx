@@ -56,7 +56,16 @@ align-items: center;
 
 background: ${props => props.theme.mainBackgroundColor};
 border: 1px solid rgba(220, 227, 229, 0.5);
-border-radius: 8px;
+
+&:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+};
+
+&:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+};
 
 :hover {
   cursor: pointer;
