@@ -1,4 +1,4 @@
 import { TaskToolbar } from './TaskToolbar.jsx';
-import { TaskModal } from './TaskModal .jsx';
+import { TaskModalIcon } from './TaskModalIcon.jsx';
 
-export { TaskToolbar, TaskModal };
+export { TaskToolbar, TaskModalIcon };
