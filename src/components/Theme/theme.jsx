@@ -39,6 +39,10 @@ export const theme = {
 
     // UserProfile
     TextColorUserProfile: '#111111',
+
+    //CalendarHead
+    CalendarHead: '#616161',
+    CurrentDate: '#FFFFFF',
   },
 
   // Стилі для темної теми
@@ -75,5 +79,8 @@ export const theme = {
 
     // UserProfile
     TextColorUserProfile: '#111111',
+    //CalendarHead
+    CalendarHead: '#FFFFFF',
+    CurrentDate: '#FFFFFF',
   },
 };

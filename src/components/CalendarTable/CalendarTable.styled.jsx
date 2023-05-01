@@ -7,8 +7,6 @@ grid-template-columns: repeat(7, 1fr);
 border-radius: 8px;`;
 
 export const CellWrapper = styled(NavLink)`
-min-width: 48px;
-min-height: 68px;
 background: ${props => props.theme.mainBackgroundColor};
 border: 1px solid rgba(220, 227, 229, 0.5);
 font-family: 'Inter';
@@ -17,6 +15,27 @@ font-weight: 700;
 font-size: 12px;
 line-height: 1.17;
 color: ${props => props.iscurrentmonth === 'true' ? props.theme.mainTextColor : props.theme.mainBackgroundColor};
+
+&:first-child {
+  border-top-left-radius: 8px;
+};
+
+&:last-child {
+  border-bottom-right-radius: 8px;
+};
+
+&:nth-child(7) {
+  border-top-right-radius: 8px;
+};
+
+&:nth-last-child(7) {
+  border-bottom-left-radius: 8px;
+};
+
+@media(min-width: 376px) {
+  min-width: 48px;
+  min-height: 68px;
+};
 
 @media(min-width: 768px) {
     min-width: 100px;
