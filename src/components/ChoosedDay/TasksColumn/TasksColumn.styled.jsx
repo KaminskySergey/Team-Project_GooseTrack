@@ -5,6 +5,6 @@ export const Item = styled.li`
   background-color: ${props => props.theme.mainBackgroundColor};
   padding: 18px 18px 28px 14px;
   max-width: 344px;
-  width: calc((100% - 3 * 27) / 3);
+  width: calc((100% - 3 * 27px) / 3);
   margin: 15px;
 `;
