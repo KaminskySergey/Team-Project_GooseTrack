@@ -21,14 +21,17 @@ export const Header = ({ onSidebarShow }) => {
   const { isDesktopOrLaptop } = useResponce();
   const { pathname } = useLocation();
 
-  let pageTitle = '';
+  let pageTitle = ''; 
+  let isAnyUncompletedTask = null;
 
   const words = pathname.split('/');
   const title = words.find(word => word === 'calendar' || word === 'account');
-
-  const isAnyUncompletedTask = userTasks.some(
-    item => item.task.category === 'toDo' || item.task.category === 'inProgress'
-  );
+  if (userTasks.length > 0) {
+    isAnyUncompletedTask = userTasks.some(
+      item => item.category === 'toDo' || item.category === 'inProgress'
+    );
+  }
+  
 
   switch (title) {
     case 'calendar':
