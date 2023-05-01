@@ -38,7 +38,9 @@ export const theme = {
     headerBurgerIcon: '#343434',
 
     // UserProfile
-    TextColorUserProfile: '#111111',
+    inputText: '#111111',
+    labelText: '#111111',
+    inputBorder: 'rgba(17, 17, 17, 0.15)',
   },
 
   // Стилі для темної теми
@@ -54,7 +56,7 @@ export const theme = {
     secondaryBackgroundColor: '#171820',
     accentColor: '#3E85F3',
     mainTextColor: '#FFFFFF',
-    
+
     secondaryTextColor: '#FFFFFF',
     borderColor: 'rgba(255, 255, 255, 0.15)',
 
@@ -74,6 +76,8 @@ export const theme = {
     headerBurgerIcon: '#FFFFFF',
 
     // UserProfile
-    TextColorUserProfile: '#111111',
+    inputText: '#ffffff',
+    labelText: 'rgba(250, 250, 250, 0.3);',
+    inputBorder: 'rgba(255, 255, 255, 0.15)',
   },
 };

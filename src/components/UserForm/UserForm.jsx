@@ -8,12 +8,11 @@ import { selectUserInfo } from 'redux/user/selectors';
 import { fetchUser, updateUser } from 'redux/user/operations';
 import { AvatarUploader } from 'components/AvatarUploader';
 import { UserFild } from 'components/UserFild';
-import { GooseDatePicker } from 'components/DatePicker/BirthdatePicker';
+import { DateSelection } from 'components/DateSelection';
 
 export const UserForm = () => {
   const dispatch = useDispatch();
   const userInfo = useSelector(selectUserInfo);
-
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -34,33 +33,27 @@ export const UserForm = () => {
   return (
     <Formik
       initialValues={{
-        name: name,
-        birthday: birthday,
-        email: email,
-        phone: phone,
-        telegram: telegram,
+        name,
+        birthday,
+        email,
+        phone,
+        telegram,
       }}
       validationSchema={userShema}
       onSubmit={values => dispatch(updateUser(values))}
     >
-      {({ values }) => (
+      {({ values, setFieldValue }) => (
         <AccountForm>
           <AvatarUploader />
           <Title>{values.name}</Title>
           <Wrap>
             <Wrapper>
               <UserFild title="User name" type="text" name="name" />
-              {/* <UserFild
+              <DateSelection
                 title="Birthday"
-                type="date"
-                name="birthday"
-                value={values.birthday}
-              /> */}
-              <GooseDatePicker
-                title={'Birthday'}
                 name="birthday"
                 date={values.birthday}
-                onChange={date => (values.birthday = date)}
+                changeDate={setFieldValue}
               />
               <UserFild title="Email" type="email" name="email" />
             </Wrapper>
