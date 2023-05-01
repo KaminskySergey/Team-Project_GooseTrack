@@ -1,3 +1,6 @@
+import { ReactComponent as Move } from '../../../../../../images/svg/iconMove.svg';
+import { ReactComponent as Edit } from '../../../../../../images/svg/iconEdit.svg';
+import { ReactComponent as Delete } from '../../../../../../images/svg/iconDelete.svg';
 
 import {
   iconDelete,
@@ -5,9 +8,17 @@ import {
   iconMove,
 } from '../../../../../../images/svg/index';
 import { Box } from './TaskToolbar.styled';
+import { TaskModalIcon } from '.';
+import { useState } from 'react';
+import { ListModalIcon, MoveIconModal } from './TaskModalIcon.styled';
 
 export const TaskToolbar = ({ handleTodoId,  todo, handleDeleteTodo, handleToggle}) => {
-  
+  const [isOpen, setIsOpen] = useState(false)
+
+ const handleModalToggle = () => {
+      setIsOpen(pS => !pS)
+    }
+
   const handleInfo = (todo) => {
     handleTodoId(todo)
 handleToggle()
@@ -16,14 +27,27 @@ handleToggle()
 
   return (
     <Box>
-      <li>
-        <img src={iconDelete} alt="Delete"  onClick={() => handleDeleteTodo(todo._id)}/>
+      <li style={{position: 'relative'}}>
+        <Move src={iconMove}  onClick={handleModalToggle}/>
+        {isOpen && <TaskModalIcon onClose={handleModalToggle}>
+          <ListModalIcon>
+            <li style={{marginBottom: '14px'}}>
+              <p>gbgbgbgb</p>
+              <MoveIconModal src={iconMove}  onClick={handleModalToggle}/>
+            </li>
+            <li>
+            <p>gbgbgbgb</p>
+              <MoveIconModal src={iconMove}  onClick={handleModalToggle}/>
+            </li>
+          </ListModalIcon>
+
+        </TaskModalIcon>}
       </li>
       <li>
-        <img src={iconEdit} alt="Edit"  onClick={() => handleInfo(todo)}/>
+        <Edit src={iconEdit}  onClick={() => handleInfo(todo)}/>
       </li>
       <li>
-        <img src={iconMove} alt="Move" />
+        <Delete src={iconDelete}   onClick={() => handleDeleteTodo(todo._id)}/>
       </li>
     </Box>
   );

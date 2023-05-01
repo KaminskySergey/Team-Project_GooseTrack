@@ -1,4 +1,4 @@
-import { TaskToolbar, TaskModal } from './TasksCardComponent/index';
+import { TaskToolbar } from './TasksCardComponent/index';
 
 import {
   TodoText,
@@ -59,7 +59,7 @@ export const TaskColumnCard = () => {
         </Wrap>
         <TaskToolbar handleTodoId={handleTodoId}  handleDeleteTodo={handleDeleteTodo} todo={el} handleToggle={handleToggle} />
       </ToolBarBox >
-      <TaskModal />
+      {/* <TaskModal /> */}
     </li>
       ))
     }
