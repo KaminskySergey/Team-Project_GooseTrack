@@ -23,24 +23,24 @@ export const Header = ({ onSidebarShow }) => {
 
   let pageTitle = '';
 
-  const words = pathname.split('/');
-  const title = words.find(word => word === 'calendar' || word === 'account');
+  // const words = pathname.split('/');
+  // const title = words.find(word => word === 'calendar' || word === 'account');
 
-  const isAnyUncompletedTask = userTasks.some(
-    item => item.task.category === 'toDo' || item.task.category === 'inProgress'
-  );
+  // const isAnyUncompletedTask = userTasks.some(
+  //   item => item.task.category === 'toDo' || item.task.category === 'inProgress'
+  // );
 
-  switch (title) {
-    case 'calendar':
-      pageTitle = 'Calendar';
-      break;
-    case 'account':
-      pageTitle = 'User Profile';
-      break;
-    default:
-      pageTitle = 'Title';
-      break;
-  }
+  // switch (title) {
+  //   case 'calendar':
+  //     pageTitle = 'Calendar';
+  //     break;
+  //   case 'account':
+  //     pageTitle = 'User Profile';
+  //     break;
+  //   default:
+  //     pageTitle = 'Title';
+  //     break;
+  // }
 
   return (
     <>
@@ -51,7 +51,7 @@ export const Header = ({ onSidebarShow }) => {
               <BurgerIcon />
             </BurgerButton>
           )}
-          {isDesktopOrLaptop && (
+          {/* {isDesktopOrLaptop && (
             <>
               {isAnyUncompletedTask && <GooseIcon />}
 
@@ -65,7 +65,7 @@ export const Header = ({ onSidebarShow }) => {
                 )}
               </div>
             </>
-          )}
+          )} */}
         </Box>
         <Menu>
           <ThemeToggler />

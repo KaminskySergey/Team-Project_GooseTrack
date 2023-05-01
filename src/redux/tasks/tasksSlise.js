@@ -3,13 +3,6 @@ import { initTasks } from './initTasks';
 
 import { fetchTasksAll, addTasks, deleteTasks, editTasks } from './operations';
 
-// const handlePending = state => {
-//   state.isLoading = true;
-// };
-// const handleRejected = (state, action) => {
-//   state.isLoading = false;
-//   state.error = action.payload;
-// };
 
 export const tasksSlise = createSlice({
   name: 'tasks',
@@ -29,12 +22,24 @@ export const tasksSlise = createSlice({
       .addCase(fetchTasksAll.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload.task;
+        
+        const todo = action.payload.task.filter(todo => todo.category === 'toDo');
+        state.todo = todo
+        const inProgress = action.payload.task.filter(todo => todo.category === 'inProgress');
+        state.inProgress = inProgress
+        const done = action.payload.task.filter(todo => todo.category === 'done');
+        
+        state.done = done
+
+        
+
+        
+        
       })
 
       //========addTasks
       .addCase(addTasks.pending, (state, action) => {
-        // handlePending();
+        
         state.isLoading = true;
       })
       .addCase(addTasks.rejected, (state, action) => {
@@ -46,7 +51,13 @@ export const tasksSlise = createSlice({
         
         state.isLoading = false;
         state.error = null;
-        state.items = [action.payload.task, ...state.items]
+        // state.todo = [action.payload.task, ...state.todo]
+        // state.inProgress = [action.payload.task, ...state.inProgress]
+        // state.done = [action.payload.task, ...state.done]
+        
+        // state.todo = action.payload.todo;
+        // state.inProgress = action.payload.inProgress;
+        // state.done = action.payload.done;
       })
 
       //========deleteTasks

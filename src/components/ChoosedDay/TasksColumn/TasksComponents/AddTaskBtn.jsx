@@ -23,6 +23,7 @@ export const AddTaskBtn = () => {
   const date = new Date(now)
   const isoString = date.toISOString();
 // Das ist ToDo!!!
+console.log(value, 'wwewewewewewewewewewewewewewew')
   const todo = {
     date: isoString,
     ...value,

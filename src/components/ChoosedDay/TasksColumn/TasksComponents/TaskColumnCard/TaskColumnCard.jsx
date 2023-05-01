@@ -1,4 +1,4 @@
-import { TaskToolbar } from './TasksCardComponent/index';
+import { TaskToolbar, TaskModal } from './TasksCardComponent/index';
 
 import {
   TodoText,
@@ -8,20 +8,22 @@ import {
   Wrap,
 } from './TaskColumnCard.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsitems } from 'redux/tasks/selectors';
+
 import { deleteTasks } from 'redux/tasks/operations';
 import ModalCreate from 'components/ModalCreate/ModalCreate';
 import ModalTodo from 'pages/ModalTodo/ModalTodo';
 import { useState } from 'react';
+import { selectIsitems } from 'redux/tasks/selectors';
 
 
 
 
-export const TaskColumnCard = () => {
+export const TaskColumnCard = ({items}) => {
   const [isModalOpen, setIsOpenModal] = useState(false)
-  const items = useSelector(selectIsitems) 
+  
   const [currentTodo, setCurrentTodo] = useState(null)
-
+  
+  
 
   const dispatch = useDispatch()
   
@@ -42,7 +44,7 @@ export const TaskColumnCard = () => {
   }
 
   
-
+  
   return (
     <>
     {
