@@ -12,8 +12,10 @@ import {
 import Box from 'components/Box/Box';
 import { ThemeToggler } from './ThemeToggler/ThemeToggler';
 import { UserInfo } from './UserInfo/UserInfo';
+import { useResponce } from 'hooks/responce/useResponce';
 
 export const Header = ({ onSidebarShow }) => {
+  const { isDesktopOrLaptop } = useResponce();
   const { pathname } = useLocation();
   let pageTitle = '';
   const words = pathname.split('/');
@@ -35,16 +37,22 @@ export const Header = ({ onSidebarShow }) => {
     <>
       <Container>
         <Box display="flex" alignItems="center" gap="8px">
-          <BurgerButton type="button" onClick={() => onSidebarShow()}>
-            <BurgerIcon />
-          </BurgerButton>
-          <GooseIcon />
-          <div>
-            <Title>{pageTitle}</Title>
-            <Motivation>
-              <Accent>Let go</Accent> of the past and focus on the present!
-            </Motivation>
-          </div>
+          {!isDesktopOrLaptop && (
+            <BurgerButton type="button" onClick={() => onSidebarShow()}>
+              <BurgerIcon />
+            </BurgerButton>
+          )}
+          {isDesktopOrLaptop && (
+            <>
+              <GooseIcon />
+              <div>
+                <Title>{pageTitle}</Title>
+                <Motivation>
+                  <Accent>Let go</Accent> of the past and focus on the present!
+                </Motivation>
+              </div>
+            </>
+          )}
         </Box>
         <Menu>
           <ThemeToggler />
