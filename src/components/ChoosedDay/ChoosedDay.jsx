@@ -19,6 +19,7 @@ export const ChoosedDay = ({ weekCalendar }) => {
     <>
       <DayCalendarHead weekCalendar={weekCalendar} />
       <TasksColumnsList />
+      
     </>
   );
 };
