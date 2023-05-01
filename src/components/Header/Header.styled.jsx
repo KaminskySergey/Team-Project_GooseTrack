@@ -18,9 +18,9 @@ export const BurgerButton = styled.button`
   padding: 0;
   cursor: pointer;
 
-  @media (min-width: 1280px) {
+  /* @media (min-width: 1280px) {
     display: none;
-  }
+  } */
 `;
 export const BurgerIcon = styled(Icon)`
   width: 34px;
@@ -40,9 +40,9 @@ export const Menu = styled.div`
 `;
 
 export const GooseIcon = styled(GooseMotivator)`
-  @media (max-width: 1279px) {
+  /* @media (max-width: 1279px) {
     display: none;
-  }
+  } */
 
   display: inline-flex;
   width: 64px;
