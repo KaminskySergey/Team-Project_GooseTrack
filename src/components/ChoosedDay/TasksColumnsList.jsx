@@ -1,20 +1,27 @@
 import { List } from './TasksColumnsList.styled';
 import { TasksColumn } from './TasksColumn/TasksColumn';
 import { useSelector } from 'react-redux';
-import { selectIsitems } from 'redux/tasks/selectors';
 import { isSameDay, parseISO } from 'date-fns';
 
 export const TasksColumnsList = ({ askDay }) => {
-  const items = useSelector(selectIsitems);
-  const todo = [...items.todo].filter(todo =>
+
+  const items = useSelector(state => state.tasks.items)
+
+
+  const todoTasks = items.filter(task => task.category === "toDo");
+  const inProgressTasks = items.filter(task => task.category === "inProgress");
+  const doneTasks = items.filter(task => task.category === "done");
+
+    const todo = todoTasks.filter(todo =>
     isSameDay(askDay, parseISO(todo.date))
-  );
-  const inProgress = [...items.inProgress].filter(inProgress =>
-    isSameDay(askDay, parseISO(inProgress.date))
-  );
-  const done = [...items.done].filter(done =>
-    isSameDay(askDay, parseISO(done.date))
-  );
+    );
+    const inProgress = inProgressTasks.filter(inProgress =>
+      isSameDay(askDay, parseISO(inProgress.date))
+    );
+    const done = doneTasks.filter(done =>
+      isSameDay(askDay, parseISO(done.date))
+    );
+
   return (
     <>
       <List>

@@ -19,13 +19,14 @@ import {
 } from './CalendarTable.styled';
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
-import { selectIsLoading, selectIsitems } from 'redux/tasks/selectors';
+import { selectIsLoading } from 'redux/tasks/selectors';
 
 export const CalendarTable = ({ calendar, askDay }) => {
-  const allTasks = useSelector(selectIsitems);
+  // const allTasks = useSelector(selectIsitems);
   const isTasksLoading = useSelector(selectIsLoading);
+  const tasks = useSelector(state => state.tasks.items)
 
-  const tasks = [...allTasks.todo, ...allTasks.inProgress, ...allTasks.done];
+  // const tasks = [...allTasks.todo, ...allTasks.inProgress, ...allTasks.done];
 
   const isCurrentMonth = day => isSameMonth(askDay, day);
 

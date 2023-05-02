@@ -1,19 +1,16 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-
-
-
 export const fetchTasksAll = createAsyncThunk(
   'tasks/fetchAll',
   async (credentials, thunkAPI) => {
-
-    const query = credentials.split('-')
+    const query = credentials.split('-');
     const month = Number(query[1]);
-    console.log(query)
+    console.log(query);
     try {
-      const { data } = await axios.get(`/tasks?year=${query[0]}&month=${month}`);
-
+      const { data } = await axios.get(
+        `/tasks?year=${query[0]}&month=${month}`
+      );
 
       return data;
     } catch (error) {
@@ -25,8 +22,6 @@ export const fetchTasksAll = createAsyncThunk(
 export const addTasks = createAsyncThunk(
   'tasks/addTasks',
   async (tasksInfo, thunkAPI) => {
-
-
     try {
       const { data } = await axios.post('/tasks', tasksInfo);
       return data;
@@ -39,7 +34,6 @@ export const addTasks = createAsyncThunk(
 export const deleteTasks = createAsyncThunk(
   'tasks/deleteTasks',
   async (tasksID, thunkAPI) => {
-
     try {
       const { data } = await axios.delete(`/tasks/${tasksID}`);
       return data;
@@ -51,29 +45,18 @@ export const deleteTasks = createAsyncThunk(
 
 export const editTasks = createAsyncThunk(
   'tasks/editTasks',
-  async ({ title, startTime, endTime, priority, _id }, thunkAPI) => {
+  async ({ title, startTime, endTime, priority, _id, category }, thunkAPI) => {
     try {
-      const { data } = await axios.patch(`/tasks/${_id}`, { title, startTime, endTime, priority });
+      const { data } = await axios.patch(`/tasks/${_id}`, {
+        title,
+        startTime,
+        endTime,
+        priority,
+        category,
+      });
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  }
-);
-
-
-export const transferTask = createAsyncThunk(
-  'tasks/transferTask',
-  async ({ _id, category }, { getState }) => {
-    console.log(category, 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt')
-
-    try {
-      const { data } = await axios.patch(`/tasks/${_id}`, { category })
-      console.log(data, 'data')
-      return data
-    } catch (error) {
-
-    }
-    
   }
 );
