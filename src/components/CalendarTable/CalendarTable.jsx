@@ -28,7 +28,7 @@ export const CalendarTable = ({calendar, askDay}) => {
         <GridWrapper>{
             calendar.map((dayItem) => (
             <CellWrapper 
-            to={`/calendar/day:${format(dayItem, 'ddMMMMyyyy')}`}
+            to={`/calendar/day/${format(dayItem, 'ddMMMMyyyy')}`}
             key={nanoid()}
             iscurrentmonth={isCurrentMonth(dayItem).toString()}
             >
@@ -46,11 +46,11 @@ export const CalendarTable = ({calendar, askDay}) => {
                     </ShowDayWrapper>
                     {!isTasksLoading && <TaskListWrapper>
                         {getDayTasks(dayItem)}
-                        {filteredTasks.slice(0,2).map(task => (
+                        {filteredTasks?.slice(0,2).map(task => (
                             <TaskItem key={nanoid()}>{task.title}</TaskItem>
                         ))}
                     </TaskListWrapper>}
-                    {filteredTasks.length > 2 && (<TasksMoreLabel>More...</TasksMoreLabel>)}        
+                    {filteredTasks?.length > 2 && (<TasksMoreLabel>More...</TasksMoreLabel>)}        
                     
                     
                 </RowInCell>
