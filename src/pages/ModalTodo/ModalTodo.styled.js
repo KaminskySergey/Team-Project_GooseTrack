@@ -1,6 +1,8 @@
 import { Field } from 'formik';
 import styled from 'styled-components';
 import { ReactComponent as EditModal } from 'images/svg/editModal.svg';
+import { ReactComponent as AddModal } from 'images/svg/plus.svg';
+
 
 import { Button, FormControlLabel, RadioGroup } from '@mui/material';
 
@@ -135,6 +137,12 @@ export const ButtonForm = styled(Button)`
   color: #ffffff;
 `;
 export const Edit = styled(EditModal)`
+  width: 14.5px;
+  height: 14.5px;
+  margin-right: 10px;
+`;
+
+export const Add = styled(AddModal)`
   width: 14.5px;
   height: 14.5px;
   margin-right: 10px;

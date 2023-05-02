@@ -10,6 +10,7 @@ import {
   StyledFormControlLabel,
   ButtonForm,
   Edit,
+  Add,
 } from './ModalTodo.styled';
 import { useDispatch } from 'react-redux';
 import { editTasks } from 'redux/tasks/operations';
@@ -265,16 +266,16 @@ const ModalTodo = ({
             </FormControl>
           </Box>
 
-          {!edit ? (
+          {edit ? (
             <ButtonForm type="submit" variant="contained" color="primary">
               <Edit />
-              Add Task
+              Edit
             </ButtonForm>
           ) : (
-            <div style={{ display: 'flex', gap: '16px' }}>
+            <div style={{ display: 'flex', gap: '14px' }}>
               <ButtonForm type="submit" variant="contained" color="primary">
-                <Edit />
-                Edit
+                <Add />
+                Add
               </ButtonForm>
               <ButtonForm
                 onClick={handleToggle}
