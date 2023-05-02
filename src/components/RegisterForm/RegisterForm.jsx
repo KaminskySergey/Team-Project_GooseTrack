@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'hooks/useAuth';
+// import { useAuth } from 'hooks/useAuth';
+import { toast } from 'react-toastify';
 
 import { login, register } from 'redux/auth/authOperations';
 import { ReactComponent as ShowIcon } from 'images/svg/show.svg';
@@ -26,7 +27,7 @@ export const RegisterForm = () => {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const { isError } = useAuth();
+  // const { isError } = useAuth();
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -40,23 +41,34 @@ export const RegisterForm = () => {
     },
     validationSchema: RegisterValidSchema,
     onSubmit: async (values, { resetForm }) => {
-      await dispatch(
-        register({
-          name: values.name,
-          email: values.email,
-          password: values.password,
-        })
-      );
+      try {
+        const resultAction = await dispatch(
+          register({
+            name: values.name,
+            email: values.email,
+            password: values.password,
+          })
+        );
+        if (resultAction.type === 'auth/register/fulfilled') {
+          await dispatch(
+            login({
+              email: values.email,
+              password: values.password,
+            })
+          );
 
-      // resetForm();
-      dispatch(login({
-        email: values.email,
-        password: values.password,
-      }))
-
-
-      if (!isError) {
           navigate('/calendar/month');
+        }
+
+        if (resultAction.type === 'auth/register/rejected') {
+          toast.error(resultAction.payload.response.data.message);
+        }
+      } catch (error) {
+        // if (error.response && error.response.status === 409) {
+        //   alert('This user is already registered.');
+        // } else {
+        toast.error(error.message);
+        // }
       }
     },
   });
