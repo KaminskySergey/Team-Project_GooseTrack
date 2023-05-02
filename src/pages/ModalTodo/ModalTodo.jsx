@@ -22,7 +22,7 @@ const initialValues = {
 };
 
 const validate = values => {
-  const errors = {}
+  const errors = {};
 
   if (!values.title) {
     errors.title = 'Title is required';
@@ -36,70 +36,32 @@ const validate = values => {
     errors.endTime = 'End time is required';
   }
 
-  
+  return errors;
 };
 
+const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
+  const dispatch = useDispatch();
 
-const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
-  const dispatch = useDispatch()
-  
-
-
-
-  const handleFormReset = (resetForm, handleToggle) => {
-    resetForm();
-    handleToggle();
-  }
-  
-  const handleSubmit =  (values, { resetForm }) => {
+  const handleSubmit = (values, { resetForm }) => {
     if (!currentTodo) {
       handleAddTodo(values);
-      handleFormReset(resetForm, handleToggle);
-    } else {
-      const todo = {
-        title: values.title,
-        startTime: values.startTime,
-        endTime: values.endTime,
-        priority: values.priority,
-        _id: currentTodo._id,
-        category: values.category
-      };
-    
-      dispatch(editTasks(todo));
-      handleFormReset(resetForm, handleToggle);
+      resetForm();
+      // handleToggle()
+      return;
     }
-  };
-  
-  
-  
-  
-  
-  
-  
-  
-  // const handleSubmit =  (values, { resetForm }) => {
-  //     if(!currentTodo){
-  //         handleAddTodo(values)
-  //         resetForm()
-  //         return;
-  //     }
-      
-  //     const todo = {
-  //       title: values.title,
-  //       startTime: values.startTime,
-  //       endTime: values.endTime,
-  //       priority: values.priority,
-  //       _id: currentTodo._id,
-  //       category: values.category
-  //     }
-      
-  //     dispatch(editTasks(todo))
-  //     resetForm()
-      
-  //     handleToggle()
-  // };
 
-   
+    const todo = {
+      title: values.title,
+      startTime: values.startTime,
+      endTime: values.endTime,
+      priority: values.priority,
+      _id: currentTodo._id,
+    };
+
+    dispatch(editTasks(todo));
+    resetForm();
+
+    handleToggle();
   };
 
   return (
