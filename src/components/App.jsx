@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy, useEffect } from 'react';
+import { lazy, useEffect, Suspense } from 'react';
 import { Layout } from './Layout/Layout';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { Loader } from './Loader/Loader';
 import { useAuth } from '../hooks/useAuth';
 import { refresh } from 'redux/auth/authOperations';
 
@@ -29,61 +30,59 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <ThemeProvider theme={isTheme === true ? theme.dark : theme.light}>
-      {!isRefreshing && (
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                <RestrictedRoute
-                  redirectTo="/account"
-                  component={<HomePage />}
-                />
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <RestrictedRoute
-                  redirectTo="/login"
-                  component={<RegisterPage />}
-                />
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <RestrictedRoute
-                  redirectTo="/calendar"
-                  component={<LoginPage />}
-                />
-              }
-            />
-            <Route
-              path="/calendar"
-              element={
-                <PrivateRoute
-                  redirectTo="/"
-                  component={<CalendarPage />}
-                />
-              }
-            >
-              <Route path="month" element={<ChoosedDay />} />
-              <Route path="day" element={<ChoosedDay />} />
-              <Route path="day/:date" element={<CalendarPage />} />
-              
+    <>
+      <ThemeProvider theme={isTheme === true ? theme.dark : theme.light}>
+        {!isRefreshing && (
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                index
+                element={
+                  <RestrictedRoute
+                    redirectTo="/account"
+                    component={<HomePage />}
+                  />
+                }
+              />
+              <Route
+                path="/register"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/login"
+                    component={<RegisterPage />}
+                  />
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/calendar"
+                    component={<LoginPage />}
+                  />
+                }
+              />
+              <Route
+                path="/calendar"
+                element={
+                  <PrivateRoute redirectTo="/" component={<CalendarPage />} />
+                }
+              >
+                <Route path="month" element={<ChoosedDay />} />
+                <Route path="day" element={<ChoosedDay />} />
+                <Route path="day/:date" element={<CalendarPage />} />
+              </Route>
+              <Route
+                path="/account"
+                element={
+                  <PrivateRoute redirectTo="/" component={<AccountPage />} />
+                }
+              />
+              <Route path="/account" element={<AccountPage />} />
             </Route>
-            <Route
-              path="/account"
-              element={
-                <PrivateRoute redirectTo="/" component={<AccountPage />} />
-              }
-            />
-            <Route path="/account" element={<AccountPage />} />
-          </Route>
-        </Routes>
-      )}
-    </ThemeProvider>
+          </Routes>
+        )}
+      </ThemeProvider>
+    </>
   );
 };
