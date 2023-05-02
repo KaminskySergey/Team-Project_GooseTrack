@@ -20,9 +20,11 @@ grid-template-columns: repeat(7, 1fr);
 border-radius: 8px;`;
 
 export const CellWrapper = styled(NavLink)`
+min-width: 28px;
 background: ${props => props.theme.mainBackgroundColor};
 border: 1px solid rgba(220, 227, 229, 0.5);
-font-family: 'Inter';
+min-height: 94px;
+font-family: 'InterBolt';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
@@ -47,21 +49,18 @@ color: ${props => props.iscurrentmonth === 'true' ? props.theme.mainTextColor : 
 
 @media(min-width: 376px) {
   min-width: 48px;
-  min-height: 94px;
+  
 };
 
 @media(min-width: 768px) {
     min-width: 100px;
     height: 144px;
-    font-family: 'Inter';
     font-size: 16px;
     line-height: 1.12;
   };
 
   @media(min-width: 1280px) {
-    min-width: 155px;
     height: 135px;
-    font-family: 'Inter';
   }
 `;
 
@@ -73,7 +72,7 @@ flex-direction: column;`;
 export const DayWrapper = styled.div`
 padding: 10px 12px;
 font-weight: 700;
-font-family: 'Inter-Bold';
+font-family: 'InterBolt';
 
 @media(min-width: 768px) {
     padding: 18px 22px;
@@ -105,7 +104,6 @@ list-style-type: none;
 padding: 0 8px 0px 8px;`;
 
 export const TaskItem = styled.li`
-width: 44px;
 height: 22px;
 padding: 4px 4px 4px 8px;
 font-family: 'InterBolt';
@@ -118,6 +116,7 @@ overflow: hidden;
 text-overflow: ellipsis;
 margin-bottom: 4px;
 ${props => getPriorityColor(props)};
+
 
 @media(min-width: 768px) {
   min-width: 92px;
@@ -138,5 +137,5 @@ color: #3E85F3;
 text-align: center;
 overflow: hidden;
 font-size: 14px;
-`
+`;
 

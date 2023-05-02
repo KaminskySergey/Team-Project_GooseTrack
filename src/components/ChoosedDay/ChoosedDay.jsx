@@ -17,7 +17,7 @@ export const ChoosedDay = ({ weekCalendar, askDay }) => {
 
   return (
     <>
-      <DayCalendarHead weekCalendar={weekCalendar} />
+      <DayCalendarHead weekCalendar={weekCalendar} askDay={askDay}/>
       <TasksColumnsList askDay={askDay}/>
     </>
   );
