@@ -3,8 +3,8 @@ import avatar from 'images/account/avatar.png';
 import { Img, Input, Label, Wrap, AddIcon } from '.';
 import Box from 'components/Box/Box';
 
-export const AvatarUploader = ({ avatarURL }) => {
-  const [imagePreview, setImagePreview] = useState(avatar);
+export const AvatarUploader = ({ imageUrl, dispatch, update }) => {
+  const [imagePreview, setImagePreview] = useState(imageUrl || avatar);
 
   const handleImageChange = e => {
     const selectedFile = e.target.files[0];
@@ -15,11 +15,10 @@ export const AvatarUploader = ({ avatarURL }) => {
     const imageUrl = URL.createObjectURL(selectedFile);
     setImagePreview(imageUrl);
 
-    // const fileReader = new FileReader();
-    // fileReader.onload = () => {
-    //   setImagePreview(fileReader.result);
-    // };
-    // fileReader.readAsDataURL(selectedFile);
+    const formData = new FormData();
+
+    formData.append('image', selectedFile);
+    dispatch(update(formData));
   };
 
   return (

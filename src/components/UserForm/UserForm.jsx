@@ -28,7 +28,7 @@ export const UserForm = () => {
     return <div>Loading...</div>;
   }
 
-  const { name, birthday, email, phone, telegram } = userInfo;
+  const { name, birthday, email, phone, telegram, avatarURL } = userInfo;
 
   return (
     <Formik
@@ -44,7 +44,11 @@ export const UserForm = () => {
     >
       {({ values, setFieldValue }) => (
         <AccountForm>
-          <AvatarUploader />
+          <AvatarUploader
+            imageUrl={avatarURL}
+            dispatch={dispatch}
+            update={updateUser}
+          />
           <Title>{values.name}</Title>
           <Wrap>
             <Wrapper>

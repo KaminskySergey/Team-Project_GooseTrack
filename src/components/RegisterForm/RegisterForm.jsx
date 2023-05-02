@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
 
-import { register } from 'redux/auth/authOperations';
+import { login, register } from 'redux/auth/authOperations';
 import { ReactComponent as ShowIcon } from 'images/svg/show.svg';
 import { ReactComponent as HideIcon } from 'images/svg/hide.svg';
 import { ReactComponent as IconButton } from 'images/svg/buttonLogReg.svg';
@@ -39,8 +39,8 @@ export const RegisterForm = () => {
       password: '',
     },
     validationSchema: RegisterValidSchema,
-    onSubmit: (values, { resetForm }) => {
-      dispatch(
+    onSubmit: async (values, { resetForm }) => {
+      await dispatch(
         register({
           name: values.name,
           email: values.email,
@@ -48,9 +48,15 @@ export const RegisterForm = () => {
         })
       );
 
-      resetForm();
+      // resetForm();
+      dispatch(login({
+        email: values.email,
+        password: values.password,
+      }))
+
+
       if (!isError) {
-        navigate('/login');
+          navigate('/calendar/month');
       }
     },
   });
