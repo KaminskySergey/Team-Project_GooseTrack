@@ -1,5 +1,6 @@
 import { Box, ColumnTitle, BtnAdd, BtnIcon } from './ColumnHeadBar.styled';
 
+
 export const ColumnHeadBar = ({ title }) => {
   switch (title) {
     case 'toDo':
@@ -13,11 +14,13 @@ export const ColumnHeadBar = ({ title }) => {
   }
 
   return (
-    <Box>
+    <>
+    <Box >
       <ColumnTitle>{title}</ColumnTitle>
       <BtnAdd>
         <BtnIcon />
       </BtnAdd>
     </Box>
+    </>
   );
 };
