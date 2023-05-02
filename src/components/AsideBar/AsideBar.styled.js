@@ -4,21 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as LogoIcon } from '../../images/svg/logo.svg';
 
 export const Aside = styled.aside`
-  @media (max-width: 1279px) {
-    position: absolute;
-    background-color: ${props => props.theme.asideBarBackground};
-    z-index: 2;
-
-    transition: ${props => props.theme.defaultTransition};
-    @media (min-width: 768px) {
-      width: 290px;
-    }
-    @media (min-width: 1280px) {
-      z-index: 1;
-      position: relative;
-    }
-  }
-
   height: 100vh;
   width: 290px;
   background-color: ${props => props.theme.asideBarBackground};
@@ -30,6 +15,23 @@ export const Aside = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   transition: ${props => props.theme.defaultTransition};
+  border-right: 1px solid rgba(220, 227, 229, 0.5);
+
+  @media (max-width: 1279px) {
+    position: absolute;
+    background-color: ${props => props.theme.asideBarBackground};
+    z-index: 2;
+    box-shadow: ${props => props.theme.buttonShadow};
+
+    transition: ${props => props.theme.defaultTransition};
+    @media (min-width: 768px) {
+      width: 290px;
+    }
+    @media (min-width: 1280px) {
+      z-index: 1;
+      position: relative;
+    }
+  }
 `;
 
 export const Logo = styled(LogoIcon)`
