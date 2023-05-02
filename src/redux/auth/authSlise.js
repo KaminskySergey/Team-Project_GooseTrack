@@ -11,15 +11,17 @@ const authSlice = createSlice({
     name: 'auth',
     initialState: initAuth,
     extraReducers: builder => builder
-        .addCase(register.pending, state => state)
-        .addCase(register.fulfilled, (state, { payload }) => {
 
-            // state.user = payload.user;
-            // state.token = payload.token;
+        .addCase(register.fulfilled, (state) => {
 
-            state.error = false
+            state.error = false;
         })
-        .addCase(register.rejected, state => state.error = true)
+        .addCase(register.pending, (state) => {
+            state.error = false;
+        })
+        .addCase(register.rejected, (state) => {
+            state.error = true;
+        })
 
         .addCase(login.pending, state => state)
         .addCase(login.fulfilled, (state, { payload }) => {

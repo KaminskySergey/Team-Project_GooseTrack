@@ -1,7 +1,8 @@
+
 import { createSlice } from '@reduxjs/toolkit';
 import { initTasks } from './initTasks';
 
-import { fetchTasksAll, addTasks, deleteTasks, editTasks } from './operations';
+import { fetchTasksAll, addTasks, deleteTasks, editTasks, transferTask } from './operations';
 
 // const handlePending = state => {
 //   state.isLoading = true;
@@ -96,8 +97,46 @@ export const tasksSlise = createSlice({
         state.done = state.done.filter(task => task._id !== action.payload.task._id)
       })
       //========editTasks
-      .addCase(editTasks.pending, (state, action) => {
+      .addCase(transferTask.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(transferTask.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const { _id, category } = action.payload.task;
 
+
+        const done = state.done.find(task => task._id === _id);
+        const todo = state.todo.find(task => task._id === _id);
+        const inProgress = state.inProgress.find(task => task._id === _id);
+
+
+        if (!todo && !done && !inProgress) return;
+
+        // Удаляем задачу из предыдущей категории
+        if (done) {
+          state[done.category] = state[done.category].filter(t => t._id !== _id);
+        }
+        if (todo) {
+
+          state[todo.category] = state[todo.category].filter(t => t._id !== _id);
+        }
+        if (inProgress) {
+          state[inProgress.category] = state[inProgress.category].filter(t => t._id !== _id);
+        }
+
+        // Добавляем задачу в новую категорию
+        state[category].push(action.payload.task);
+        state[category] = [...state[category],]
+      })
+      .addCase(transferTask.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload ? action.payload.message : action.error.message;
+      })
+
+
+        .addCase(editTasks.pending, (state, action) => {
         state.isLoading = true;
       })
       .addCase(editTasks.rejected, (state, action) => {
@@ -112,6 +151,7 @@ export const tasksSlise = createSlice({
 
         state.todo = state.todo.map(task => {
           if (task._id === action.payload.task._id) {
+
             return action.payload.task;
           } else {
             return task;
@@ -133,5 +173,13 @@ export const tasksSlise = createSlice({
             return task;
           }
         });
-      }),
+      }
+      )
+
+
+
+
+
+
 });
+

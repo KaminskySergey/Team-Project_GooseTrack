@@ -7,8 +7,11 @@ import { Box } from './TaskToolbar.styled';
 import { TaskModalIcon } from '.';
 import { useState } from 'react';
 import { ListModalIcon, MoveIconModal } from './TaskModalIcon.styled';
-// import { useDispatch } from 'react-redux';
-// import { transferTask } from 'redux/tasks/operations';
+import { transferTask } from 'redux/tasks/operations';
+import { useDispatch } from 'react-redux';
+
+import { transferTask } from 'redux/tasks/operations';
+
 
 const value = {
   toDo: 'Todo',
@@ -24,18 +27,81 @@ export const TaskToolbar = ({
   handleToggle,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  // const [nextId, setNextId] = useState('')
-  // const [currentTodo, setCurrentTodo] = useState('')
-  // const dispatch = useDispatch()
 
-  const handleModalToggle = () => {
-    setIsOpen(pS => !pS);
+  const [nextId, setNextId] = useState('');
+  console.log(nextId, 'nextIdnextIdnextIdnextId');
+  const [currentTodo, setCurrentTodo] = useState('');
+  const dispatch = useDispatch();
+
+  const handleTransfer = async el => {
+    const newNextId = await handleNextId(el);
+
+    dispatch(transferTask({ _id: currentTodo, category: newNextId }));
   };
+
+  const handleNextId = async el => {
+    console.log(el);
+    let newNextId = '';
+    switch (el) {
+      case 'Todo':
+        newNextId = 'todo';
+        break;
+      case 'In Progress':
+        newNextId = 'inProgress';
+        break;
+      case 'Done':
+        newNextId = 'done';
+        break;
+      default:
+        break;
+    }
+    await setNextId(newNextId);
+    console.log(newNextId, 'newNextIdnewNextIdnewNextIdnewNextIdnewNextId');
+    return newNextId;
+  };
+
+
+  const handleTransfer = async (el) => {
+    const newNextId = await handleNextId(el);
+    
+      dispatch(transferTask({ _id: currentTodo, category: newNextId }));
+    
+  };
+  const handleNextId = async (el) => {
+    console.log(el)
+    let newNextId = '';
+    switch (el) {
+      case 'Todo':
+        newNextId = 'todo';
+        break;
+      case 'In Progress':
+        newNextId = 'inProgress';
+        break;
+      case 'Done':
+        newNextId = 'done';
+        break;
+      default:
+        break;
+    }
+    await setNextId(newNextId);
+    console.log(newNextId, 'newNextIdnewNextIdnewNextIdnewNextIdnewNextId')
+    return newNextId;
+  };
+  
+  const handleModalToggle = () => {
+    setCurrentTodo(todo._id);
+
+    setIsOpen(prevState => !prevState);
+
+  };
+
+
 
   const handleInfo = todo => {
     handleTodoId(todo);
     handleToggle();
   };
+
 
   const data = Object.keys(value).filter(item => item !== listId);
 
@@ -45,7 +111,6 @@ export const TaskToolbar = ({
   }, {});
 
   const finnaly = Object.values(filteredValue);
-
   return (
     <Box>
       <li style={{ position: 'relative' }}>
@@ -55,7 +120,9 @@ export const TaskToolbar = ({
             <ListModalIcon>
               {finnaly.map(el => (
                 // < key={el} onClick={() => handleTransfer(el)}>
-                <li key={el}>
+
+                <li key={el} onClick={() => handleTransfer(el)}>
+
                   <p>{el}</p>
                   <MoveIconModal src={iconMove} onClick={handleModalToggle} />
                 </li>
