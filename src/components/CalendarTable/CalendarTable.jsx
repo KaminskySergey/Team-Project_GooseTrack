@@ -64,12 +64,12 @@ export const CalendarTable = ({ calendar, askDay }) => {
               <TaskListWrapper>
                 {getDayTasks(dayItem)}
                 {filteredTasks?.slice(0, 2).map(task => (
-                  <TaskItem key={nanoid()}>{task.title}</TaskItem>
+                  <TaskItem key={nanoid()} priority={task.priority}>{task.title}</TaskItem>
                 ))}
               </TaskListWrapper>
             )}
             {filteredTasks?.length > 2 && (
-              <TasksMoreLabel>More...</TasksMoreLabel>
+              <TasksMoreLabel>...</TasksMoreLabel>
             )}
           </RowInCell>
         </CellWrapper>

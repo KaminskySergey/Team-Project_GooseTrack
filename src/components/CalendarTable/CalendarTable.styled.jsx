@@ -1,6 +1,19 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+const getPriorityColor = (props) => {
+  switch (props.priority) {
+    case 'low' :
+      return 'color: #3E85F3; background-color: #CEEEFD;';
+    case 'medium' :
+        return 'color: #F3B249; background-color: #FCF0D4;';
+    case 'high' :
+      return 'color: #EA3D65; background-color: #FFD2DD;';
+    default :
+    return 'color: #3E85F3; background-color: #FFFFFF';
+  };
+};
+
 export const GridWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(7, 1fr);
@@ -47,7 +60,7 @@ color: ${props => props.iscurrentmonth === 'true' ? props.theme.mainTextColor : 
 
   @media(min-width: 1280px) {
     min-width: 155px;
-    height: 125px;
+    height: 135px;
     font-family: 'Inter';
   }
 `;
@@ -100,26 +113,30 @@ font-style: normal;
 font-weight: 700;
 font-size: 10px;
 line-height: 1.4;
-color: #3E85F3;
-background: #CEEEFD;
 border-radius: 8px;
 overflow: hidden;
+text-overflow: ellipsis;
 margin-bottom: 4px;
+${props => getPriorityColor(props)};
 
 @media(min-width: 768px) {
-  width: 92px;
+  min-width: 92px;
   height: 26px;
   padding: 4px 8px 4px 12px;
+  font-size: 10px;
+  line-height: 1.29;
 };
 
 @media(min-width: 1280px) {
-  width: 139px;
+  min-width: 139px;
 };`;
 
 export const TasksMoreLabel = styled.div`
 margin-top: auto;
 margin: auto;
+color: #3E85F3;
 text-align: center;
 overflow: hidden;
-text-overflow: ellipsis;`
+font-size: 14px;
+`
 
