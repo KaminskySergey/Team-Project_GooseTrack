@@ -13,6 +13,7 @@ import {
 } from './ModalTodo.styled';
 import { useDispatch } from 'react-redux';
 import { editTasks } from 'redux/tasks/operations';
+import { toast } from 'react-toastify';
 
 const initialValues = {
   title: '',
@@ -42,27 +43,39 @@ const validate = values => {
 const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
-    if (!currentTodo) {
-      handleAddTodo(values);
-      resetForm();
-      // handleToggle()
-      return;
+  const handleSubmit =  (values, { resetForm }) => {
+      if (values.startTime.replace(':','') >= values.endTime.replace(':','')) {
+      toast.error('End time should be later than Start Time');
+      return
     }
-
-    const todo = {
-      title: values.title,
-      startTime: values.startTime,
-      endTime: values.endTime,
-      priority: values.priority,
-      _id: currentTodo._id,
-    };
-
-    dispatch(editTasks(todo));
-    resetForm();
-
-    handleToggle();
+  
+      if(!currentTodo){
+          handleAddTodo(values)
+          resetForm()
+          // handleToggle()
+          return;
+      }
+      
+      const todo = {
+        title: values.title,
+        startTime: values.startTime,
+        endTime: values.endTime,
+        priority: values.priority,
+        _id: currentTodo._id,
+        category: values.category
+      }
+      
+      dispatch(editTasks(todo))
+      resetForm()
+      
+      handleToggle()
   };
+
+
+
+
+  
+  
 
   return (
     <Formik
