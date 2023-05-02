@@ -29,61 +29,59 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <ThemeProvider theme={isTheme === true ? theme.dark : theme.light}>
-      {!isRefreshing && (
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route
-              index
-              element={
-                <RestrictedRoute
-                  redirectTo="/account"
-                  component={<HomePage />}
-                />
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <RestrictedRoute
-                  redirectTo="/login"
-                  component={<RegisterPage />}
-                />
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <RestrictedRoute
-                  redirectTo="/calendar"
-                  component={<LoginPage />}
-                />
-              }
-            />
-            <Route
-              path="/calendar"
-              element={
-                <PrivateRoute
-                  redirectTo="/"
-                  component={<CalendarPage />}
-                />
-              }
-            >
-              <Route path="month" element={<ChoosedDay />} />
-              <Route path="day" element={<ChoosedDay />} />
-              <Route path="day/:date" element={<CalendarPage />} />
-              
+    <>
+      <ThemeProvider theme={isTheme === true ? theme.dark : theme.light}>
+        {!isRefreshing && (
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                index
+                element={
+                  <RestrictedRoute
+                    redirectTo="/account"
+                    component={<HomePage />}
+                  />
+                }
+              />
+              <Route
+                path="/register"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/login"
+                    component={<RegisterPage />}
+                  />
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/calendar"
+                    component={<LoginPage />}
+                  />
+                }
+              />
+              <Route
+                path="/calendar"
+                element={
+                  <PrivateRoute redirectTo="/" component={<CalendarPage />} />
+                }
+              >
+                <Route path="month" element={<ChoosedDay />} />
+                <Route path="day" element={<ChoosedDay />} />
+                <Route path="day/:date" element={<CalendarPage />} />
+              </Route>
+              <Route
+                path="/account"
+                element={
+                  <PrivateRoute redirectTo="/" component={<AccountPage />} />
+                }
+              />
+              <Route path="/account" element={<AccountPage />} />
             </Route>
-            <Route
-              path="/account"
-              element={
-                <PrivateRoute redirectTo="/" component={<AccountPage />} />
-              }
-            />
-            <Route path="/account" element={<AccountPage />} />
-          </Route>
-        </Routes>
-      )}
-    </ThemeProvider>
+          </Routes>
+        )}
+      </ThemeProvider>
+    </>
   );
 };

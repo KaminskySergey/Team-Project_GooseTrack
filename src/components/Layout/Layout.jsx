@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense, useState } from 'react';
 
+import { Loader } from '../Loader/Loader';
 import { Wrapper, Main, Box } from './Layout.styled';
 import { useAuth } from 'hooks/useAuth';
 import { Container } from './Layout.styled';
@@ -28,17 +29,18 @@ export const Layout = () => {
                 {(isDesktopOrLaptop || sideBarIsVisible) && (
                   <AsideBar onSidebarShow={onSidebarShow} />
                 )}
+
                 <Box>
                   <Header onSidebarShow={onSidebarShow} />
                   <Main>
-                    <Suspense>
+                    <Suspense fallback={<Loader />}>
                       <Outlet />
                     </Suspense>
                   </Main>
                 </Box>
               </>
             ) : (
-              <Suspense>
+              <Suspense fallback={<Loader />}>
                 <Outlet />
               </Suspense>
             )}

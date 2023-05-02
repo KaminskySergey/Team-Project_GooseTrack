@@ -1,9 +1,9 @@
 import { nanoid } from "nanoid";
 import { CellWrapper, GridWrapper, CurrentDay, CellWrapperOfDate } from "./DayCalendarHead.styled";
-import { format, isToday } from "date-fns";
+import { format, isSameDay} from "date-fns";
 import { useResponce } from "hooks/responce";
 
-export const DayCalendarHead = ({weekCalendar}) => {
+export const DayCalendarHead = ({weekCalendar, askDay}) => {
     const {isMobile} = useResponce();
     return (
         <>
@@ -21,8 +21,14 @@ export const DayCalendarHead = ({weekCalendar}) => {
             <CellWrapper>FRI</CellWrapper>
             <CellWrapper weekend={true}>SAT</CellWrapper>
             <CellWrapper weekend={true}>SUN</CellWrapper></>)}
-            {weekCalendar.map((dayItem) => (<CellWrapperOfDate key={nanoid()} color="#343434">{!isToday(dayItem) && format(dayItem, 'd')}
-                {isToday(dayItem) && <CurrentDay>{format(dayItem, 'd')}</CurrentDay>}</CellWrapperOfDate>))}
+            {weekCalendar.map((dayItem) => (
+            <CellWrapperOfDate 
+            key={nanoid()} 
+            color="#343434"
+            >
+                {!isSameDay(dayItem, askDay) && format(dayItem, 'd')}
+                {isSameDay(dayItem, askDay) && <CurrentDay>{format(dayItem, 'd')}</CurrentDay>}
+                </CellWrapperOfDate>))}
         </GridWrapper>
         </>
     )
