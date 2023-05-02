@@ -31,13 +31,14 @@ export const UserInfo = () => {
   const userNameTSpit = userInfo.name.split('');
   const firstLeterOfUserName = userNameTSpit[0].toUpperCase();
 
+  const { name, avatarURL } = userInfo;
   return (
     <>
-      {userInfo.name ? <Name>{userInfo.name}</Name> : <Name>User</Name>}
+      {name ? <Name>{name}</Name> : <Name>User</Name>}
 
       <ImgWrapper>
-        {userInfo.avatarURL !== '' ? (
-          <Avatar src={userInfo.avatarURL} alt="avatar" />
+        {avatarURL !== '' ? (
+          <Avatar src={avatarURL} alt="avatar" />
         ) : (
           <NameFirstLetter>{firstLeterOfUserName}</NameFirstLetter>
         )}
