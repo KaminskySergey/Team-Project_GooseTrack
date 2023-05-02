@@ -55,6 +55,7 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
         endTime: values.endTime,
         priority: values.priority,
         _id: currentTodo._id,
+        category: values.category
       }
       
       dispatch(editTasks(todo))
