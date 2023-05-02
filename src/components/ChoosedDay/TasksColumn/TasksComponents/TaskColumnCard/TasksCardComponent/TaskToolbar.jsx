@@ -10,7 +10,6 @@ import { ListModalIcon, MoveIconModal } from './TaskModalIcon.styled';
 import { transferTask } from 'redux/tasks/operations';
 import { useDispatch } from 'react-redux';
 
-import { transferTask } from 'redux/tasks/operations';
 
 
 const value = {
@@ -92,8 +91,6 @@ export const TaskToolbar = ({
           <TaskModalIcon onClose={handleModalToggle}>
             <ListModalIcon>
               {finnaly.map(el => (
-                // < key={el} onClick={() => handleTransfer(el)}>
-
                 <li key={el} onClick={() => handleTransfer(el)}>
 
                   <p>{el}</p>
