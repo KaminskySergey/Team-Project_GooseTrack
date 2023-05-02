@@ -282,7 +282,7 @@ const ModalTodo = ({
                 variant="contained"
                 color="primary"
               >
-                Cansel
+                Cancel
               </ButtonForm>
             </div>
           )}
