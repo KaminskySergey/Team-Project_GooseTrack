@@ -39,24 +39,34 @@ const validate = values => {
   return errors;
 };
 
-const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
-  const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
-    if (!currentTodo) {
-      handleAddTodo(values);
-      resetForm();
-      // handleToggle()
-      return;
-    }
+const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
+  const dispatch = useDispatch()
+  
 
-    const todo = {
-      title: values.title,
-      startTime: values.startTime,
-      endTime: values.endTime,
-      priority: values.priority,
-      _id: currentTodo._id,
-    };
+  const handleSubmit =  (values, { resetForm }) => {
+      if(!currentTodo){
+          handleAddTodo(values)
+          resetForm()
+          // handleToggle()
+          return;
+      }
+      
+      const todo = {
+        title: values.title,
+        startTime: values.startTime,
+        endTime: values.endTime,
+        priority: values.priority,
+        _id: currentTodo._id,
+        category: values.category
+      }
+      
+      dispatch(editTasks(todo))
+      resetForm()
+      
+      handleToggle()
+  };
+
 
     dispatch(editTasks(todo));
     resetForm();
