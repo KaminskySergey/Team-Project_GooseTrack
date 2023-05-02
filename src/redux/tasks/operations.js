@@ -66,7 +66,7 @@ export const transferTask = createAsyncThunk(
   'tasks/transferTask',
   async ({ _id, category }, { getState }) => {
     console.log(category, 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt')
-    console.log(_id)
+
     try {
       const { data } = await axios.patch(`/tasks/${_id}`, { category })
       console.log(data, 'data')
@@ -74,14 +74,6 @@ export const transferTask = createAsyncThunk(
     } catch (error) {
 
     }
-    // console.log({ taskId, sourceColumnId, destinationColumnId }, '{ taskId, sourceColumnId, destinationColumnId }')
-    // console.log(tasks)
-    // const task = tasks[sourceColumnId].find((task) => task.id === taskId);
-    // const newSourceColumn = tasks[sourceColumnId].filter(
-    //   (task) => task.id !== taskId
-    // );
-    // const newDestinationColumn = [...tasks[destinationColumnId], task];
-
-    // return { newSourceColumn, newDestinationColumn };
+    
   }
 );

@@ -22,7 +22,7 @@ const initialValues = {
 };
 
 const validate = values => {
-  const errors = {};
+  const errors = {}
 
   if (!values.title) {
     errors.title = 'Title is required';
@@ -36,19 +36,37 @@ const validate = values => {
     errors.endTime = 'End time is required';
   }
 
-  return errors;
+  
 };
 
-const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
-  const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
-    if (!currentTodo) {
-      handleAddTodo(values);
-      resetForm();
-      // handleToggle()
-      return;
-    }
+const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
+  const dispatch = useDispatch()
+  
+
+  const handleSubmit =  (values, { resetForm }) => {
+      if(!currentTodo){
+          handleAddTodo(values)
+          resetForm()
+          // handleToggle()
+          return;
+      }
+      
+      const todo = {
+        title: values.title,
+        startTime: values.startTime,
+        endTime: values.endTime,
+        priority: values.priority,
+        _id: currentTodo._id,
+        category: values.category
+      }
+      
+      dispatch(editTasks(todo))
+      resetForm()
+      
+      handleToggle()
+  };
+
 
     const todo = {
       title: values.title,
@@ -58,6 +76,7 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
       _id: currentTodo._id,
       category: values.category,
     };
+
 
     dispatch(editTasks(todo));
     resetForm();
