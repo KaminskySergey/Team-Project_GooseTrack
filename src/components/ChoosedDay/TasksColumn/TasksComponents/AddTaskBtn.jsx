@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTasks } from 'redux/tasks/operations';
 
-export const AddTaskBtn = ({ listId }) => {
+export const AddTaskBtn = ({ listId, askDay }) => {
   const [isModalOpen, setIsOpenModal] = useState(false);
 
   // const [isAddTodo, setIsAddTodo] = useState(false)
@@ -13,12 +13,10 @@ export const AddTaskBtn = ({ listId }) => {
   const dispatch = useDispatch();
 
   const handleAddTodo = value => {
-    const now = new Date();
-    const date = new Date(now);
-    const isoString = date.toISOString();
-    // Das ist ToDo!!!
+    const newIsoString = askDay.toISOString();
+
     const todo = {
-      date: isoString,
+      date: newIsoString,
       ...value,
       category: listId,
     };
