@@ -1,5 +1,8 @@
-export const initUser = {
-  info: null,
-  loading: false,
-  error: false,
-}
+export const initTasks = {
+  items: [],
+  todo: [],
+  inProgress: [],
+  done: [],
+  isLoading: false,
+  error: null,
+};
