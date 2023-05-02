@@ -25,9 +25,9 @@ export const Layout = () => {
           <Container style={{ display: isLoggedIn ? 'flex' : 'block' }}>
             {isLoggedIn ? (
               <>
-                {isDesktopOrLaptop || sideBarIsVisible ? (
+                {(isDesktopOrLaptop || sideBarIsVisible) && (
                   <AsideBar onSidebarShow={onSidebarShow} />
-                ) : null}
+                )}
                 <Box>
                   <Header onSidebarShow={onSidebarShow} />
                   <Main>

@@ -12,7 +12,7 @@ export const CalendarTools = ({isChoosedMonth, changeAskDay, askDay, calendar, t
     return (
         <ToolsWrapper>
         <PeriodPaginator isChoosedMonth={isChoosedMonth} askDay={askDay} changeAskDay={changeAskDay} calendar={calendar}/>
-        <PeriodTypeSelect toogleChooseMonth={toogleChooseMonth}/>
+        <PeriodTypeSelect ischoosedmonth={isChoosedMonth} toogleChooseMonth={toogleChooseMonth}/>
         </ToolsWrapper>
     )
 }

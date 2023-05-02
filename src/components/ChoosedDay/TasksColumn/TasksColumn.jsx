@@ -1,17 +1,18 @@
+import { Item } from './TasksColumn.styled';
 import {
   ColumnHeadBar,
   ColumnTasksList,
   AddTaskBtn,
 } from './TasksComponents/index';
 
-import { Box } from './TasksColumn.styled';
+
 
 export const TasksColumn = () => {
   return (
-    <Box>
+    <Item>
       <ColumnHeadBar />
       <ColumnTasksList />
       <AddTaskBtn />
-    </Box>
+    </Item>
   );
 };

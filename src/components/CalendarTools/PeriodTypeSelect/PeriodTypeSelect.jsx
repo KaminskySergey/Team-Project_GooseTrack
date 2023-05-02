@@ -1,18 +1,17 @@
 import {
-  ActivePeriod,
   ChooseWrapper,
-  NotActivePeriod,
+  ChangePeriod
 } from './PeriodTypeSelect.styled';
 
-export const PeriodTypeSelect = ({ toogleChooseMonth }) => {
+export const PeriodTypeSelect = ({ toogleChooseMonth, ischoosedmonth }) => {
   return (
     <ChooseWrapper>
-      <ActivePeriod onClick={toogleChooseMonth} to="/calendar/month">
+      <ChangePeriod onClick={toogleChooseMonth} ischoosedmonth={ischoosedmonth.toString()} to="/calendar/month">
         Month
-      </ActivePeriod>
-      <NotActivePeriod onClick={toogleChooseMonth} to="/calendar/day">
+      </ChangePeriod>
+      <ChangePeriod onClick={toogleChooseMonth} ischoosedmonth={ischoosedmonth.toString()} to="/calendar/day">
         Day
-      </NotActivePeriod>
+      </ChangePeriod>
     </ChooseWrapper>
   );
 };
