@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Team-Project_GooseTrack/static/css/main.0201af2f.css",
-    "main.js": "/Team-Project_GooseTrack/static/js/main.42087323.js",
+    "main.js": "/Team-Project_GooseTrack/static/js/main.781d2fe4.js",
     "static/js/254.f861b11a.chunk.js": "/Team-Project_GooseTrack/static/js/254.f861b11a.chunk.js",
     "static/js/332.d0fad98d.chunk.js": "/Team-Project_GooseTrack/static/js/332.d0fad98d.chunk.js",
     "static/js/351.2bcdec84.chunk.js": "/Team-Project_GooseTrack/static/js/351.2bcdec84.chunk.js",
@@ -64,7 +64,7 @@
     "static/media/chevron-down.svg": "/Team-Project_GooseTrack/static/media/chevron-down.cfb8056c03d3ea1e67360f3c96b9b144.svg",
     "static/media/chevron-right.svg": "/Team-Project_GooseTrack/static/media/chevron-right.e40d694518a487eeee0f1f4a367295ac.svg",
     "main.0201af2f.css.map": "/Team-Project_GooseTrack/static/css/main.0201af2f.css.map",
-    "main.42087323.js.map": "/Team-Project_GooseTrack/static/js/main.42087323.js.map",
+    "main.781d2fe4.js.map": "/Team-Project_GooseTrack/static/js/main.781d2fe4.js.map",
     "254.f861b11a.chunk.js.map": "/Team-Project_GooseTrack/static/js/254.f861b11a.chunk.js.map",
     "332.d0fad98d.chunk.js.map": "/Team-Project_GooseTrack/static/js/332.d0fad98d.chunk.js.map",
     "351.2bcdec84.chunk.js.map": "/Team-Project_GooseTrack/static/js/351.2bcdec84.chunk.js.map",
@@ -78,6 +78,6 @@
   },
   "entrypoints": [
     "static/css/main.0201af2f.css",
-    "static/js/main.42087323.js"
+    "static/js/main.781d2fe4.js"
   ]
 }
