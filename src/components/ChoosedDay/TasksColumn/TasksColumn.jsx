@@ -5,14 +5,12 @@ import {
   AddTaskBtn,
 } from './TasksComponents/index';
 
-
-
-export const TasksColumn = () => {
+export const TasksColumn = ({ items, listId }) => {
   return (
     <Item>
-      <ColumnHeadBar />
-      <ColumnTasksList />
-      <AddTaskBtn />
+      <ColumnHeadBar title={listId} />
+      <ColumnTasksList items={items} listId={listId} />
+      <AddTaskBtn listId={listId} />
     </Item>
   );
 };

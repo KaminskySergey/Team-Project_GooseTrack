@@ -1,5 +1,14 @@
+import {
+  endOfMonth,
+  endOfWeek,
+  startOfMonth,
+  startOfToday,
+  isSameDay,
+  addDays,
+  addMonths,
+  startOfDay,
+} from 'date-fns';
 
-import { endOfMonth, endOfWeek, startOfMonth, startOfToday, isSameDay, addDays, addMonths, startOfDay } from 'date-fns';
 import { startOfWeek } from 'date-fns';
 import { CalendarTools } from '../../components/CalendarTools/CalendarTools';
 import { useEffect, useState } from 'react';
@@ -12,18 +21,19 @@ import { useParams } from 'react-router';
 // import { selectIsitems } from 'redux/tasks/selectors';
 // import { fetchTasksAll } from 'redux/tasks/operations';
 
-export default function CalendarPage () {
+export default function CalendarPage() {
   const [askDay, setAskDay] = useState(startOfToday());
   const [isChoosedMonth, setIsChoosedMonth] = useState(true);
 
   const startMonth = startOfMonth(askDay);
   const startDay = startOfWeek(startMonth, { weekStartsOn: 1 });
   const endMonth = endOfMonth(askDay);
-  const endDay = endOfWeek(endMonth, { weekStartsOn: 1 })
+  const endDay = endOfWeek(endMonth, { weekStartsOn: 1 });
   const firstDayOfNextMonth = addDays(endDay, 1);
-  const firstDayOFWeek = startOfWeek(askDay, {weekStartsOn: 1});
-  const lastDayOfWeek = endOfWeek(askDay, {weekStartsOn: 1});
+  const firstDayOFWeek = startOfWeek(askDay, { weekStartsOn: 1 });
+  const lastDayOfWeek = endOfWeek(askDay, { weekStartsOn: 1 });
   const startNextWeek = addDays(lastDayOfWeek, 1);
+
 
  
   let newAskDate = useParams();
@@ -37,7 +47,7 @@ export default function CalendarPage () {
     setIsChoosedMonth(false);
     // setIsChoosedMonth(false);
   }}, [newAskDate])
-  
+
   // const items = useSelector(selectIsitems);
   // const dispatch = useDispatch();
   // useEffect(() => {
@@ -50,50 +60,52 @@ export default function CalendarPage () {
   let day = startDay;
   let weekDay = firstDayOFWeek;
   while (!isSameDay(day, firstDayOfNextMonth)) {
-  calendar.push(day);
-  day = addDays(day, 1);
-  };
+    calendar.push(day);
+    day = addDays(day, 1);
+  }
 
-  while (!isSameDay(weekDay, startNextWeek)){
+  while (!isSameDay(weekDay, startNextWeek)) {
     weekCalendar.push(weekDay);
     weekDay = addDays(weekDay, 1);
   }
 
-  const changeAskDay = (value) => {
-    if(!isChoosedMonth) {weekCalendar = [];
-      return setAskDay(addDays(askDay, value));}
-    
-  
-  if (isChoosedMonth) {
-    return setAskDay(addMonths(askDay, value));
-  } } 
+  const changeAskDay = value => {
+    if (!isChoosedMonth) {
+      weekCalendar = [];
+      return setAskDay(addDays(askDay, value));
+    }
 
+    if (isChoosedMonth) {
+      return setAskDay(addMonths(askDay, value));
+    }
+  };
 
   const toogleChooseMonth = () => {
     setIsChoosedMonth(prev => !prev);
   };
 
-console.log(askDay, 'wqeweqweqweqweqwewqwewe')
-const newFormat = new Date(askDay);
-    console.log(newFormat, 'newFormat')
-const isoString = newFormat.toISOString().substr(0, 7);
+  const newFormat = new Date(askDay);
 
-console.log(isoString)
-
-
+  const isoString = newFormat.toISOString().substr(0, 7);
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchTasksAll(isoString));
   }, [dispatch, isoString]);
   return (
-
-     <>
-     <CalendarTools calendar={calendar} changeAskDay={changeAskDay} isChoosedMonth={isChoosedMonth} askDay={askDay} toogleChooseMonth={toogleChooseMonth}/>
-     {isChoosedMonth ? <ChoosedMonth calendar={calendar} askDay={askDay}/> : <ChoosedDay weekCalendar={weekCalendar}/>}
-     </> 
-
+    <>
+      <CalendarTools
+        calendar={calendar}
+        changeAskDay={changeAskDay}
+        isChoosedMonth={isChoosedMonth}
+        askDay={askDay}
+        toogleChooseMonth={toogleChooseMonth}
+      />
+      {isChoosedMonth ? (
+        <ChoosedMonth calendar={calendar} askDay={askDay} />
+      ) : (
+        <ChoosedDay weekCalendar={weekCalendar} />
+      )}
+    </>
   );
-};
-
-
+}
