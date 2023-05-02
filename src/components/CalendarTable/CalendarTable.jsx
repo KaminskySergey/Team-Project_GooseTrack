@@ -40,6 +40,7 @@ export const CalendarTable = ({ calendar, askDay }) => {
 
   console.log(filteredTasks);
 
+
   return (
     <GridWrapper>
       {calendar.map(dayItem => (
@@ -61,12 +62,12 @@ export const CalendarTable = ({ calendar, askDay }) => {
             {!isTasksLoading && (
               <TaskListWrapper>
                 {getDayTasks(dayItem)}
-                {filteredTasks.slice(0, 2).map(task => (
+                {filteredTasks?.slice(0, 2).map(task => (
                   <TaskItem key={nanoid()}>{task.title}</TaskItem>
                 ))}
               </TaskListWrapper>
             )}
-            {filteredTasks.length > 2 && (
+            {filteredTasks?.length > 2 && (
               <TasksMoreLabel>More...</TasksMoreLabel>
             )}
           </RowInCell>
@@ -75,3 +76,4 @@ export const CalendarTable = ({ calendar, askDay }) => {
     </GridWrapper>
   );
 };
+

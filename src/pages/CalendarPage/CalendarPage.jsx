@@ -6,7 +6,9 @@ import {
   isSameDay,
   addDays,
   addMonths,
+  startOfDay,
 } from 'date-fns';
+
 import { startOfWeek } from 'date-fns';
 import { CalendarTools } from '../../components/CalendarTools/CalendarTools';
 import { useEffect, useState } from 'react';
@@ -14,6 +16,7 @@ import { ChoosedMonth } from '../../components/ChoosedMonth/ChoosedMonth';
 import { ChoosedDay } from '../../components/ChoosedDay/ChoosedDay';
 import { useDispatch } from 'react-redux';
 import { fetchTasksAll } from 'redux/tasks/operations';
+import { useParams } from 'react-router';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { selectIsitems } from 'redux/tasks/selectors';
 // import { fetchTasksAll } from 'redux/tasks/operations';
@@ -30,6 +33,20 @@ export default function CalendarPage() {
   const firstDayOFWeek = startOfWeek(askDay, { weekStartsOn: 1 });
   const lastDayOfWeek = endOfWeek(askDay, { weekStartsOn: 1 });
   const startNextWeek = addDays(lastDayOfWeek, 1);
+
+
+ 
+  let newAskDate = useParams();
+
+  
+  useEffect(() => {
+
+  if (newAskDate.date) {
+    const formatedNewAskDate = new Date(newAskDate.date);
+    setAskDay(startOfDay(formatedNewAskDate));
+    setIsChoosedMonth(false);
+    // setIsChoosedMonth(false);
+  }}, [newAskDate])
 
   // const items = useSelector(selectIsitems);
   // const dispatch = useDispatch();
