@@ -10,7 +10,6 @@ import { ListModalIcon, MoveIconModal } from './TaskModalIcon.styled';
 import { transferTask } from 'redux/tasks/operations';
 import { useDispatch } from 'react-redux';
 
-import { transferTask } from 'redux/tasks/operations';
 
 
 const value = {
@@ -32,33 +31,6 @@ export const TaskToolbar = ({
   console.log(nextId, 'nextIdnextIdnextIdnextId');
   const [currentTodo, setCurrentTodo] = useState('');
   const dispatch = useDispatch();
-
-  const handleTransfer = async el => {
-    const newNextId = await handleNextId(el);
-
-    dispatch(transferTask({ _id: currentTodo, category: newNextId }));
-  };
-
-  const handleNextId = async el => {
-    console.log(el);
-    let newNextId = '';
-    switch (el) {
-      case 'Todo':
-        newNextId = 'todo';
-        break;
-      case 'In Progress':
-        newNextId = 'inProgress';
-        break;
-      case 'Done':
-        newNextId = 'done';
-        break;
-      default:
-        break;
-    }
-    await setNextId(newNextId);
-    console.log(newNextId, 'newNextIdnewNextIdnewNextIdnewNextIdnewNextId');
-    return newNextId;
-  };
 
 
   const handleTransfer = async (el) => {
@@ -119,8 +91,6 @@ export const TaskToolbar = ({
           <TaskModalIcon onClose={handleModalToggle}>
             <ListModalIcon>
               {finnaly.map(el => (
-                // < key={el} onClick={() => handleTransfer(el)}>
-
                 <li key={el} onClick={() => handleTransfer(el)}>
 
                   <p>{el}</p>
