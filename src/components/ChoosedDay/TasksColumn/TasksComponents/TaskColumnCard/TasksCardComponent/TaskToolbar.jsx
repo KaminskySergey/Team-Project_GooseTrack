@@ -7,7 +7,7 @@ import { Box } from './TaskToolbar.styled';
 import { TaskModalIcon } from '.';
 import { useState } from 'react';
 import { ListModalIcon, MoveIconModal } from './TaskModalIcon.styled';
-import { editTasks, transferTask } from 'redux/tasks/operations';
+import { transferTask } from 'redux/tasks/operations';
 import { useDispatch } from 'react-redux';
 // import { transferTask } from 'redux/tasks/operations';
 
@@ -28,7 +28,7 @@ export const TaskToolbar = ({
   const [nextId, setNextId] = useState('')
   const [currentTodo, setCurrentTodo] = useState('')
   const dispatch = useDispatch()
-
+console.log(nextId)
   // const handleModalToggle = () => {
   //   setIsOpen(pS => !pS);
   // };
