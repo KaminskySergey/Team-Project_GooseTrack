@@ -11,6 +11,7 @@ import {
   ButtonForm,
   Edit,
   Add,
+  ButtonCancel,
 } from './ModalTodo.styled';
 import { useDispatch } from 'react-redux';
 import { editTasks } from 'redux/tasks/operations';
@@ -277,13 +278,15 @@ const ModalTodo = ({
                 <Add />
                 Add
               </ButtonForm>
-              <ButtonForm
+              <ButtonCancel
                 onClick={handleToggle}
                 variant="contained"
                 color="primary"
               >
-                Cancel
-              </ButtonForm>
+
+                Cansel
+              </ButtonCancel>
+
             </div>
           )}
         </Form>

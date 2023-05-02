@@ -11,26 +11,28 @@ position: fixed;
     `
 
 export const Modal = styled.div`
-position: absolute;
+    position: absolute;
+    min-width: 303px;
+    padding: 48px 18px 40px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: ${props => props.theme.mainBackgroundColor};
+
     @media (min-width: 375px) {
-        width: 90%;
-        height: 50%;
+        /* height: 50%; */
     }
     @media (max-width: 1279px) {
         /* width and height */
     }
-    @media (min-width: 1280px) {
+    @media (min-width: 768px) {
         width: 396px;
         height: 360px;
         padding: 40px 28px;
     }
     `
 
-    export const CloseModal = styled(Close)`
+export const CloseModal = styled(Close)`
     position: absolute;
     top: 19;
     right: 19;

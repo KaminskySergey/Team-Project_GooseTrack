@@ -136,6 +136,35 @@ export const ButtonForm = styled(Button)`
 
   color: #ffffff;
 `;
+
+export const ButtonCancel = styled.button`
+  width: 144px;
+  height: 48px;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  padding-left: 48px;
+  padding-right: 48px;
+  font-family: 'InterNormal';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: capitalize;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  background-color: #eeeeee;
+  color: #111111;
+
+
+transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+  :hover,
+  :focus {
+    background-color: #e0dfdf;
+  }
+`;
+
 export const Edit = styled(EditModal)`
   width: 14.5px;
   height: 14.5px;
