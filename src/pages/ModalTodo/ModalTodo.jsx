@@ -44,14 +44,18 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
   const dispatch = useDispatch()
   
 
+
+
+  const handleFormReset = (resetForm, handleToggle) => {
+    resetForm();
+    handleToggle();
+  }
+  
   const handleSubmit =  (values, { resetForm }) => {
-      if(!currentTodo){
-          handleAddTodo(values)
-          resetForm()
-          // handleToggle()
-          return;
-      }
-      
+    if (!currentTodo) {
+      handleAddTodo(values);
+      handleFormReset(resetForm, handleToggle);
+    } else {
       const todo = {
         title: values.title,
         startTime: values.startTime,
@@ -59,13 +63,41 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
         priority: values.priority,
         _id: currentTodo._id,
         category: values.category
-      }
-      
-      dispatch(editTasks(todo))
-      resetForm()
-      
-      handleToggle()
+      };
+    
+      dispatch(editTasks(todo));
+      handleFormReset(resetForm, handleToggle);
+    }
   };
+  
+  
+  
+  
+  
+  
+  
+  
+  // const handleSubmit =  (values, { resetForm }) => {
+  //     if(!currentTodo){
+  //         handleAddTodo(values)
+  //         resetForm()
+  //         return;
+  //     }
+      
+  //     const todo = {
+  //       title: values.title,
+  //       startTime: values.startTime,
+  //       endTime: values.endTime,
+  //       priority: values.priority,
+  //       _id: currentTodo._id,
+  //       category: values.category
+  //     }
+      
+  //     dispatch(editTasks(todo))
+  //     resetForm()
+      
+  //     handleToggle()
+  // };
 
    
   };
