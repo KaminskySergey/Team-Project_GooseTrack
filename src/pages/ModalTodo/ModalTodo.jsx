@@ -13,6 +13,7 @@ import {
 } from './ModalTodo.styled';
 import { useDispatch } from 'react-redux';
 import { editTasks } from 'redux/tasks/operations';
+import { toast } from 'react-toastify';
 
 const initialValues = {
   title: '',
@@ -36,6 +37,8 @@ const validate = values => {
     errors.endTime = 'End time is required';
   }
 
+  
+
   return errors;
 };
 
@@ -43,6 +46,11 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
+    if (values.startTime.replace(':','') >= values.endTime.replace(':','')) {
+      toast.error('End time should be later than Start Time');
+      return
+    }
+    
     if (!currentTodo) {
       handleAddTodo(values);
       resetForm();
