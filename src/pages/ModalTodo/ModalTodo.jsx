@@ -271,7 +271,7 @@ const ModalTodo = ({
               Add Task
             </ButtonForm>
           ) : (
-            <>
+            <div style={{ display: 'flex', gap: '16px' }}>
               <ButtonForm type="submit" variant="contained" color="primary">
                 <Edit />
                 Edit
@@ -283,7 +283,7 @@ const ModalTodo = ({
               >
                 Cansel
               </ButtonForm>
-            </>
+            </div>
           )}
         </Form>
       )}
