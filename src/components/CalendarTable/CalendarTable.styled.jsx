@@ -34,12 +34,12 @@ color: ${props => props.iscurrentmonth === 'true' ? props.theme.mainTextColor : 
 
 @media(min-width: 376px) {
   min-width: 48px;
-  min-height: 68px;
+  min-height: 94px;
 };
 
 @media(min-width: 768px) {
     min-width: 100px;
-    height: 104px;
+    height: 144px;
     font-family: 'Inter';
     font-size: 16px;
     line-height: 1.12;
@@ -92,7 +92,29 @@ list-style-type: none;
 padding: 0 8px 0px 8px;`;
 
 export const TaskItem = styled.li`
-overflow: hidden;`;
+width: 44px;
+height: 22px;
+padding: 4px 4px 4px 8px;
+font-family: 'InterBolt';
+font-style: normal;
+font-weight: 700;
+font-size: 10px;
+line-height: 1.4;
+color: #3E85F3;
+background: #CEEEFD;
+border-radius: 8px;
+overflow: hidden;
+margin-bottom: 4px;
+
+@media(min-width: 768px) {
+  width: 92px;
+  height: 26px;
+  padding: 4px 8px 4px 12px;
+};
+
+@media(min-width: 1280px) {
+  width: 139px;
+};`;
 
 export const TasksMoreLabel = styled.div`
 margin-top: auto;

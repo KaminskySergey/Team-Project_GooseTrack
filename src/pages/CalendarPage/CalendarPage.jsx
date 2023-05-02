@@ -104,7 +104,7 @@ export default function CalendarPage() {
       {isChoosedMonth ? (
         <ChoosedMonth calendar={calendar} askDay={askDay} />
       ) : (
-        <ChoosedDay weekCalendar={weekCalendar} />
+        <ChoosedDay weekCalendar={weekCalendar} askDay={askDay}/>
       )}
     </>
   );
