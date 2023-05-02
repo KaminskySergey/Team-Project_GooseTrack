@@ -25,7 +25,7 @@ export const CalendarTable = ({ calendar, askDay }) => {
   const allTasks = useSelector(selectIsitems);
   const isTasksLoading = useSelector(selectIsLoading);
 
-  const tasks = [...allTasks.todo, ...allTasks.inProgress, ...allTasks.done];
+  const tasks = [...allTasks.toDo, ...allTasks.inProgress, ...allTasks.done];
 
   const isCurrentMonth = day => isSameMonth(askDay, day);
 

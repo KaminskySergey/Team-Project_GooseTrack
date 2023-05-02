@@ -1,6 +1,6 @@
 export const initTasks = {
   items: [],
-  todo: [],
+  toDo : [],
   inProgress: [],
   done: [],
   isLoading: false,

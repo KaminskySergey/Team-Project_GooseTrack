@@ -51,11 +51,11 @@ export const TaskColumnCard = ({ items, listId }) => {
               listId={listId}
               handleTodoId={handleTodoId}
               handleDeleteTodo={handleDeleteTodo}
-              todo={el}
+              toDo={el}
               handleToggle={handleToggle}
             />
           </ToolBarBox>
-          {/* <TaskModal /> */}
+          
         </li>
       ))}
       {isModalOpen && (

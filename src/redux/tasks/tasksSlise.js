@@ -32,11 +32,11 @@ export const tasksSlise = createSlice({
         state.error = null;
 
 
-        const todo = action.payload.task.filter(todo => todo.category === 'toDo');
-        state.todo = todo
-        const inProgress = action.payload.task.filter(todo => todo.category === 'inProgress');
+        const toDo = action.payload.task.filter(todo => todo.category === 'toDo');
+        state.toDo = toDo
+        const inProgress = action.payload.task.filter(toDo => toDo.category === 'inProgress');
         state.inProgress = inProgress
-        const done = action.payload.task.filter(todo => todo.category === 'done');
+        const done = action.payload.task.filter(toDo => toDo.category === 'done');
 
         state.done = done
       })
@@ -65,7 +65,7 @@ export const tasksSlise = createSlice({
         const newItem = action.payload.task;
         switch (newItem.category) {
           case "toDo":
-            state.todo = [newItem, ...state.todo]
+            state.toDo = [newItem, ...state.toDo]
             break;
           case "inProgress":
             state.inProgress = [newItem, ...state.inProgress]
@@ -92,7 +92,7 @@ export const tasksSlise = createSlice({
         state.isLoading = false;
         state.error = null;
 
-        state.todo = state.todo.filter(task => task._id !== action.payload.task._id)
+        state.toDo = state.toDo.filter(task => task._id !== action.payload.task._id)
         state.inProgress = state.inProgress.filter(task => task._id !== action.payload.task._id)
         state.done = state.done.filter(task => task._id !== action.payload.task._id)
       })
@@ -106,21 +106,24 @@ export const tasksSlise = createSlice({
         state.error = null;
         const { _id, category } = action.payload.task;
 
-
+        if (action.payload.task === undefined || action.payload.task === null) {
+          console.log('UpdateTaskStatusThunk payload not object!');
+          return;
+        }
         const done = state.done.find(task => task._id === _id);
-        const todo = state.todo.find(task => task._id === _id);
+        const toDo  = state.toDo.find(task => task._id === _id);
         const inProgress = state.inProgress.find(task => task._id === _id);
 
 
-        if (!todo && !done && !inProgress) return;
+        if (!toDo  && !done && !inProgress) return;
 
         // Удаляем задачу из предыдущей категории
         if (done) {
           state[done.category] = state[done.category].filter(t => t._id !== _id);
         }
-        if (todo) {
+        if (toDo) {
 
-          state[todo.category] = state[todo.category].filter(t => t._id !== _id);
+          state[toDo.category] = state[toDo.category].filter(t => t._id !== _id);
         }
         if (inProgress) {
           state[inProgress.category] = state[inProgress.category].filter(t => t._id !== _id);
@@ -128,7 +131,7 @@ export const tasksSlise = createSlice({
 
         // Добавляем задачу в новую категорию
         state[category].push(action.payload.task);
-        state[category] = [...state[category],]
+        
       })
       .addCase(transferTask.rejected, (state, action) => {
         state.isLoading = false;
@@ -149,7 +152,7 @@ export const tasksSlise = createSlice({
         state.error = null;
         // todoList
 
-        state.todo = state.todo.map(task => {
+        state.toDo = state.toDo.map(task => {
           if (task._id === action.payload.task._id) {
 
             return action.payload.task;

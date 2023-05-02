@@ -7,10 +7,9 @@ import { Box } from './TaskToolbar.styled';
 import { TaskModalIcon } from '.';
 import { useState } from 'react';
 import { ListModalIcon, MoveIconModal } from './TaskModalIcon.styled';
-import { transferTask } from 'redux/tasks/operations';
+import {  transferTask } from 'redux/tasks/operations';
 import { useDispatch } from 'react-redux';
-
-
+// import { transferTask } from 'redux/tasks/operations';
 
 const value = {
   toDo: 'Todo',
@@ -21,17 +20,18 @@ const value = {
 export const TaskToolbar = ({
   listId,
   handleTodoId,
-  todo,
+  toDo,
   handleDeleteTodo,
   handleToggle,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const [nextId, setNextId] = useState('');
-  console.log(nextId, 'nextIdnextIdnextIdnextId');
-  const [currentTodo, setCurrentTodo] = useState('');
-  const dispatch = useDispatch();
-
+  const [nextId, setNextId] = useState('')
+  const [currentTodo, setCurrentTodo] = useState('')
+  const dispatch = useDispatch()
+console.log(nextId)
+  // const handleModalToggle = () => {
+  //   setIsOpen(pS => !pS);
+  // };
 
   const handleTransfer = async (el) => {
     const newNextId = await handleNextId(el);
@@ -44,7 +44,7 @@ export const TaskToolbar = ({
     let newNextId = '';
     switch (el) {
       case 'Todo':
-        newNextId = 'todo';
+        newNextId = 'toDo';
         break;
       case 'In Progress':
         newNextId = 'inProgress';
@@ -61,19 +61,18 @@ export const TaskToolbar = ({
   };
   
   const handleModalToggle = () => {
-    setCurrentTodo(todo._id);
-
-    setIsOpen(prevState => !prevState);
-
+    setCurrentTodo(toDo._id);
+    setIsOpen((prevState) => !prevState);
   };
 
 
 
-  const handleInfo = todo => {
-    handleTodoId(todo);
+  const handleInfo = toDo => {
+    handleTodoId(toDo);
     handleToggle();
   };
 
+  
 
   const data = Object.keys(value).filter(item => item !== listId);
 
@@ -91,8 +90,8 @@ export const TaskToolbar = ({
           <TaskModalIcon onClose={handleModalToggle}>
             <ListModalIcon>
               {finnaly.map(el => (
-                <li key={el} onClick={() => handleTransfer(el)}>
-
+                // < key={el} onClick={() => handleTransfer(el)}>
+                <li key={el}onClick={() => handleTransfer(el)}>
                   <p>{el}</p>
                   <MoveIconModal src={iconMove} onClick={handleModalToggle} />
                 </li>
@@ -102,10 +101,10 @@ export const TaskToolbar = ({
         )}
       </li>
       <li>
-        <Edit src={iconEdit} onClick={() => handleInfo(todo)} />
+        <Edit src={iconEdit} onClick={() => handleInfo(toDo)} />
       </li>
       <li>
-        <Delete src={iconDelete} onClick={() => handleDeleteTodo(todo._id)} />
+        <Delete src={iconDelete} onClick={() => handleDeleteTodo(toDo._id)} />
       </li>
     </Box>
   );

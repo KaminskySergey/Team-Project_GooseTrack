@@ -15,13 +15,13 @@ export const AddTaskBtn = ({ listId, askDay }) => {
   const handleAddTodo = value => {
     const newIsoString = askDay.toISOString();
 
-    const todo = {
+    const toDo = {
       date: newIsoString,
       ...value,
       category: listId,
     };
 
-    dispatch(addTasks(todo));
+    dispatch(addTasks(toDo));
     handleToggle();
   };
 

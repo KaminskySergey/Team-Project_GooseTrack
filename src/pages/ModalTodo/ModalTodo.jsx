@@ -50,7 +50,7 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
       return;
     }
 
-    const todo = {
+    const toDo = {
       title: values.title,
       startTime: values.startTime,
       endTime: values.endTime,
@@ -58,7 +58,7 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
       _id: currentTodo._id,
     };
 
-    dispatch(editTasks(todo));
+    dispatch(editTasks(toDo));
     resetForm();
 
     handleToggle();

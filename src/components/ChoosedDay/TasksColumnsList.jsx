@@ -6,8 +6,9 @@ import { isSameDay, parseISO } from 'date-fns';
 
 export const TasksColumnsList = ({ askDay }) => {
   const items = useSelector(selectIsitems);
-  const todo = [...items.todo].filter(todo =>
-    isSameDay(askDay, parseISO(todo.date))
+  console.log(items, 'itemsitemsitems')
+  const toDo = [...items.toDo].filter(toDo =>
+    isSameDay(askDay, parseISO(toDo.date))
   );
   const inProgress = [...items.inProgress].filter(inProgress =>
     isSameDay(askDay, parseISO(inProgress.date))
@@ -18,7 +19,7 @@ export const TasksColumnsList = ({ askDay }) => {
   return (
     <>
       <List>
-        <TasksColumn listId="toDo" items={todo} askDay={askDay} />
+        <TasksColumn listId="toDo" items={toDo} askDay={askDay} />
         <TasksColumn listId="inProgress" items={inProgress} askDay={askDay} />
         <TasksColumn listId="done" items={done} askDay={askDay} />
       </List>
