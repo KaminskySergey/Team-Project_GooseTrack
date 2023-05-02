@@ -41,14 +41,20 @@ export const UploadImage = styled.label`
 export const Input = styled(Field)`
   height: 42px;
   border-radius: 8px;
+  border-width: 1px;
   padding: 0 14px;
-  border-color: rgb(17 17 17 / 15%);
-  color: ${props => props.theme.TextColorUserProfile};
+  border-color: ${props => props.theme.inputBorder};
+  background-color: transparent;
+  color: ${props => props.theme.inputText};
   transition: ${props => props.theme.defaultTransition};
   font-family: 'InterSemiBolt';
   font-weight: 600;
   font-size: 14px;
   line-height: calc((18 / 14) * 100%);
+
+  &::placeholder {
+    color: ${props => props.theme.inputText};
+  }
 
   @media (min-width: 768px) {
     font-size: 16px;
