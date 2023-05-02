@@ -5,7 +5,7 @@ import { fetchTasksAll } from '../../redux/tasks/operations';
 import { useEffect } from 'react';
 // import { selectToken } from 'redux/auth/selectors';
 
-export const ChoosedDay = ({ weekCalendar }) => {
+export const ChoosedDay = ({ weekCalendar, askDay }) => {
   // const items = useSelector(selectIsitems);
   // const token = useSelector(selectToken);
   // console.log(items, 'items');
@@ -18,7 +18,7 @@ export const ChoosedDay = ({ weekCalendar }) => {
   return (
     <>
       <DayCalendarHead weekCalendar={weekCalendar} />
-      <TasksColumnsList />
+      <TasksColumnsList askDay={askDay}/>
     </>
   );
 };

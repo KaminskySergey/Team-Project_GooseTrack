@@ -19,12 +19,13 @@ import {
 } from './CalendarTable.styled';
 import { nanoid } from 'nanoid';
 import { useSelector } from 'react-redux';
-import { selectIsLoading, selectIsitemsMain } from 'redux/tasks/selectors';
+import { selectIsLoading, selectIsitems } from 'redux/tasks/selectors';
 
 export const CalendarTable = ({ calendar, askDay }) => {
-  const tasks = useSelector(selectIsitemsMain);
+  const allTasks = useSelector(selectIsitems);
   const isTasksLoading = useSelector(selectIsLoading);
-  console.log(tasks);
+
+  const tasks = [...allTasks.todo, ...allTasks.inProgress, ...allTasks.done];
 
   const isCurrentMonth = day => isSameMonth(askDay, day);
 
@@ -45,7 +46,7 @@ export const CalendarTable = ({ calendar, askDay }) => {
     <GridWrapper>
       {calendar.map(dayItem => (
         <CellWrapper
-          to={`/calendar/day:${format(dayItem, 'ddMMMMyyyy')}`}
+          to={`/calendar/day/${format(dayItem, 'ddMMMMyyyy')}`}
           key={nanoid()}
           iscurrentmonth={isCurrentMonth(dayItem).toString()}
         >
