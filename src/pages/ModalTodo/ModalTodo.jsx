@@ -15,13 +15,6 @@ import { useDispatch } from 'react-redux';
 import { editTasks } from 'redux/tasks/operations';
 import { toast } from 'react-toastify';
 
-const initialValues = {
-  title: '',
-  startTime: '',
-  endTime: '',
-  priority: 'low',
-};
-
 const validate = values => {
   const errors = {};
 
@@ -40,42 +33,49 @@ const validate = values => {
   return errors;
 };
 
-const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
+const ModalTodo = ({
+  onSubmit,
+  handleAddTodo,
+  currentTodo,
+  handleToggle,
+  edit = false,
+}) => {
   const dispatch = useDispatch();
 
-  const handleSubmit =  (values, { resetForm }) => {
-      if (values.startTime.replace(':','') >= values.endTime.replace(':','')) {
-      toast.error('End time should be later than Start Time');
-      return
-    }
-  
-      if(!currentTodo){
-          handleAddTodo(values)
-          resetForm()
-          // handleToggle()
-          return;
-      }
-      
-      const todo = {
-        title: values.title,
-        startTime: values.startTime,
-        endTime: values.endTime,
-        priority: values.priority,
-        _id: currentTodo._id,
-        category: values.category
-      }
-      
-      dispatch(editTasks(todo))
-      resetForm()
-      
-      handleToggle()
+  const initialValues = {
+    title: currentTodo ? currentTodo.title : '',
+    startTime: currentTodo ? currentTodo.startTime : '',
+    endTime: currentTodo ? currentTodo.endTime : '',
+    priority: currentTodo ? currentTodo.priority : 'low',
   };
 
+  const handleSubmit = (values, { resetForm }) => {
+    if (values.startTime.replace(':', '') >= values.endTime.replace(':', '')) {
+      toast.error('End time should be later than Start Time');
+      return;
+    }
 
+    if (!currentTodo) {
+      handleAddTodo(values);
+      resetForm();
+      // handleToggle()
+      return;
+    }
 
+    const todo = {
+      title: values.title,
+      startTime: values.startTime,
+      endTime: values.endTime,
+      priority: values.priority,
+      _id: currentTodo._id,
+      category: values.category,
+    };
 
-  
-  
+    dispatch(editTasks(todo));
+    resetForm();
+
+    handleToggle();
+  };
 
   return (
     <Formik
@@ -265,10 +265,26 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
             </FormControl>
           </Box>
 
-          <ButtonForm type="submit" variant="contained" color="primary">
-            <Edit />
-            Edit
-          </ButtonForm>
+          {!edit ? (
+            <ButtonForm type="submit" variant="contained" color="primary">
+              <Edit />
+              Add Task
+            </ButtonForm>
+          ) : (
+            <>
+              <ButtonForm type="submit" variant="contained" color="primary">
+                <Edit />
+                Edit
+              </ButtonForm>
+              <ButtonForm
+                onClick={handleToggle}
+                variant="contained"
+                color="primary"
+              >
+                Cansel
+              </ButtonForm>
+            </>
+          )}
         </Form>
       )}
     </Formik>

@@ -60,7 +60,11 @@ export const TaskColumnCard = ({ items, listId }) => {
       ))}
       {isModalOpen && (
         <ModalCreate onClose={handleToggle}>
-          <ModalTodo handleToggle={handleToggle} currentTodo={currentTodo} />
+          <ModalTodo
+            handleToggle={handleToggle}
+            currentTodo={currentTodo}
+            edit
+          />
         </ModalCreate>
       )}
     </>
