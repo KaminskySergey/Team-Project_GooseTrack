@@ -1,15 +1,30 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+const getPriorityColor = (props) => {
+  switch (props.priority) {
+    case 'low' :
+      return 'color: #3E85F3; background-color: #CEEEFD;';
+    case 'medium' :
+        return 'color: #F3B249; background-color: #FCF0D4;';
+    case 'high' :
+      return 'color: #EA3D65; background-color: #FFD2DD;';
+    default :
+    return 'color: #3E85F3; background-color: #FFFFFF';
+  };
+};
+
 export const GridWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(7, 1fr);
 border-radius: 8px;`;
 
 export const CellWrapper = styled(NavLink)`
+min-width: 28px;
 background: ${props => props.theme.mainBackgroundColor};
 border: 1px solid rgba(220, 227, 229, 0.5);
-font-family: 'Inter';
+min-height: 94px;
+font-family: 'InterBolt';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
@@ -34,21 +49,18 @@ color: ${props => props.iscurrentmonth === 'true' ? props.theme.mainTextColor : 
 
 @media(min-width: 376px) {
   min-width: 48px;
-  min-height: 94px;
+  
 };
 
 @media(min-width: 768px) {
     min-width: 100px;
     height: 144px;
-    font-family: 'Inter';
     font-size: 16px;
     line-height: 1.12;
   };
 
   @media(min-width: 1280px) {
-    min-width: 155px;
-    height: 125px;
-    font-family: 'Inter';
+    height: 135px;
   }
 `;
 
@@ -60,7 +72,7 @@ flex-direction: column;`;
 export const DayWrapper = styled.div`
 padding: 10px 12px;
 font-weight: 700;
-font-family: 'Inter-Bold';
+font-family: 'InterBolt';
 
 @media(min-width: 768px) {
     padding: 18px 22px;
@@ -92,7 +104,6 @@ list-style-type: none;
 padding: 0 8px 0px 8px;`;
 
 export const TaskItem = styled.li`
-width: 44px;
 height: 22px;
 padding: 4px 4px 4px 8px;
 font-family: 'InterBolt';
@@ -100,26 +111,31 @@ font-style: normal;
 font-weight: 700;
 font-size: 10px;
 line-height: 1.4;
-color: #3E85F3;
-background: #CEEEFD;
 border-radius: 8px;
 overflow: hidden;
+text-overflow: ellipsis;
 margin-bottom: 4px;
+${props => getPriorityColor(props)};
+
 
 @media(min-width: 768px) {
-  width: 92px;
+  min-width: 92px;
   height: 26px;
   padding: 4px 8px 4px 12px;
+  font-size: 10px;
+  line-height: 1.29;
 };
 
 @media(min-width: 1280px) {
-  width: 139px;
+  min-width: 139px;
 };`;
 
 export const TasksMoreLabel = styled.div`
 margin-top: auto;
 margin: auto;
+color: #3E85F3;
 text-align: center;
 overflow: hidden;
-text-overflow: ellipsis;`
+font-size: 14px;
+`;
 

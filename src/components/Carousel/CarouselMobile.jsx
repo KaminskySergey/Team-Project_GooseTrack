@@ -13,8 +13,10 @@ import {
 
 import { ReactComponent as Back } from 'images/svg/arrowBack.svg';
 import { ReactComponent as Next } from 'images/svg/arrowNext.svg';
-import avatar1 from 'images/reviews/one.png';
-import avatar2 from 'images/reviews/two.png';
+import avatarOne2x from 'images/reviews/one@2x.png';
+import avatarOne from 'images/reviews/one.png';
+import avatarTwo from 'images/reviews/two.png';
+import avatarTwo2x from 'images/reviews/two@2x.png';
 import stars from 'images/reviews/stars.png';
 
 export const CarouselMobile = () => {
@@ -33,7 +35,8 @@ export const CarouselMobile = () => {
             <Review>
               <ImageContainer>
                 <img
-                  src={avatar1}
+                  srcSet={`${avatarOne} 1x, ${avatarOne2x} 2x`}
+                  src={avatarOne}
                   alt="Callendar view"
                   width="50"
                   height="50"
@@ -54,7 +57,8 @@ export const CarouselMobile = () => {
             <Review>
               <ImageContainer>
                 <img
-                  src={avatar2}
+                  srcSet={`${avatarTwo} 1x, ${avatarTwo2x} 2x`}
+                  src={avatarTwo}
                   alt="Callendar view"
                   width="50"
                   height="50"

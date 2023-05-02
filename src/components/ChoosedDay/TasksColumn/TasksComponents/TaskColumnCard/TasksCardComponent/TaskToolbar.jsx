@@ -72,7 +72,6 @@ export const TaskToolbar = ({
     handleToggle();
   };
 
-  
 
   const data = Object.keys(value).filter(item => item !== listId);
 
