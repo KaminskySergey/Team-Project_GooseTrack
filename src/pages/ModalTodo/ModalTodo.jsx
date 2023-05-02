@@ -19,7 +19,7 @@ const initialValues = {
 };
 
 const validate = values => {
-  const errors = {};
+  const errors = {}
 
   if (!values.title) {
     errors.title = 'Title is required';
@@ -34,7 +34,7 @@ const validate = values => {
     errors.endTime = 'End time is required';
   }
 
-  return errors;
+  
 };
 
 const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
