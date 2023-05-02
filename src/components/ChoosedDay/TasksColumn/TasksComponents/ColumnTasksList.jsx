@@ -3,7 +3,7 @@ import { TaskColumnCard } from './TaskColumnCard/TaskColumnCard';
 
 
 
-export const ColumnTasksList = ({items}) => {
+export const ColumnTasksList = ({items, listId}) => {
   
   
 
@@ -12,7 +12,7 @@ export const ColumnTasksList = ({items}) => {
     <>
     
     <ul>
-      <TaskColumnCard items={items}/>
+      <TaskColumnCard items={items} listId={listId}/>
     </ul>
     
     </>

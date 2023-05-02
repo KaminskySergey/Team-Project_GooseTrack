@@ -60,3 +60,27 @@ export const editTasks = createAsyncThunk(
     }
   }
 );
+
+export const transferTask = createAsyncThunk(
+  'tasks/editTasks',
+  async ({ _Id, category }, { getState }) => {
+    console.log( category, 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt' )
+    console.log(_Id)
+    try {
+      const {data} = await axios.patch(`/tasks/${_Id}`, { category })
+      console.log(data, 'data')
+      return data
+    } catch (error) {
+      
+    }
+    // console.log({ taskId, sourceColumnId, destinationColumnId }, '{ taskId, sourceColumnId, destinationColumnId }')
+    // console.log(tasks)
+    // const task = tasks[sourceColumnId].find((task) => task.id === taskId);
+    // const newSourceColumn = tasks[sourceColumnId].filter(
+    //   (task) => task.id !== taskId
+    // );
+    // const newDestinationColumn = [...tasks[destinationColumnId], task];
+
+    // return { newSourceColumn, newDestinationColumn };
+  }
+);

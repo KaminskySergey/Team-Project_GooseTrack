@@ -1,4 +1,4 @@
-import { TaskToolbar, TaskModal } from './TasksCardComponent/index';
+import { TaskToolbar } from './TasksCardComponent/index';
 
 import {
   TodoText,
@@ -18,7 +18,7 @@ import { useState } from 'react';
 
 
 
-export const TaskColumnCard = ({items}) => {
+export const TaskColumnCard = ({items, listId}) => {
   const [isModalOpen, setIsOpenModal] = useState(false)
   
   const [currentTodo, setCurrentTodo] = useState(null)
@@ -42,7 +42,7 @@ export const TaskColumnCard = ({items}) => {
 
     
   }
-
+  
   
   
   return (
@@ -59,7 +59,7 @@ export const TaskColumnCard = ({items}) => {
           />
           <Status status={el.status}>Medium</Status>
         </Wrap>
-        <TaskToolbar handleTodoId={handleTodoId}  handleDeleteTodo={handleDeleteTodo} todo={el} handleToggle={handleToggle} />
+        <TaskToolbar listId={listId} handleTodoId={handleTodoId}  handleDeleteTodo={handleDeleteTodo} todo={el} handleToggle={handleToggle} />
       </ToolBarBox >
       {/* <TaskModal /> */}
     </li>
