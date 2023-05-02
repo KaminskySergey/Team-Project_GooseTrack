@@ -4,7 +4,9 @@ import {
   TodoText,
   AvatarImg,
   ToolBarBox,
-  Status,
+  StatusRed,
+  StatusMedium,
+  StatusLow,
   Wrap,
 } from './TaskColumnCard.styled';
 import { useDispatch } from 'react-redux';
@@ -39,7 +41,11 @@ export const TaskColumnCard = ({ items, listId }) => {
           <ToolBarBox>
             <Wrap>
               <AvatarImg src={el.avatar} alt={el.name} />
-              <Status status={el.status}>Medium</Status>
+              {el.priority === 'high' && <StatusRed>{el.priority}</StatusRed>}
+              {el.priority === 'medium' && (
+                <StatusMedium>{el.priority}</StatusMedium>
+              )}
+              {el.priority === 'low' && <StatusLow>{el.priority}</StatusLow>}
             </Wrap>
             <TaskToolbar
               listId={listId}
