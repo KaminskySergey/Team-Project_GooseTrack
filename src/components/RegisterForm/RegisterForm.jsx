@@ -47,6 +47,7 @@ export const RegisterForm = () => {
           password: values.password,
         })
       );
+
       resetForm();
       if (!isError) {
         navigate('/login');
