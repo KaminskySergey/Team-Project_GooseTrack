@@ -67,21 +67,7 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle}) => {
       handleToggle()
   };
 
-
-    const todo = {
-      title: values.title,
-      startTime: values.startTime,
-      endTime: values.endTime,
-      priority: values.priority,
-      _id: currentTodo._id,
-      category: values.category,
-    };
-
-
-    dispatch(editTasks(todo));
-    resetForm();
-
-    handleToggle();
+   
   };
 
   return (
