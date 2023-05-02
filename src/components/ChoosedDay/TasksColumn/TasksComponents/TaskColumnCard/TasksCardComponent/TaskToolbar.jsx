@@ -33,33 +33,6 @@ export const TaskToolbar = ({
   const [currentTodo, setCurrentTodo] = useState('');
   const dispatch = useDispatch();
 
-  const handleTransfer = async el => {
-    const newNextId = await handleNextId(el);
-
-    dispatch(transferTask({ _id: currentTodo, category: newNextId }));
-  };
-
-  const handleNextId = async el => {
-    console.log(el);
-    let newNextId = '';
-    switch (el) {
-      case 'Todo':
-        newNextId = 'todo';
-        break;
-      case 'In Progress':
-        newNextId = 'inProgress';
-        break;
-      case 'Done':
-        newNextId = 'done';
-        break;
-      default:
-        break;
-    }
-    await setNextId(newNextId);
-    console.log(newNextId, 'newNextIdnewNextIdnewNextIdnewNextIdnewNextId');
-    return newNextId;
-  };
-
 
   const handleTransfer = async (el) => {
     const newNextId = await handleNextId(el);
