@@ -1,6 +1,6 @@
 import { Сontainer, ImageContainer, Text } from './RegisterPage.styled';
 
-import { RegisterForm } from 'components/RegisterForm';
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import { AuthNavigate } from 'components/AuthNavigate';
 import { ReactComponent as Message } from 'images/svg/message.svg';
 import { ReactComponent as Goose } from 'images/svg/Goose.svg';

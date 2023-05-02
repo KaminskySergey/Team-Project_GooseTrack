@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as LogoIcon } from '../../images/svg/logo.svg';
 
 export const Aside = styled.aside`
-  height: 100vh;
+  /* height: 100vh; */
   width: 290px;
   background-color: ${props => props.theme.asideBarBackground};
   padding-left: 24px;
