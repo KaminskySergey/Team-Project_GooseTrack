@@ -63,12 +63,12 @@ export const editTasks = createAsyncThunk(
 
 
 export const transferTask = createAsyncThunk(
-  'tasks/editTasks',
-  async ({ _Id, category }, { getState }) => {
+  'tasks/transferTask',
+  async ({ _id, category }, { getState }) => {
     console.log(category, 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt')
-    console.log(_Id)
+    console.log(_id)
     try {
-      const { data } = await axios.patch(`/tasks/${_Id}`, { category })
+      const { data } = await axios.patch(`/tasks/${_id}`, { category })
       console.log(data, 'data')
       return data
     } catch (error) {
