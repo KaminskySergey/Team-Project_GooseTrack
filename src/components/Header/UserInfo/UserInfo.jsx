@@ -21,7 +21,7 @@ export const UserInfo = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return 
   }
 
   if (!userInfo) {
