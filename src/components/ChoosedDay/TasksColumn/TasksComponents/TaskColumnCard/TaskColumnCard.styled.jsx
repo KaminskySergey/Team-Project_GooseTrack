@@ -56,7 +56,7 @@ export const ToolBarBox = styled.div`
   align-items: flex-end;
 `;
 
-export const Status = styled.p`
+export const StatusRed = styled.p`
   padding: 4px 12px;
   border-radius: 4px;
   max-height: 20px;
@@ -65,9 +65,33 @@ export const Status = styled.p`
   font-size: 10px;
   line-height: 1.2;
   color: ${props => props.theme.secondaryBackgroundColor};
-  
-  background-color: aqua;
-  
+
+  background-color: #f00;
+`;
+export const StatusLow = styled.p`
+  padding: 4px 12px;
+  border-radius: 4px;
+  max-height: 20px;
+
+  font-family: 'InterSemiBoltMinSize';
+  font-size: 10px;
+  line-height: 1.2;
+  color: ${props => props.theme.secondaryBackgroundColor};
+
+  background-color: #0015ff;
+`;
+
+export const StatusMedium = styled.p`
+  padding: 4px 12px;
+  border-radius: 4px;
+  max-height: 20px;
+
+  font-family: 'InterSemiBoltMinSize';
+  font-size: 10px;
+  line-height: 1.2;
+  color: ${props => props.theme.secondaryBackgroundColor};
+
+  background-color: #ff7700;
 `;
 
 export const Wrap = styled.div`

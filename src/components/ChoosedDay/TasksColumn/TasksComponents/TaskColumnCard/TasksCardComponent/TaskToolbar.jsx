@@ -37,32 +37,6 @@ export const TaskToolbar = ({
     handleToggle();
   };
 
-  // const handleNextId = async (el, _id) => {
-  //   console.log(_id, 'rrrr')
-  //   switch (el) {
-  //     case 'Todo':
-  //       await setNextId('toDo')
-  //       await setCurrentTodo(_id)
-  //       break
-  //     case 'In Progress':
-  //       await setNextId('inProgress')
-  //       await setCurrentTodo(_id)
-  //       break
-  //     case 'Done':
-  //       await setNextId('done')
-  //       await setCurrentTodo(_id)
-  //       break
-  //     default:
-  //       break;
-  //   }
-  // };
-
-  // const handleTransfer = async el => {
-  //   await handleNextId(el);
-  //   // console.log(nextId, 'qqqqqqqqqqqqqqqqqqqqqqqqqqq')
-  //   // dispatch(transferTask({ _Id: currentTodo, category: nextId }))
-  // };
-
   const data = Object.keys(value).filter(item => item !== listId);
 
   const filteredValue = data.reduce((acc, key) => {
