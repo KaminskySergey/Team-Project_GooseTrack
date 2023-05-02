@@ -1,12 +1,30 @@
-import { useSelector } from 'react-redux';
-import { selectUserInfo } from 'redux/auth/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+// import { selectUserInfo } from 'redux/auth/selectors';
+import { selectUserInfo } from 'redux/user/selectors';
+import { fetchUser } from 'redux/user/operations';
 
 import { Name, ImgWrapper, Avatar, NameFirstLetter } from './UserInfo.styled';
 
 export const UserInfo = () => {
+  const dispatch = useDispatch();
   const userInfo = useSelector(selectUserInfo);
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (!userInfo.name || !userInfo.name) {
+  useEffect(() => {
+    const getUserInfo = async () => {
+      await dispatch(fetchUser());
+      setIsLoading(false);
+    };
+
+    getUserInfo();
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!userInfo) {
     return;
   }
 
