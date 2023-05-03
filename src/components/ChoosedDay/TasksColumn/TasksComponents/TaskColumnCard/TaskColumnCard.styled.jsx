@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const TaskItem = styled.div`
   display: block;
-  max-width: 299px;
+  max-width: 100%;
   min-height: 108px;
   border-radius: 8px;
   padding-top: 14px;
@@ -17,7 +17,7 @@ export const TaskItem = styled.div`
   }
 
   @media (min-width: 768px) {
-    max-width: 301px;
+    max-width: 100%;
     min-height: 112px;
     padding-left: 14px;
 

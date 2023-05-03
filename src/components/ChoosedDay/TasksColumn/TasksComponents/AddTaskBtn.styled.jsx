@@ -17,8 +17,8 @@ export const AddTaskButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 299px;
-  height: 48px;
+  width: 100%;
+  min-height: 48px;
   border: ${props => props.theme.borderAddTask};
 
   cursor: pointer;
