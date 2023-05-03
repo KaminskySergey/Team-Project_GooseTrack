@@ -3,8 +3,8 @@ import { ReactComponent as IconAdd } from 'images/svg/addIcon.svg';
 export const Item = styled.li`
   display: flex;
   flex-direction: column;
-  padding: 18px 6px 10px 18px;
-  min-width: 335px;
+  padding: 18px 18px 10px 18px;
+  min-width: 301px;
   width: 100%;
   max-height: 432px;
   list-style: none;
@@ -14,7 +14,7 @@ export const Item = styled.li`
   @media (min-width: 768px) {
     min-width: 344px;
     max-height: 568px;
-    padding: 18px 12px 28px 20px;
+    padding: 18px 23px 28px 20px;
   }
 `;
 
