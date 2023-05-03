@@ -57,6 +57,7 @@ export const theme = {
     // TaskModal
     taskModalInputColor: '#F6F6F6',
     taskModalLabelColor: '#5D5D5D',
+    titleColor: 'rgba(52, 52, 52, 0.8)',
   },
 
   // Стилі для темної теми
@@ -104,6 +105,7 @@ export const theme = {
 
     TextColorUserProfile: '#111111',
     //CalendarHead
+    titleColor: 'rgba(250, 250, 250, 0.3)',
     CalendarHead: '#FFFFFF',
     CurrentDate: '#FFFFFF',
   },

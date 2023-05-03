@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as IconAdd } from 'images/svg/addIcon.svg';
+
 export const Item = styled.li`
   display: flex;
   flex-direction: column;
@@ -28,4 +29,22 @@ export const IconAddTodo = styled(IconAdd)`
   &:focus {
     stroke: ${props => props.theme.accentColor};
   }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 1.1;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  font-family: 'InterBolt';
+  color: ${props => props.theme.buttonAddTaskColor};
+
+  font-weight: 700;
 `;
