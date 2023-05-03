@@ -7,7 +7,16 @@ export const Box = styled.ul`
   width: 62px;
   li {
     svg {
+      cursor: pointer;
+      transition: all 250ms;
+      transform: scale(1);
       stroke: ${props => props.theme.mainTextColor};
+
+      :hover,
+      :focus {
+        transform: scale(1.1);
+        stroke: ${props => props.theme.accentColor};
+      }
     }
   }
 

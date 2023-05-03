@@ -27,10 +27,7 @@ const ModalCreate = ({ children, onClose }) => {
   return createPortal(
     <Backdrop onClick={handleClose}>
       <Modal>
-        <CloseModal
-          onClick={onClose}
-          style={{ position: 'absolute', top: 19, right: 19 }}
-        />
+        <CloseModal onClick={onClose} />
         {children}
       </Modal>
     </Backdrop>,

@@ -21,6 +21,7 @@ export const AddTaskButton = styled.button`
   border: ${props => props.theme.borderAddTask};
 
   cursor: pointer;
+  transition: all 250ms;
   background-color: ${props => props.theme.buttonBackgroundColorAddTask};
   color: ${props => props.theme.buttonAddTaskColor};
 
@@ -30,7 +31,7 @@ export const AddTaskButton = styled.button`
     color: ${props => props.theme.buttonAddTaskColorHover};
   }
 
-  :hover ${Icon} {
+  :hover ${Icon}, :focus ${Icon} {
     stroke: ${props => props.theme.buttonAddTaskColorHover};
   }
 `;
