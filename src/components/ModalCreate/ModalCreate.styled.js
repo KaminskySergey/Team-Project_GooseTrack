@@ -12,7 +12,7 @@ position: fixed;
 
 export const Modal = styled.div`
     position: absolute;
-    min-width: 303px;
+    max-width: 95%;
     padding: 48px 18px 40px;
     top: 50%;
     left: 50%;
@@ -20,6 +20,7 @@ export const Modal = styled.div`
     background-color: ${props => props.theme.mainBackgroundColor};
 
     @media (min-width: 375px) {
+        width: 300px;
         /* height: 50%; */
     }
     @media (max-width: 1279px) {
