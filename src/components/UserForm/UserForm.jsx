@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { Formik } from 'formik';
 
 import { Wrapper, Button, Title, AccountForm, Wrap } from '.';
@@ -40,7 +41,15 @@ export const UserForm = () => {
         telegram,
       }}
       validationSchema={userShema}
-      onSubmit={values => dispatch(updateUser(values))}
+      onSubmit={async values => {
+        try {
+          await dispatch(updateUser(values));
+
+          toast.success('Profile is successfully updated');
+        } catch (errror) {
+          toast.error(errror.message);
+        }
+      }}
     >
       {({ values, setFieldValue }) => (
         <AccountForm>
