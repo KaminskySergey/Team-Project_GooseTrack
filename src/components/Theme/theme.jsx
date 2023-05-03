@@ -9,7 +9,12 @@ export const theme = {
     // animation
     defaultTransition: 'all 250ms',
     // buttons
+    borderAddTask: '2px dashed #3e85f3',
+    buttonAddTaskColor: '#171820',
+    buttonAddTaskColorHover: '#FFFFFF',
     buttontextColor: '#FFFFFF',
+    buttonBackgroundColorAddTask: '#E3F3FF',
+    buttonBackgroundColorAddTaskHover: '#3E85F3',
     buttonBackgroundColor: '#3E85F3',
     buttonBackgroundColorHover: '#2B78EF',
     buttonShadow: ' 4px 2px 16px rgba(136, 165, 191, 0.48)',
@@ -58,6 +63,11 @@ export const theme = {
   dark: {
     defaultTransition: 'all 250ms',
     // buttons
+    borderAddTask: 'none',
+    buttonAddTaskColor: '#FFFFFF',
+    buttonAddTaskColorHover: '#111111',
+    buttonBackgroundColorAddTask: '#3E85F3',
+    buttonBackgroundColorAddTaskHover: '#E3F3FF',
     buttontextColor: '#FFFFFF',
     buttonBackgroundColor: '#3E85F3',
     buttonBackgroundColorHover: '#2B78EF',

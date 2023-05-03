@@ -31,7 +31,7 @@ export const AddTaskBtn = ({ listId, askDay }) => {
   return (
     <>
       <AddTaskButton type="button" onClick={handleToggle}>
-        ADD TODO
+        Add task
       </AddTaskButton>
       {isModalOpen && (
         <ModalCreate onClose={handleToggle}>
