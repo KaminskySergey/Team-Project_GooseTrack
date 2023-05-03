@@ -1,64 +1,63 @@
-import { ReactComponent as Move } from '../../../../../../images/svg/iconMove.svg';
+import { ReactComponent as Move } from 'images/svg/iconMove.svg';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Modal = styled.div`
-position: absolute;
-    top: 26px;
-    left: 0;
-    background-color: #FFFFFF;
-    border-radius: 8px;
-    box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
-    z-index: 2;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding: 20px 24px;
-   
-    /* @media (min-width: 375px) {
-        width: 90%;
-        height: 50%;
-    }
-    @media (max-width: 1279px) {
-        /* width and height */
-    /* }  */
-    @media (min-width: 1280px) {
-        width: 147px;
-        height: 90px;
-        
-    }
-    `
+  position: absolute;
+  top: 26px;
+  left: -40px;
+  background-color: ${props => props.theme.mainBackgroundColor};
+  transition: ${props => props.theme.defaultTransition};
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  width: 115px;
+  height: 80px;
+
+  @media (min-width: 768px) {
+    padding: 24px;
+    width: 147px;
+    height: 90px;
+  }
+`;
 
 export const ListModalIcon = styled.ul`
-li {
+  li {
     display: flex;
+    justify-content: space-between;
     cursor: pointer;
-font-family: 'InterNormal';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 18px;
-transition: all 250ms;
-&:hover svg g path, &:focus svg g path{
-    stroke: #3E85F3;
-}
-&:hover p, &:focus p{
-    color: #3E85F3;
-}
-svg { 
-    g {
+    font-family: 'InterNormal';
+    font-size: 12px;
+    line-height: calc((14 / 12) * 100%);
+    transition: ${props => props.theme.defaultTransition};
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+    &:hover svg g path,
+    &:focus svg g path {
+      stroke: ${props => props.theme.mainTextColor};
+    }
+    &:hover p,
+    &:focus p {
+      color: ${props => props.theme.accentColor};
+    }
+    svg {
+      g {
         path {
-        stroke: #616161;
-    }}
+          stroke: ${props => props.theme.mainTextColor};
+        }
+      }
     }
 
-color: #616161;
-
-}
-`
+    color: ${props => props.theme.mainTextColor};
+  }
+`;
 
 export const MoveIconModal = styled(Move)`
-margin-left: 10px;
-
-
-`
+  margin-left: 10px;
+`;
