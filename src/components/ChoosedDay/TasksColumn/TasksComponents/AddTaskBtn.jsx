@@ -3,7 +3,10 @@ import ModalTodo from 'pages/ModalTodo/ModalTodo';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTasks } from 'redux/tasks/operations';
-import { AddTaskButton } from 'components/ChoosedDay/TasksColumn/TasksComponents/AddTaskBtn.styled';
+import {
+  AddTaskButton,
+  Icon,
+} from 'components/ChoosedDay/TasksColumn/TasksComponents/AddTaskBtn.styled';
 
 export const AddTaskBtn = ({ listId, askDay }) => {
   const [isModalOpen, setIsOpenModal] = useState(false);
@@ -31,6 +34,7 @@ export const AddTaskBtn = ({ listId, askDay }) => {
   return (
     <>
       <AddTaskButton type="button" onClick={handleToggle}>
+        <Icon />
         Add task
       </AddTaskButton>
       {isModalOpen && (
