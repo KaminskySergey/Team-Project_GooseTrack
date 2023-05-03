@@ -1,14 +1,15 @@
-import styled from "styled-components";
-
-
+import styled from 'styled-components';
 
 export const List = styled.ul`
-display: flex;
-margin: -15px;
-width: calc((100% - 3 * 27px) / 3)
-
-
-li {
-
-}
-`
+  display: flex;
+  list-style: none;
+  width: 100%;
+  gap: 16px;
+  margin-top: 16px;
+  overflow: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  @media screen and (min-width: 1280px) {
+    gap: 27px;
+  }
+`;

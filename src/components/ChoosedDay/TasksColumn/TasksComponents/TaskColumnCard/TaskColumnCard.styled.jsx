@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+// import { style } from 'styled-system';
 
-export const Box = styled.div`
+export const TaskItem = styled.div`
   display: block;
   max-width: 299px;
   min-height: 108px;
@@ -9,8 +10,9 @@ export const Box = styled.div`
   padding-right: 14px;
   padding-bottom: 18px;
   padding-left: 15px;
+  transition: ${props => props.theme.defaultTransition};
   background-color: ${props => props.theme.secondaryBackgroundColor};
-  not:last-child {
+  &:not(:last-child) {
     margin-bottom: 18px;
   }
 
@@ -19,7 +21,7 @@ export const Box = styled.div`
     min-height: 112px;
     padding-left: 14px;
 
-    not:last-child {
+    &:not(:last-child) {
       margin-bottom: 14px;
     }
   }
@@ -34,13 +36,27 @@ export const TodoText = styled.p`
   margin-bottom: 28px;
 
   color: ${props => props.theme.mainTextColor};
-  font-family: 'InterNormal', sans-serif;
+  font-family: 'InterNormal';
   font-size: 14px;
-  line-height: 1.29;
+  font-size: 14px;
+  line-height: 18px;
+  line-height: calc((18 / 14) * 100%);
 
   @media (min-width: 768px) {
     margin-bottom: 30px;
   }
+`;
+
+export const ImgWrapper = styled.div`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.8px solid ${props => props.theme.accentColor};
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3f3ff;
 `;
 export const AvatarImg = styled.img`
   width: 32px;
@@ -48,6 +64,13 @@ export const AvatarImg = styled.img`
   border-radius: 50%;
   border: 1.8px solid ${props => props.theme.mainTextColor};
   margin-right: 8px;
+`;
+
+export const NameFirstLetter = styled.p`
+  font-family: 'InterBolt';
+  font-size: 20px;
+  line-height: calc((24 / 18) * 100%);
+  color: ${props => props.theme.accentColor};
 `;
 
 export const ToolBarBox = styled.div`
@@ -64,7 +87,7 @@ export const StatusRed = styled.p`
   font-family: 'InterSemiBoltMinSize';
   font-size: 10px;
   line-height: 1.2;
-  color: ${props => props.theme.secondaryBackgroundColor};
+  color: white;
 
   background-color: #f00;
 `;
@@ -76,7 +99,7 @@ export const StatusLow = styled.p`
   font-family: 'InterSemiBoltMinSize';
   font-size: 10px;
   line-height: 1.2;
-  color: ${props => props.theme.secondaryBackgroundColor};
+  color: white;
 
   background-color: #0015ff;
 `;
@@ -89,7 +112,7 @@ export const StatusMedium = styled.p`
   font-family: 'InterSemiBoltMinSize';
   font-size: 10px;
   line-height: 1.2;
-  color: ${props => props.theme.secondaryBackgroundColor};
+  color: white;
 
   background-color: #ff7700;
 `;
@@ -97,4 +120,5 @@ export const StatusMedium = styled.p`
 export const Wrap = styled.div`
   display: flex;
   align-items: flex-end;
+  gap: 8px;
 `;

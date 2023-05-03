@@ -23,13 +23,18 @@ export const BurgerButton = styled.button`
   } */
 `;
 export const BurgerIcon = styled(Icon)`
-  width: 34px;
-  height: 34px;
+  width: 24px;
+  height: 24px;
   stroke: ${props => props.theme.headerBurgerIcon};
   transition: ${props => props.theme.defaultTransition};
   &:hover,
   &:focus {
     stroke: ${props => props.theme.buttonBackgroundColorHover};
+  }
+
+  @media (min-width: 768px) {
+    width: 34px;
+    height: 34px;
   }
 `;
 
@@ -58,7 +63,7 @@ export const Title = styled.h2`
   margin-bottom: 8px;
   font-family: 'InterBolt';
   font-size: 32px;
-  line-height: calc((32/ 32) * 100%);
+  line-height: calc((32 / 32) * 100%);
   color: ${props => props.theme.mainTextColor};
 `;
 

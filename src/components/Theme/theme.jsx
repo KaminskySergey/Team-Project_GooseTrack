@@ -49,6 +49,9 @@ export const theme = {
     CalendarHead: '#616161',
     CurrentDate: '#FFFFFF',
 
+    // TaskModal
+    taskModalInputColor: '#F6F6F6',
+    taskModalLabelColor: '#5D5D5D',
   },
 
   // Стилі для темної теми
@@ -93,6 +96,9 @@ export const theme = {
     //CalendarHead
     CalendarHead: '#FFFFFF',
     CurrentDate: '#FFFFFF',
-
   },
+
+  // TaskModal
+  taskModalInputColor: '#171820',
+  taskModalLabelColor: '#5B5C61',
 };
