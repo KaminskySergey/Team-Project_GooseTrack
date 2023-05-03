@@ -15,7 +15,7 @@ export const ChangePeriod = styled(NavLink)`
   gap: 149px;
   width: 76px;
   height: 34px;
-  font-family: 'Inter';
+  font-family: 'InterNormal';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -28,12 +28,13 @@ export const ChangePeriod = styled(NavLink)`
     border-radius: 8px 0px 0px 8px;
     padding: 8px 16px;
     border-right: 1px solid rgba(62, 133, 243, 0.2);
-    background: ${props => props.ischoosedmonth ==='false' ? '#e3f3ff' : "#CAE8FF"};
+    background: ${props =>
+      props.ischoosedmonth === 'false' ? '#e3f3ff' : '#CAE8FF'};
   }
 
   :last-child {
     border-radius: 0px 8px 8px 0px;
-    background: ${props => props.ischoosedmonth ==='true' ? '#e3f3ff' : "#CAE8FF"};
+    background: ${props =>
+      props.ischoosedmonth === 'true' ? '#e3f3ff' : '#CAE8FF'};
   }
-
 `;
