@@ -17,10 +17,12 @@ import {
 import Icon from '../Icon/Icon';
 import { useDispatch } from 'react-redux';
 import { logout } from 'redux/auth/authOperations';
+import { format, startOfToday } from 'date-fns';
 
 
 const AsideBar = ({ onSidebarShow }) => {
   const dispatch = useDispatch();
+  const month = format(startOfToday(), 'MMMMyyyy')
 
   const handleLogout = () => dispatch(logout());
 
@@ -54,7 +56,7 @@ const AsideBar = ({ onSidebarShow }) => {
               </Link>
             </Item>
             <Item>
-              <Link to="/calendar">
+              <Link to={`/calendar/month/${month}`}>
                 <Icon id="calendarCheked" />
                 <span style={{ marginLeft: '10px' }}>Calendar</span>
               </Link>

@@ -80,8 +80,12 @@ export default function CalendarPage() {
     }
   };
 
-  const toogleChooseMonth = () => {
-    setIsChoosedMonth(prev => !prev);
+  const handleChooseMonth = () => {
+    setIsChoosedMonth(true);
+  };
+
+  const handleChooseDay = () => {
+    setIsChoosedMonth(false);
   };
 
   const newFormat = new Date(askDay);
@@ -99,12 +103,15 @@ export default function CalendarPage() {
         changeAskDay={changeAskDay}
         isChoosedMonth={isChoosedMonth}
         askDay={askDay}
-        toogleChooseMonth={toogleChooseMonth}
+        handleChooseMonth={handleChooseMonth}
+        handleChooseDay={handleChooseDay}
       />
       {isChoosedMonth ? (
-        <ChoosedMonth calendar={calendar} askDay={askDay} />
+        <ChoosedMonth calendar={calendar} 
+        askDay={askDay} />
       ) : (
-        <ChoosedDay weekCalendar={weekCalendar} askDay={askDay}/>
+        <ChoosedDay weekCalendar={weekCalendar} 
+        askDay={askDay}/>
       )}
     </>
   );

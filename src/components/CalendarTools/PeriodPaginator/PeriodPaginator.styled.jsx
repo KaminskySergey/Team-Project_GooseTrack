@@ -27,7 +27,7 @@ font-size: 14px;
 line-height: 1.29;
 text-align: center;
 text-transform: uppercase;
-min-width: 150px;
+min-width: 166px;
 
 @media(min-width: 768px) {
     padding: 8px 12px;
