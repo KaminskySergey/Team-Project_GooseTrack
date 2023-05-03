@@ -89,7 +89,7 @@ const ModalTodo = ({
         <Form>
           <Box marginBottom="18px" color={'red'} fontSize={12}>
             <label htmlFor="title">
-              <TitleInput>Title:</TitleInput>
+              <TitleInput>Title</TitleInput>
               <StyledInput name="title">
                 {({ field }) => (
                   <StyledTextField
@@ -106,7 +106,7 @@ const ModalTodo = ({
             <ErrorMessage name="title" />
           </Box>
 
-          <Box display="flex" justifyContent={'space-between'}>
+          <Box display="flex" gap="15px" justifyContent={'space-between'}>
             <Box marginBottom="28px" color={'red'} fontSize={12}>
               <label htmlFor="startTime">
                 <TitleInput>Start</TitleInput>
@@ -283,10 +283,8 @@ const ModalTodo = ({
                 variant="contained"
                 color="primary"
               >
-
                 Cansel
               </ButtonCancel>
-
             </div>
           )}
         </Form>
