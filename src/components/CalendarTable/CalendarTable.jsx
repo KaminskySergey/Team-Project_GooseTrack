@@ -40,8 +40,6 @@ export const CalendarTable = ({ calendar, askDay }) => {
     );
   };
 
-  console.log(filteredTasks);
-
 
   return (
     <GridWrapper>
