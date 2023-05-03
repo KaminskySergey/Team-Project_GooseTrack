@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { ReactComponent as IconPlus } from 'images/svg/plus.svg';
 
 import { ReactComponent as IconPlus } from 'images/svg/plusAdd.svg';
 
