@@ -13,7 +13,9 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-
+  border: 1px solid rgba(220, 227, 229, 0.8);
+  box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
+  border-radius: 8px;
   max-width: 95%;
   padding: 48px 18px 40px;
   top: 50%;

@@ -42,7 +42,7 @@
 
 body {
 	margin: 0;
-	font-family: InterSemiBolt;
+	font-family: 'InterSemiBolt';
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
