@@ -53,7 +53,7 @@ const AsideBar = ({ onSidebarShow }) => {
               </Link>
             </Item>
             <Item>
-              <Link to={`/calendar/month`}>
+              <Link to={`/calendar`}>
                 <Icon id="calendarCheked" />
                 <span style={{ marginLeft: '10px' }}>Calendar</span>
               </Link>
