@@ -10,7 +10,6 @@ import { fetchUser, updateUser } from 'redux/user/operations';
 import { AvatarUploader } from 'components/AvatarUploader';
 import { UserFild } from 'components/UserFild';
 import { DateSelection } from 'components/DateSelection';
-import { toast } from 'react-toastify';
 
 export const UserForm = () => {
   const dispatch = useDispatch();
@@ -58,17 +57,7 @@ export const UserForm = () => {
         telegram,
       }}
       validationSchema={userShema}
-
-      onSubmit={async values => {
-        try {
-          await dispatch(updateUser(values));
-
-          toast.success('Profile is successfully updated');
-        } catch (errror) {
-          toast.error(errror.message);
-        }
-      }}
-
+      onSubmit={handleSubmit}
     >
       {({ values, setFieldValue }) => (
         <AccountForm>
