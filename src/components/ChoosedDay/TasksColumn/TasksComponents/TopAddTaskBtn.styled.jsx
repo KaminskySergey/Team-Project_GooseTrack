@@ -9,6 +9,7 @@ export const AddTaskButton = styled.button`
 export const IconAddTodo = styled(IconAdd)`
   height: 22px;
   width: 22px;
+  cursor: pointer;
   stroke: ${props => props.theme.mainTextColor};
   transition: ${props => props.theme.defaultTransition};
 
