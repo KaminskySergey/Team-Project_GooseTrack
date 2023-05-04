@@ -13,9 +13,7 @@ export const TasksColumn = ({ items, listId, askDay }) => {
       <Container>
         <ColumnHeadBar title={listId} />
         <TopAddTaskBtn listId={listId} askDay={askDay} />
-        {/* <IconAddTodo /> */}
       </Container>
-
       <ColumnTasksList items={items} listId={listId} />
       <AddTaskBtn listId={listId} askDay={askDay} />
     </Item>
