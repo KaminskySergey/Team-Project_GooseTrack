@@ -21,7 +21,7 @@ export const tasksSlise = createSlice({
       .addCase(fetchTasksAll.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        console.log('MY PAYLOAD', action.payload);
+
         state.items = [...action.payload.task];
       })
 
@@ -37,7 +37,7 @@ export const tasksSlise = createSlice({
       .addCase(addTasks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        console.log('ACTIONADDPAYLOAD', action.payload.task);
+
         state.items = [...state.items, action.payload.task];
       })
 

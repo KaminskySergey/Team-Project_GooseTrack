@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { ReactComponent as EditModal } from 'images/svg/editModal.svg';
 import { ReactComponent as AddModal } from 'images/svg/plus.svg';
 
-
 import { Button, FormControlLabel, RadioGroup } from '@mui/material';
 
 export const Label = styled(Field)``;
@@ -12,7 +11,8 @@ export const TitleInput = styled.p`
   margin-bottom: 8px;
   font-family: 'InterNormal';
   font-size: 12px;
-  color: rgba(52, 52, 52, 0.8);
+  line-height: 0.85;
+  color: ${props => props.theme.titleColor};
 `;
 
 export const StyledInput = styled(Field)`
@@ -60,7 +60,7 @@ export const StyledTextFieldTime = styled.input`
   background-color: #f7f7f7;
   border-radius: 8px;
   border: none;
-  width: 163px;
+  width: 125px;
   padding: 14px 0;
   padding-left: 18px;
   font-family: 'InterNormal';
@@ -72,6 +72,10 @@ export const StyledTextFieldTime = styled.input`
   &:hover,
   &:focus {
     outline: 1px solid rgb(62, 133, 243);
+  }
+
+  @media (min-width: 768px) {
+    width: 163px;
   }
 `;
 
@@ -138,12 +142,13 @@ export const ButtonForm = styled(Button)`
 `;
 
 export const ButtonCancel = styled.button`
-  width: 144px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   height: 48px;
   padding-top: 14px;
   padding-bottom: 16px;
-  padding-left: 48px;
-  padding-right: 48px;
+
   font-family: 'InterNormal';
   font-weight: 600;
   font-size: 14px;
@@ -156,12 +161,17 @@ export const ButtonCancel = styled.button`
   background-color: #eeeeee;
   color: #111111;
 
-
-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
   :hover,
   :focus {
     background-color: #e0dfdf;
+  }
+
+  @media (min-width: 768px) {
+    width: 144px;
+    padding-left: 48px;
+    padding-right: 48px;
   }
 `;
 

@@ -5,10 +5,10 @@ import { useDispatch } from 'react-redux';
 import { addTasks } from 'redux/tasks/operations';
 import {
   AddTaskButton,
-  Icon,
-} from 'components/ChoosedDay/TasksColumn/TasksComponents/AddTaskBtn.styled';
+  IconAddTodo,
+} from './TopAddTaskBtn.styled';
 
-export const AddTaskBtn = ({ listId, askDay }) => {
+export const TopAddTaskBtn = ({ listId, askDay }) => {
   const [isModalOpen, setIsOpenModal] = useState(false);
 
   // const [isAddTodo, setIsAddTodo] = useState(false)
@@ -34,8 +34,7 @@ export const AddTaskBtn = ({ listId, askDay }) => {
   return (
     <>
       <AddTaskButton type="button" onClick={handleToggle}>
-        <Icon />
-        Add task
+        <IconAddTodo />
       </AddTaskButton>
       {isModalOpen && (
         <ModalCreate onClose={handleToggle}>

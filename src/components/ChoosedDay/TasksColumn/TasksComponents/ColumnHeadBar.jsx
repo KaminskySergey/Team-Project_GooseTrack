@@ -5,7 +5,7 @@ export const ColumnHeadBar = ({ title }) => {
     case 'toDo':
       return 'To do';
     case 'inProgress':
-      return 'In Progress';
+      return 'In progress';
     case 'done':
       return 'Done';
     default:

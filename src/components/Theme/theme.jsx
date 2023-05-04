@@ -9,7 +9,12 @@ export const theme = {
     // animation
     defaultTransition: 'all 250ms',
     // buttons
+    borderAddTask: '2px dashed #3e85f3',
+    buttonAddTaskColor: '#171820',
+    buttonAddTaskColorHover: '#FFFFFF',
     buttontextColor: '#FFFFFF',
+    buttonBackgroundColorAddTask: '#E3F3FF',
+    buttonBackgroundColorAddTaskHover: '#3E85F3',
     buttonBackgroundColor: '#3E85F3',
     buttonBackgroundColorHover: '#2B78EF',
     buttonShadow: ' 4px 2px 16px rgba(136, 165, 191, 0.48)',
@@ -49,12 +54,21 @@ export const theme = {
     CalendarHead: '#616161',
     CurrentDate: '#FFFFFF',
 
+    // TaskModal
+    taskModalInputColor: '#F6F6F6',
+    taskModalLabelColor: '#5D5D5D',
+    titleColor: 'rgba(52, 52, 52, 0.8)',
   },
 
   // Стилі для темної теми
   dark: {
     defaultTransition: 'all 250ms',
     // buttons
+    borderAddTask: 'none',
+    buttonAddTaskColor: '#FFFFFF',
+    buttonAddTaskColorHover: '#111111',
+    buttonBackgroundColorAddTask: '#3E85F3',
+    buttonBackgroundColorAddTaskHover: '#E3F3FF',
     buttontextColor: '#FFFFFF',
     buttonBackgroundColor: '#3E85F3',
     buttonBackgroundColorHover: '#2B78EF',
@@ -91,8 +105,12 @@ export const theme = {
 
     TextColorUserProfile: '#111111',
     //CalendarHead
+    titleColor: 'rgba(250, 250, 250, 0.3)',
     CalendarHead: '#FFFFFF',
     CurrentDate: '#FFFFFF',
-
   },
+
+  // TaskModal
+  taskModalInputColor: '#171820',
+  taskModalLabelColor: '#5B5C61',
 };

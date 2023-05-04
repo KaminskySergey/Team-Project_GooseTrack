@@ -1,6 +1,7 @@
 import { TaskToolbar } from './TasksCardComponent/index';
 
 import {
+  TaskItem,
   TodoText,
   AvatarImg,
   ToolBarBox,
@@ -8,17 +9,19 @@ import {
   StatusMedium,
   StatusLow,
   Wrap,
+  ImgWrapper,
+  NameFirstLetter,
 } from './TaskColumnCard.styled';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUserInfo } from 'redux/user/selectors';
 import { deleteTasks } from 'redux/tasks/operations';
 import ModalCreate from 'components/ModalCreate/ModalCreate';
-import ModalTodo from 'pages/ModalTodo/ModalTodo';
+import ModalEditTodo from 'pages/ModalEditTodo/ModalEditTodo';
 import { useState } from 'react';
 
 export const TaskColumnCard = ({ items, listId }) => {
   const [isModalOpen, setIsOpenModal] = useState(false);
-
+  const userInfo = useSelector(selectUserInfo);
   const [currentTodo, setCurrentTodo] = useState(null);
 
   const dispatch = useDispatch();
@@ -33,14 +36,23 @@ export const TaskColumnCard = ({ items, listId }) => {
     setCurrentTodo(data);
   };
 
+  const userNameTSpit = userInfo.name.split('');
+  const firstLeterOfUserName = userNameTSpit[0].toUpperCase();
+
   return (
     <>
       {items?.map(el => (
-        <li key={el._id}>
+        <TaskItem key={el._id}>
           <TodoText>{el.title}</TodoText>
           <ToolBarBox>
             <Wrap>
-              <AvatarImg src={el.avatar} alt={el.name} />
+              {userInfo && userInfo.avatarURL !== '' ? (
+                <AvatarImg src={userInfo.avatarURL} alt={userInfo.name} />
+              ) : (
+                <ImgWrapper>
+                  <NameFirstLetter>{firstLeterOfUserName}</NameFirstLetter>
+                </ImgWrapper>
+              )}
               {el.priority === 'high' && <StatusRed>{el.priority}</StatusRed>}
               {el.priority === 'medium' && (
                 <StatusMedium>{el.priority}</StatusMedium>
@@ -56,15 +68,11 @@ export const TaskColumnCard = ({ items, listId }) => {
             />
           </ToolBarBox>
           {/* <TaskModal /> */}
-        </li>
+        </TaskItem>
       ))}
       {isModalOpen && (
         <ModalCreate onClose={handleToggle}>
-          <ModalTodo
-            handleToggle={handleToggle}
-            currentTodo={currentTodo}
-            edit
-          />
+          <ModalEditTodo handleToggle={handleToggle} currentTodo={currentTodo} />
         </ModalCreate>
       )}
     </>

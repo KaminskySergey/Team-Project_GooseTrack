@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
+import { NavLink } from "react-router-dom";
 
 export const BiChevronLeftStyled = styled(BiChevronLeft)`
-height: 30px;
-width: 36px;
+
 fill: #616161;
 `;
 
@@ -20,14 +20,14 @@ padding: 6px 12px;
 background: ${props => props.theme.accentColor};
 border-radius: 8px;
 color: ${props => props.theme.secondaryTextColor};
-font-family: 'Inter';
+font-family: 'InterBolt';
 font-style: normal;
 font-weight: 700;
 font-size: 14px;
 line-height: 1.29;
 text-align: center;
 text-transform: uppercase;
-min-width: 150px;
+min-width: 166px;
 
 @media(min-width: 768px) {
     padding: 8px 12px;
@@ -43,7 +43,7 @@ display: flex;
 justify-content: space-between;
 margin-bottom: 18px;`;
 
-export const ButtonPeriodPaginator = styled.button`
+export const LinkPeriodPaginator = styled(NavLink)`
 width: 36px;
 height: 34px;
 box-sizing: border-box;

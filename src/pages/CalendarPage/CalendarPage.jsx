@@ -34,26 +34,16 @@ export default function CalendarPage() {
   const lastDayOfWeek = endOfWeek(askDay, { weekStartsOn: 1 });
   const startNextWeek = addDays(lastDayOfWeek, 1);
 
-
- 
   let newAskDate = useParams();
 
-  
   useEffect(() => {
-
-  if (newAskDate.date) {
-    const formatedNewAskDate = new Date(newAskDate.date);
-    setAskDay(startOfDay(formatedNewAskDate));
-    setIsChoosedMonth(false);
-    // setIsChoosedMonth(false);
-  }}, [newAskDate])
-
-  // const items = useSelector(selectIsitems);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchTasksAll());
-  // }, [dispatch]);
-  // console.log(items);
+    if (newAskDate.date) {
+      const formatedNewAskDate = new Date(newAskDate.date);
+      setAskDay(startOfDay(formatedNewAskDate));
+      setIsChoosedMonth(false);
+      // setIsChoosedMonth(false);
+    }
+  }, [newAskDate]);
 
   let calendar = [];
   let weekCalendar = [];
@@ -80,8 +70,12 @@ export default function CalendarPage() {
     }
   };
 
-  const toogleChooseMonth = () => {
-    setIsChoosedMonth(prev => !prev);
+  const handleChooseMonth = () => {
+    setIsChoosedMonth(true);
+  };
+
+  const handleChooseDay = () => {
+    setIsChoosedMonth(false);
   };
 
   const newFormat = new Date(askDay);
@@ -99,12 +93,13 @@ export default function CalendarPage() {
         changeAskDay={changeAskDay}
         isChoosedMonth={isChoosedMonth}
         askDay={askDay}
-        toogleChooseMonth={toogleChooseMonth}
+        handleChooseMonth={handleChooseMonth}
+        handleChooseDay={handleChooseDay}
       />
       {isChoosedMonth ? (
         <ChoosedMonth calendar={calendar} askDay={askDay} />
       ) : (
-        <ChoosedDay weekCalendar={weekCalendar} askDay={askDay}/>
+        <ChoosedDay weekCalendar={weekCalendar} askDay={askDay} />
       )}
     </>
   );

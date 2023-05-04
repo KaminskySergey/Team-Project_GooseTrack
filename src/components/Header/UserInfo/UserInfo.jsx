@@ -21,7 +21,7 @@ export const UserInfo = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return 
+    return;
   }
 
   if (!userInfo) {
@@ -38,7 +38,7 @@ export const UserInfo = () => {
 
       <ImgWrapper>
         {avatarURL !== '' ? (
-          <Avatar src={avatarURL} alt="avatar" />
+          <Avatar src={avatarURL} alt={name} />
         ) : (
           <NameFirstLetter>{firstLeterOfUserName}</NameFirstLetter>
         )}

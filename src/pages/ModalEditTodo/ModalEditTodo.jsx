@@ -9,9 +9,8 @@ import {
   TitleInput,
   StyledFormControlLabel,
   ButtonForm,
-  Add,
-  ButtonCancel,
-} from './ModalTodo.styled';
+  Edit,
+} from './ModalEditTodo.styled';
 import { useDispatch } from 'react-redux';
 import { editTasks } from 'redux/tasks/operations';
 import { toast } from 'react-toastify';
@@ -34,12 +33,7 @@ const validate = values => {
   return errors;
 };
 
-const ModalTodo = ({
-  onSubmit,
-  handleAddTodo,
-  currentTodo,
-  handleToggle,
-}) => {
+const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
   const dispatch = useDispatch();
 
   const initialValues = {
@@ -264,19 +258,10 @@ const ModalTodo = ({
               </RadioGroup>
             </FormControl>
           </Box>
-            <div style={{ display: 'flex', gap: '14px' }}>
-              <ButtonForm type="submit" variant="contained" color="primary">
-                <Add />
-                Add
-              </ButtonForm>
-              <ButtonCancel
-                onClick={handleToggle}
-                variant="contained"
-                color="primary"
-              >
-                Cancel
-              </ButtonCancel>
-            </div>
+          <ButtonForm type="submit" variant="contained" color="primary">
+            <Edit />
+            Edit
+          </ButtonForm>
         </Form>
       )}
     </Formik>

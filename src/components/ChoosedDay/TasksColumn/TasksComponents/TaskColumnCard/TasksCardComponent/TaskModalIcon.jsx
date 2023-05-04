@@ -1,19 +1,5 @@
+import { Modal } from './TaskModalIcon.styled';
 
-
-import { Modal } from "./TaskModalIcon.styled"
-
-
-
-export const TaskModalIcon = ({children, onClose}) => {
-       
-
-    
-    
-
-    return (
-        
-                <Modal>
-                {children}
-                </Modal>
-    )
-}
+export const TaskModalIcon = ({ children, listId }) => {
+  return <Modal $listId={listId}>{children}</Modal>;
+};
