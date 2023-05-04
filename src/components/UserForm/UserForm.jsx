@@ -27,7 +27,7 @@ export const UserForm = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   const { name, birthday, email, phone, telegram, avatarURL } = userInfo;
