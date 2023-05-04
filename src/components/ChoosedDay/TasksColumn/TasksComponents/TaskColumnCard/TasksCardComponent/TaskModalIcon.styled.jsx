@@ -4,9 +4,8 @@ import styled from 'styled-components';
 
 export const Modal = styled.div`
   position: absolute;
-
   top: 26px;
-  right: ${props => (props.$listId === 'done' ? '50px' : '')};
+  right: ${props => (props.$listId === 'done' ? '50px' : '5px')};
 
   background-color: ${props => props.theme.mainBackgroundColor};
   transition: ${props => props.theme.defaultTransition};
