@@ -38,8 +38,6 @@ export const TodoText = styled.p`
   color: ${props => props.theme.mainTextColor};
   font-family: 'InterNormal';
   font-size: 14px;
-  font-size: 14px;
-  line-height: 18px;
   line-height: calc((18 / 14) * 100%);
 
   @media (min-width: 768px) {
@@ -84,7 +82,7 @@ export const StatusRed = styled.p`
   border-radius: 4px;
   max-height: 20px;
 
-  font-family: 'InterSemiBoltMinSize';
+  font-family: 'InterSemiBolt';
   font-size: 10px;
   line-height: 1.2;
   color: white;
@@ -96,7 +94,7 @@ export const StatusLow = styled.p`
   border-radius: 4px;
   max-height: 20px;
 
-  font-family: 'InterSemiBoltMinSize';
+  font-family: 'InterSemiBolt';
   font-size: 10px;
   line-height: 1.2;
   color: white;
@@ -109,7 +107,7 @@ export const StatusMedium = styled.p`
   border-radius: 4px;
   max-height: 20px;
 
-  font-family: 'InterSemiBoltMinSize';
+  font-family: 'InterSemiBolt';
   font-size: 10px;
   line-height: 1.2;
   color: white;
