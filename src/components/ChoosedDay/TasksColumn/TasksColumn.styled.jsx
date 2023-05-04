@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ReactComponent as IconAdd } from 'images/svg/addIcon.svg';
 
 export const Item = styled.li`
   display: flex;
@@ -19,17 +18,6 @@ export const Item = styled.li`
   }
 `;
 
-export const IconAddTodo = styled(IconAdd)`
-  cursor: pointer;
-  stroke: ${props => props.theme.mainTextColor};
-  transition: all 250ms;
-  transform: scale(1);
-
-  &:hover,
-  &:focus {
-    stroke: ${props => props.theme.accentColor};
-  }
-`;
 
 export const Container = styled.div`
   display: flex;
