@@ -5,7 +5,7 @@ export const ColumnTasksList = ({ items, listId }) => {
     <ul
       style={{
         overflowY: 'auto',
-        overflow: 'visible',
+        // overflow: 'visible',
         height: '100%',
       }}
     >

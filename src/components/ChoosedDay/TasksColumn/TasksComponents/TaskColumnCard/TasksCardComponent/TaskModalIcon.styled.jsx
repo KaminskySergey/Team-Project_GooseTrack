@@ -30,6 +30,7 @@ export const Modal = styled.div`
 export const ListModalIcon = styled.ul`
   li {
     display: flex;
+
     justify-content: space-between;
     cursor: pointer;
     font-family: 'InterNormal';
