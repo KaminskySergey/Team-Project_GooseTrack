@@ -13,16 +13,15 @@ import {
   ButtonText,
   ButtonClose,
   IconClose,
-} from './AsideBar.styled';
+} from './AsideBar.styled.jsx';
 import Icon from '../Icon/Icon';
 import { useDispatch } from 'react-redux';
 import { logout } from 'redux/auth/authOperations';
 import { format, startOfToday } from 'date-fns';
 
-
 const AsideBar = ({ onSidebarShow }) => {
   const dispatch = useDispatch();
-  const month = format(startOfToday(), 'MMMMyyyy')
+  const month = format(startOfToday(), 'MMMMyyyy');
 
   const handleLogout = () => dispatch(logout());
 
