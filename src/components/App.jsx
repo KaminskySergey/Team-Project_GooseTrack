@@ -18,6 +18,7 @@ const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const AccountPage = lazy(() => import('pages/AccountPage/AccountPage'));
 const CalendarPage = lazy(() => import('pages/CalendarPage/CalendarPage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'))
 
 export const App = () => {
   const { isRefreshing } = useAuth();
@@ -79,7 +80,9 @@ export const App = () => {
                 }
               />
               <Route path="/account" element={<AccountPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         )}
       </ThemeProvider>
