@@ -1,7 +1,7 @@
 import DatePicker from 'react-date-picker';
 import { useSelector } from 'react-redux';
 import { selectIsTheme } from 'redux/theme/selectors';
-import { Label } from 'components/UserFild';
+import { Label, MessageError } from 'components/UserFild';
 
 import { ReactComponent as ArrowDown } from 'images/svg/chevron-down.svg';
 import { ReactComponent as ArrowLeft } from 'images/svg/chevron-left.svg';
@@ -41,6 +41,7 @@ export const DateSelection = ({ title, name, date, changeDate }) => {
         nextLabel={<ArrowRight />}
         showNeighboringMonth={false}
       />
+      <MessageError name={name} component="p" />
     </Label>
   );
 };

@@ -32,15 +32,16 @@ export const UserForm = () => {
 
   const { name, birthday, email, phone, telegram, avatarURL } = userInfo;
 
-  const handleSubmit = values => {
+  const handleSubmit = async values => {
     const formData = new FormData();
 
     formData.append('image', fileImage);
-    formData.append('body', values);
 
     try {
-      dispatch(updateUser(formData));
-      toast.success('Success');
+      await dispatch(updateUser(formData));
+      await dispatch(updateUser(values));
+
+      toast.success('Profile is successfully updated');
     } catch (error) {
       toast.error(error.message);
     }
@@ -60,12 +61,7 @@ export const UserForm = () => {
     >
       {({ values, setFieldValue }) => (
         <AccountForm>
-          <AvatarUploader
-            imageUrl={avatarURL}
-            dispatch={dispatch}
-            update={updateUser}
-            setFileImage={setFileImage}
-          />
+          <AvatarUploader imageUrl={avatarURL} setFileImage={setFileImage} />
           <Title>{values.name}</Title>
           <Wrap>
             <Wrapper>

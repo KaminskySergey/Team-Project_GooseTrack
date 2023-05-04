@@ -3,12 +3,7 @@ import avatar from 'images/account/avatar.png';
 import { Img, Input, Label, Wrap, AddIcon } from '.';
 import Box from 'components/Box/Box';
 
-export const AvatarUploader = ({
-  imageUrl,
-  dispatch,
-  update,
-  setFileImage,
-}) => {
+export const AvatarUploader = ({ imageUrl, setFileImage }) => {
   const [imagePreview, setImagePreview] = useState(imageUrl || avatar);
 
   const handleImageChange = e => {
@@ -18,14 +13,9 @@ export const AvatarUploader = ({
     }
 
     const imageUrl = URL.createObjectURL(selectedFile);
+
     setImagePreview(imageUrl);
-
     setFileImage(selectedFile);
-
-    // const formData = new FormData();
-
-    // formData.append('image', selectedFile);
-    // dispatch(update(formData));
   };
 
   return (
