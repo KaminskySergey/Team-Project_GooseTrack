@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUserInfo } from 'redux/user/selectors';
 import { deleteTasks } from 'redux/tasks/operations';
 import ModalCreate from 'components/ModalCreate/ModalCreate';
-import ModalTodo from 'pages/ModalTodo/ModalTodo';
+import ModalEditTodo from 'pages/ModalEditTodo/ModalEditTodo';
 import { useState } from 'react';
 
 export const TaskColumnCard = ({ items, listId }) => {
@@ -72,7 +72,7 @@ export const TaskColumnCard = ({ items, listId }) => {
       ))}
       {isModalOpen && (
         <ModalCreate onClose={handleToggle}>
-          <ModalTodo handleToggle={handleToggle} currentTodo={currentTodo} />
+          <ModalEditTodo handleToggle={handleToggle} currentTodo={currentTodo} />
         </ModalCreate>
       )}
     </>
