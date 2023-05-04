@@ -38,7 +38,7 @@ export const Header = ({ onSidebarShow }) => {
       pageTitle = 'User Profile';
       break;
     default:
-      pageTitle = 'Title';
+      pageTitle = '';
       break;
   }
 
