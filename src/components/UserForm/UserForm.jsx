@@ -10,11 +10,13 @@ import { fetchUser, updateUser } from 'redux/user/operations';
 import { AvatarUploader } from 'components/AvatarUploader';
 import { UserFild } from 'components/UserFild';
 import { DateSelection } from 'components/DateSelection';
+import { toast } from 'react-toastify';
 
 export const UserForm = () => {
   const dispatch = useDispatch();
   const userInfo = useSelector(selectUserInfo);
   const [isLoading, setIsLoading] = useState(true);
+  const [fileImage, setFileImage] = useState(null);
 
   useEffect(() => {
     const getUserInfo = async () => {
@@ -31,6 +33,21 @@ export const UserForm = () => {
 
   const { name, birthday, email, phone, telegram, avatarURL } = userInfo;
 
+  const handleSubmit = async values => {
+    const formData = new FormData();
+
+    formData.append('image', fileImage);
+
+    try {
+      await dispatch(updateUser(formData));
+      await dispatch(updateUser(values));
+
+      toast.success('Profile is successfully updated');
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   return (
     <Formik
       initialValues={{
@@ -41,6 +58,7 @@ export const UserForm = () => {
         telegram,
       }}
       validationSchema={userShema}
+
       onSubmit={async values => {
         try {
           await dispatch(updateUser(values));
@@ -50,14 +68,11 @@ export const UserForm = () => {
           toast.error(errror.message);
         }
       }}
+
     >
       {({ values, setFieldValue }) => (
         <AccountForm>
-          <AvatarUploader
-            imageUrl={avatarURL}
-            dispatch={dispatch}
-            update={updateUser}
-          />
+          <AvatarUploader imageUrl={avatarURL} setFileImage={setFileImage} />
           <Title>{values.name}</Title>
           <Wrap>
             <Wrapper>
