@@ -10,7 +10,6 @@ import {
   StyledFormControlLabel,
   ButtonForm,
   Edit,
-  ButtonCancel,
 } from './ModalEditTodo.styled';
 import { useDispatch } from 'react-redux';
 import { editTasks } from 'redux/tasks/operations';
