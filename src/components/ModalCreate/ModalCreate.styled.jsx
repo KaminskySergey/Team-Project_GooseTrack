@@ -3,6 +3,7 @@ import { ReactComponent as Close } from 'images/svg/closeModal.svg';
 
 export const Backdrop = styled.div`
   position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,6 +13,7 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
+
   max-width: 95%;
   padding: 48px 18px 40px;
   top: 50%;
