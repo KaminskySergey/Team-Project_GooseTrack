@@ -7,6 +7,7 @@ import {
   AddTaskButton,
   Icon,
 } from 'components/ChoosedDay/TasksColumn/TasksComponents/AddTaskBtn.styled';
+import { toast } from 'react-toastify';
 
 export const AddTaskBtn = ({ listId, askDay }) => {
   const [isModalOpen, setIsOpenModal] = useState(false);
@@ -25,8 +26,10 @@ export const AddTaskBtn = ({ listId, askDay }) => {
       category: listId,
     };
 
-    dispatch(addTasks(todo));
-    handleToggle();
+    dispatch(addTasks(todo))
+      .unwrap()
+      .then(() => handleToggle())
+      .catch(() => toast.error('Please specify the future time'));
   };
 
   const handleToggle = () => setIsOpenModal(pS => !pS);

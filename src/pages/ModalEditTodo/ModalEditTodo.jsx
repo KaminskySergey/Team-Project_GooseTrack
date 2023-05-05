@@ -65,10 +65,18 @@ const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
       category: values.category,
     };
 
-    dispatch(editTasks(todo));
-    resetForm();
+    // dispatch(editTasks(todo));
+    // resetForm();
 
-    handleToggle();
+    // handleToggle();
+
+    dispatch(editTasks(todo))
+      .unwrap()
+      .then(() => {
+        resetForm();
+        handleToggle();
+      })
+      .catch(() => toast.error('Failed to edit'));
   };
 
   return (

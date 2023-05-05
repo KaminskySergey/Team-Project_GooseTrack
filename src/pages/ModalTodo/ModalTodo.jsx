@@ -34,19 +34,14 @@ const validate = values => {
   return errors;
 };
 
-const ModalTodo = ({
-  onSubmit,
-  handleAddTodo,
-  currentTodo,
-  handleToggle,
-}) => {
+const ModalTodo = ({ onSubmit, handleAddTodo, currentTodo, handleToggle }) => {
   const dispatch = useDispatch();
 
   const initialValues = {
-    title: currentTodo ? currentTodo.title : '',
-    startTime: currentTodo ? currentTodo.startTime : '',
-    endTime: currentTodo ? currentTodo.endTime : '',
-    priority: currentTodo ? currentTodo.priority : 'low',
+    title: '',
+    startTime: '',
+    endTime: '',
+    priority: 'low',
   };
 
   const handleSubmit = (values, { resetForm }) => {
@@ -57,7 +52,7 @@ const ModalTodo = ({
 
     if (!currentTodo) {
       handleAddTodo(values);
-      resetForm();
+      // resetForm();
       // handleToggle()
       return;
     }
@@ -71,10 +66,18 @@ const ModalTodo = ({
       category: values.category,
     };
 
-    dispatch(editTasks(todo));
-    resetForm();
+    // dispatch(editTasks(todo));
+    // resetForm();
 
-    handleToggle();
+    // handleToggle();
+
+    dispatch(editTasks(todo))
+      .unwrap()
+      .then(() => {
+        resetForm();
+        handleToggle();
+      })
+      .catch(() => toast.error('Failed to edit'));
   };
 
   return (
@@ -264,19 +267,19 @@ const ModalTodo = ({
               </RadioGroup>
             </FormControl>
           </Box>
-            <div style={{ display: 'flex', gap: '14px' }}>
-              <ButtonForm type="submit" variant="contained" color="primary">
-                <Add />
-                Add
-              </ButtonForm>
-              <ButtonCancel
-                onClick={handleToggle}
-                variant="contained"
-                color="primary"
-              >
-                Cancel
-              </ButtonCancel>
-            </div>
+          <div style={{ display: 'flex', gap: '14px' }}>
+            <ButtonForm type="submit" variant="contained" color="primary">
+              <Add />
+              Add
+            </ButtonForm>
+            <ButtonCancel
+              onClick={handleToggle}
+              variant="contained"
+              color="primary"
+            >
+              Cancel
+            </ButtonCancel>
+          </div>
         </Form>
       )}
     </Formik>

@@ -42,8 +42,8 @@ export const UserForm = () => {
       await dispatch(updateUser(values));
 
       toast.success('Profile is successfully updated');
-    } catch (error) {
-      toast.error(error.message);
+    } catch {
+      toast.error('Something went wrong. Try again!');
     }
   };
 
