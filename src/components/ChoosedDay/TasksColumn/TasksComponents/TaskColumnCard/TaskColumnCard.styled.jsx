@@ -24,7 +24,7 @@ export const TaskItem = styled.div`
     &:not(:last-child) {
       margin-bottom: 14px;
     }
-  }
+  };
 `;
 
 export const TodoText = styled.p`
