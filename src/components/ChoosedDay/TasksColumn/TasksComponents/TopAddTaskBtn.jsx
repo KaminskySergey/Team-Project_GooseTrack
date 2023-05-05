@@ -2,11 +2,9 @@ import ModalCreate from 'components/ModalCreate/ModalCreate';
 import ModalTodo from 'pages/ModalTodo/ModalTodo';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { addTasks } from 'redux/tasks/operations';
-import {
-  AddTaskButton,
-  IconAddTodo,
-} from './TopAddTaskBtn.styled';
+import { AddTaskButton, IconAddTodo } from './TopAddTaskBtn.styled';
 
 export const TopAddTaskBtn = ({ listId, askDay }) => {
   const [isModalOpen, setIsOpenModal] = useState(false);
@@ -25,8 +23,13 @@ export const TopAddTaskBtn = ({ listId, askDay }) => {
       category: listId,
     };
 
-    dispatch(addTasks(todo));
-    handleToggle();
+    dispatch(addTasks(todo))
+      .unwrap()
+      .then(() => handleToggle())
+      .catch(() => toast.error('Please specify the future time'));
+
+    // dispatch(addTasks(todo));
+    // handleToggle();
   };
 
   const handleToggle = () => setIsOpenModal(pS => !pS);
