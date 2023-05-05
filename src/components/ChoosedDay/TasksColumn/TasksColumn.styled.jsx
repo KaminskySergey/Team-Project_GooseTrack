@@ -15,6 +15,10 @@ export const Item = styled.li`
     min-width: 344px;
     max-height: 568px;
     padding: 18px 23px 28px 20px;
+  };
+
+  @media (min-width: 1280px) {
+    min-width: 290px;
   }
 `;
 

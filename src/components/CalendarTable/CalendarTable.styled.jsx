@@ -134,7 +134,7 @@ export const TaskItem = styled.li`
   }
 
   @media (min-width: 1280px) {
-    min-width: 139px;
+    min-width: 114px;
   }
 `;
 
