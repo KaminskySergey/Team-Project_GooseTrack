@@ -60,7 +60,7 @@ export const AvatarImg = styled.img`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1.8px solid ${props => props.theme.mainTextColor};
+  border: 1.8px solid ${props => props.theme.accentColor};
   margin-right: 8px;
 `;
 
