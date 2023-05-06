@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 export const Modal = styled.div`
   position: absolute;
-  top: 26px;
-  right: ${props => (props.$listId === 'done' ? '50px' : '5px')};
+  top: -60px;
+  right: ${props => (props.$listId === 'done' ? '75px' : '75px')};
 
   background-color: ${props => props.theme.mainBackgroundColor};
   transition: ${props => props.theme.defaultTransition};
   border-radius: 8px;
   box-shadow: 0px 4px 16px rgba(17, 17, 17, 0.1);
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +23,6 @@ export const Modal = styled.div`
   @media (min-width: 768px) {
     padding: 24px;
     width: 147px;
-    height: 90px;
   }
 `;
 

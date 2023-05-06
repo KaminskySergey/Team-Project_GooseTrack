@@ -13,15 +13,12 @@ import Box from 'components/Box/Box';
 import { ThemeToggler } from './ThemeToggler/ThemeToggler';
 import { UserInfo } from './UserInfo/UserInfo';
 import { useResponce } from 'hooks/responce/useResponce';
-import {
-  selectIsitemsToDo,
-  selectIsitemsInProgress,
-} from 'redux/tasks/selectors';
+import { selectIsitemsMain } from 'redux/tasks/selectors';
 import { useSelector } from 'react-redux';
 
 export const Header = ({ onSidebarShow }) => {
-  const userTasksToDo = useSelector(selectIsitemsToDo);
-  const userTasksInProgress = useSelector(selectIsitemsInProgress);
+  const userTasks = useSelector(selectIsitemsMain);
+  // const userTasksInProgress = useSelector(selectIsitemsInProgress);
   const { isDesktopOrLaptop } = useResponce();
   const { pathname } = useLocation();
 
@@ -42,9 +39,13 @@ export const Header = ({ onSidebarShow }) => {
       break;
   }
 
-  const shouldShowMotivation =
-    pageTitle === 'Calendar' &&
-    (userTasksToDo.length > 0 || userTasksInProgress.length > 0);
+  // const shouldShowMotivation =
+  //   pageTitle === 'Calendar' &&
+  //   (userTasksToDo.length > 0 || userTasksInProgress.length > 0);
+
+  const isAnyUncompletedTask = userTasks.some(
+    item => item.category === 'toDo' || item.category === 'inProgress'
+  );
 
   return (
     <>
@@ -57,10 +58,10 @@ export const Header = ({ onSidebarShow }) => {
           )}
           {isDesktopOrLaptop && (
             <>
-              {shouldShowMotivation && <GooseIcon />}
+              {isAnyUncompletedTask && <GooseIcon />}
               <div>
                 <Title>{pageTitle}</Title>
-                {shouldShowMotivation && (
+                {isAnyUncompletedTask && (
                   <Motivation>
                     <Accent>Let go</Accent> of the past and focus on the
                     present!
